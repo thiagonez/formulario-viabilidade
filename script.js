@@ -32,6 +32,15 @@ function addRow(tableId) {
     }
 }
 
+
+
+
+
+
+
+
+
+
 // Função para rolar até a seção do formulário
 function scrollToForm() {
     document.getElementById("form-section").scrollIntoView({ behavior: "smooth" });
