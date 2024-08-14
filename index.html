@@ -28,34 +28,40 @@
     <section class="form-section" id="form-section">
         <h2>Formulário de Diagnóstico de Viabilidade</h2>
         <form id="diagnosticForm">
-            <h3>Aspectos Gerais</h3>
-            <label for="year">Ano Inicial do Projeto:</label>
-            <input type="number" id="year" name="year" required>
-            
-            <label for="month">Mês Inicial do Projeto:</label>
-            <input type="text" id="month" name="month" required>
-            
-            <label for="years-analyzed">Quantidade de anos analisados:</label>
-            <input type="number" id="years-analyzed" name="years-analyzed" required>
+            <div class="form-grid">
+                <div class="form-column">
+                    <h3>Aspectos Gerais</h3>
+                    <label for="year">Ano Inicial do Projeto:</label>
+                    <input type="number" id="year" name="year" required>
+                    
+                    <label for="month">Mês Inicial do Projeto:</label>
+                    <input type="text" id="month" name="month" required>
+                    
+                    <label for="years-analyzed">Quantidade de anos analisados:</label>
+                    <input type="number" id="years-analyzed" name="years-analyzed" required>
+                </div>
+                
+                <div class="form-column">
+                    <h3>Dados Monetários</h3>
+                    <label for="total-capital">Capital total disponível:</label>
+                    <input type="number" id="total-capital" name="total-capital" required>
+                    
+                    <label for="third-party-capital">Usará capital de terceiros?</label>
+                    <select id="third-party-capital" name="third-party-capital" required>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                    
+                    <label for="third-party-amount">Quanto?</label>
+                    <input type="number" id="third-party-amount" name="third-party-amount">
 
-            <h3>Dados Monetários</h3>
-            <label for="total-capital">Capital total disponível:</label>
-            <input type="number" id="total-capital" name="total-capital" required>
-            
-            <label for="third-party-capital">Usará capital de terceiros?</label>
-            <select id="third-party-capital" name="third-party-capital" required>
-                <option value="Sim">Sim</option>
-                <option value="Não">Não</option>
-            </select>
-            
-            <label for="third-party-amount">Quanto?</label>
-            <input type="number" id="third-party-amount" name="third-party-amount">
+                    <label for="own-capital-percentage">Percentual de capital próprio:</label>
+                    <input type="number" id="own-capital-percentage" name="own-capital-percentage" required>
 
-            <label for="own-capital-percentage">Percentual de capital próprio:</label>
-            <input type="number" id="own-capital-percentage" name="own-capital-percentage" required>
-
-            <label for="third-party-capital-percentage">Percentual de capital de terceiros:</label>
-            <input type="number" id="third-party-capital-percentage" name="third-party-capital-percentage" required>
+                    <label for="third-party-capital-percentage">Percentual de capital de terceiros:</label>
+                    <input type="number" id="third-party-capital-percentage" name="third-party-capital-percentage" required>
+                </div>
+            </div>
 
             <h3>Tabela de Investimentos Iniciais</h3>
             <table id="investment-table">
