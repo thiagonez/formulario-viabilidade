@@ -1,26 +1,34 @@
 // Função para adicionar uma nova linha a uma tabela
 function addRow(tableId) {
     let table = document.getElementById(tableId);
-    let newRow = table.insertRow(-1); // Insere a nova linha no final da tabela
     let lastRow = table.rows[table.rows.length - 1];
-    let cols = lastRow.cells.length;
-
+    let newRow = table.insertRow(-1); // Insere a nova linha no final da tabela
+    
     // Copia os valores das células da última linha como referência
-    for (let i = 0; i < cols; i++) {
+    for (let i = 0; i < lastRow.cells.length; i++) {
         let cell = newRow.insertCell(i);
-        let inputElement = lastRow.cells[i].querySelector('input, select');
+        let lastCell = lastRow.cells[i];
+        let inputElement = lastCell.querySelector('input, select');
         
         if (inputElement) {
             if (inputElement.tagName === 'SELECT') {
                 // Cria um novo <select> com as mesmas opções da linha anterior
-                cell.innerHTML = inputElement.outerHTML;
+                let newSelect = document.createElement('select');
+                newSelect.name = inputElement.name;
+                newSelect.innerHTML = inputElement.innerHTML; // Copia as opções
+                cell.appendChild(newSelect);
             } else {
-                // Cria um novo <input> com o mesmo nome e valor da linha anterior
-                cell.innerHTML = `<input type="${inputElement.type}" name="${inputElement.name}" value="${inputElement.value}">`;
+                // Cria um novo <input> com o mesmo tipo, nome e valor da linha anterior
+                let newInput = document.createElement('input');
+                newInput.type = inputElement.type;
+                newInput.name = inputElement.name;
+                newInput.value = inputElement.value;
+                cell.appendChild(newInput);
             }
         }
     }
-}}
+}
+
 
 // Função para rolar até a seção do formulário
 function scrollToForm() {
