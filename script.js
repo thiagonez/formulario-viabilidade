@@ -7,12 +7,13 @@ function addRow(tableId) {
     for (let i = 0; i < cols; i++) {
         let cell = newRow.insertCell(i);
         if (i === 0) {
-            cell.innerHTML = <input type="text" name="${tableId}-item">;
+            cell.innerHTML = `<input type="text" name="${tableId}-item">`;
         } else {
-            cell.innerHTML = <input type="number" name="${tableId}-value">;
+            cell.innerHTML = `<input type="text" name="${tableId}-value">`;
         }
     }
 }
+
 
 // Função para rolar até a seção do formulário
 function scrollToForm() {
