@@ -7,9 +7,13 @@ function addRow(tableId) {
     for (let i = 0; i < cols; i++) {
         let cell = newRow.insertCell(i);
         if (i === 0) {
-            cell.innerHTML = <input type="text" name="${tableId}-item">;
-        } else {
-            cell.innerHTML = <input type="number" name="${tableId}-value">;
+            cell.innerHTML = '<input type="text" name="' + tableId + '-item">';
+        } else if (i === 1) {
+            cell.innerHTML = '<input type="number" name="' + tableId + '-value">';
+        } else if (i === 2) {
+            cell.innerHTML = '<input type="number" name="' + tableId + '-depreciation">';
+        } else if (i === 3) {
+            cell.innerHTML = '<input type="number" name="' + tableId + '-adjustment">';
         }
     }
 }
