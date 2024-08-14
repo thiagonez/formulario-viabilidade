@@ -2,18 +2,25 @@
 function addRow(tableId) {
     let table = document.getElementById(tableId);
     let newRow = table.insertRow(-1); // Insere a nova linha no final da tabela
-    let cols = table.rows[0].cells.length;
+    let lastRow = table.rows[table.rows.length - 1];
+    let cols = lastRow.cells.length;
 
-    // Copia os valores das células da primeira linha (ou outra linha de referência)
+    // Copia os valores das células da última linha como referência
     for (let i = 0; i < cols; i++) {
         let cell = newRow.insertCell(i);
-        if (i === 0) {
-            cell.innerHTML = `<input type="text" name="${tableId}-item">`;
-        } else {
-            cell.innerHTML = `<input type="number" name="${tableId}-value">`;
+        let inputElement = lastRow.cells[i].querySelector('input, select');
+        
+        if (inputElement) {
+            if (inputElement.tagName === 'SELECT') {
+                // Cria um novo <select> com as mesmas opções da linha anterior
+                cell.innerHTML = inputElement.outerHTML;
+            } else {
+                // Cria um novo <input> com o mesmo nome e valor da linha anterior
+                cell.innerHTML = `<input type="${inputElement.type}" name="${inputElement.name}" value="${inputElement.value}">`;
+            }
         }
     }
-}
+}}
 
 // Função para rolar até a seção do formulário
 function scrollToForm() {
