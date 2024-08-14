@@ -97,7 +97,8 @@ label {
 }
 
 input[type="text"], input[type="number"], select {
-    width: 100%;
+    /* Desativando temporariamente o tamanho do campo
+    width: 100%; */
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
