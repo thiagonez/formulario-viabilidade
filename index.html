@@ -75,18 +75,18 @@
                 <tbody>
                     <tr>
                         <td><input type="text" name="investment-item"></td>
-                        <td><input type="number" name="investment-value"></td>
-                        <td><input type="number" name="investment-depreciation"></td>
+                        <td><input type="text" name="investment-value"></td>
+                        <td><input type="text" name="investment-depreciation"></td>
                     </tr>
                     <tr>
                         <td><input type="text" name="investment-item"></td>
-                        <td><input type="number" name="investment-value"></td>
-                        <td><input type="number" name="investment-depreciation"></td>
+                        <td><input type="text" name="investment-value"></td>
+                        <td><input type="text" name="investment-depreciation"></td>
                     </tr>
                     <tr>
                         <td><input type="text" name="investment-item"></td>
-                        <td><input type="number" name="investment-value"></td>
-                        <td><input type="number" name="investment-depreciation"></td>
+                        <td><input type="text" name="investment-value"></td>
+                        <td><input type="text" name="investment-depreciation"></td>
                     </tr>
                 </tbody>
             </table>
@@ -109,9 +109,9 @@
                 <tbody>
                     <tr>
                         <td><input type="text" name="pricing-item" placeholder="Nome do Produto/Serviço" required></td>
-                        <td><input type="number" name="pricing-price" placeholder="Ex: 100.00" required></td>
-                        <td><input type="number" name="pricing-cost" placeholder="Ex: 50.00" required></td>
-                        <td><input type="number" name="pricing-taxes" placeholder="Ex: 10" required></td>
+                        <td><input type="text" name="pricing-price" placeholder="Ex: 100.00" required></td>
+                        <td><input type="text" name="pricing-cost" placeholder="Ex: 50.00" required></td>
+                        <td><input type="text" name="pricing-taxes" placeholder="Ex: 10" required></td>
                         <td><input type="text" name="pricing-client-type" placeholder="Ex: Pessoa Física" required></td>
                         <td>
                             <select name="pricing-revenue-type" required>
@@ -135,13 +135,13 @@
                                 <option value="Anual">Anual</option>
                             </select>
                         </td>
-                        <td><input type="number" name="pricing-projection" placeholder="Ex: 1200" required></td>
+                        <td><input type="text" name="pricing-projection" placeholder="Ex: 1200" required></td>
                     </tr>
                     <tr>
                         <td><input type="text" name="pricing-item" placeholder="Nome do Produto/Serviço" required></td>
-                        <td><input type="number" name="pricing-price" placeholder="Ex: 100.00" required></td>
-                        <td><input type="number" name="pricing-cost" placeholder="Ex: 50.00" required></td>
-                        <td><input type="number" name="pricing-taxes" placeholder="Ex: 10" required></td>
+                        <td><input type="text" name="pricing-price" placeholder="Ex: 100.00" required></td>
+                        <td><input type="text" name="pricing-cost" placeholder="Ex: 50.00" required></td>
+                        <td><input type="text" name="pricing-taxes" placeholder="Ex: 10" required></td>
                         <td><input type="text" name="pricing-client-type" placeholder="Ex: Pessoa Física" required></td>
                         <td>
                             <select name="pricing-revenue-type" required>
@@ -165,13 +165,13 @@
                                 <option value="Anual">Anual</option>
                             </select>
                         </td>
-                        <td><input type="number" name="pricing-projection" placeholder="Ex: 1200" required></td>
+                        <td><input type="text" name="pricing-projection" placeholder="Ex: 1200" required></td>
                     </tr>
                     <tr>
                         <td><input type="text" name="pricing-item" placeholder="Nome do Produto/Serviço" required></td>
-                        <td><input type="number" name="pricing-price" placeholder="Ex: 100.00" required></td>
-                        <td><input type="number" name="pricing-cost" placeholder="Ex: 50.00" required></td>
-                        <td><input type="number" name="pricing-taxes" placeholder="Ex: 10" required></td>
+                        <td><input type="text" name="pricing-price" placeholder="Ex: 100.00" required></td>
+                        <td><input type="text" name="pricing-cost" placeholder="Ex: 50.00" required></td>
+                        <td><input type="text" name="pricing-taxes" placeholder="Ex: 10" required></td>
                         <td><input type="text" name="pricing-client-type" placeholder="Ex: Pessoa Física" required></td>
                         <td>
                             <select name="pricing-revenue-type" required>
@@ -195,7 +195,7 @@
                                 <option value="Anual">Anual</option>
                             </select>
                         </td>
-                        <td><input type="number" name="pricing-projection" placeholder="Ex: 1200" required></td>
+                        <td><input type="text" name="pricing-projection" placeholder="Ex: 1200" required></td>
                     </tr>
                 </tbody>
             </table>
@@ -213,17 +213,17 @@
                 <tbody>
                     <tr>
                         <td><input type="text" name="expense-type"></td>
-                        <td><input type="number" name="expense-value"></td>
+                        <td><input type="text" name="expense-value"></td>
                         <td><input type="text" name="expense-frequency"></td>
                     </tr>
                     <tr>
                         <td><input type="text" name="expense-type"></td>
-                        <td><input type="number" name="expense-value"></td>
+                        <td><input type="text" name="expense-value"></td>
                         <td><input type="text" name="expense-frequency"></td>
                     </tr>
                     <tr>
                         <td><input type="text" name="expense-type"></td>
-                        <td><input type="number" name="expense-value"></td>
+                        <td><input type="text" name="expense-value"></td>
                         <td><input type="text" name="expense-frequency"></td>
                     </tr>
                 </tbody>
@@ -248,15 +248,15 @@
             if (tableId === 'investment-table') {
                 newRow.innerHTML = `
                     <td><input type="text" name="investment-item"></td>
-                    <td><input type="number" name="investment-value"></td>
-                    <td><input type="number" name="investment-depreciation"></td>
+                    <td><input type="text" name="investment-value"></td>
+                    <td><input type="text" name="investment-depreciation"></td>
                 `;
             } else if (tableId === 'pricing-table') {
                 newRow.innerHTML = `
                     <td><input type="text" name="pricing-item" placeholder="Nome do Produto/Serviço" required></td>
-                    <td><input type="number" name="pricing-price" placeholder="Ex: 100.00" required></td>
-                    <td><input type="number" name="pricing-cost" placeholder="Ex: 50.00" required></td>
-                    <td><input type="number" name="pricing-taxes" placeholder="Ex: 10" required></td>
+                    <td><input type="text" name="pricing-price" placeholder="Ex: 100.00" required></td>
+                    <td><input type="text" name="pricing-cost" placeholder="Ex: 50.00" required></td>
+                    <td><input type="text" name="pricing-taxes" placeholder="Ex: 10" required></td>
                     <td><input type="text" name="pricing-client-type" placeholder="Ex: Pessoa Física" required></td>
                     <td>
                         <select name="pricing-revenue-type" required>
@@ -280,12 +280,12 @@
                             <option value="Anual">Anual</option>
                         </select>
                     </td>
-                    <td><input type="number" name="pricing-projection" placeholder="Ex: 1200" required></td>
+                    <td><input type="text" name="pricing-projection" placeholder="Ex: 1200" required></td>
                 `;
             } else if (tableId === 'expenses-table') {
                 newRow.innerHTML = `
                     <td><input type="text" name="expense-type"></td>
-                    <td><input type="number" name="expense-value"></td>
+                    <td><input type="text" name="expense-value"></td>
                     <td><input type="text" name="expense-frequency"></td>
                 `;
             }
