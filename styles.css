@@ -206,7 +206,7 @@ th, td {
     /* Adiciona os títulos das colunas como conteúdo antes das células */
     td::before {
         content: attr(data-label);
-        position: absolute;
+        position: relative;
         left: 0;
         width: 50%;
         padding-left: 15px;
