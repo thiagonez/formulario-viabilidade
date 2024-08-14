@@ -7,28 +7,17 @@ function addRow(tableId) {
     for (let i = 0; i < cols; i++) {
         let cell = newRow.insertCell(i);
 
-        // Coluna Produto/Serviço
         if (i === 0) {
             cell.innerHTML = '<input type="text" name="pricing-item" required>';
-        }
-        // Coluna Preço de Venda
-        else if (i === 1) {
-            cell.innerHTML = '<input type="text" name="pricing-price" required>';
-        }
-        // Coluna Custo
-        else if (i === 2) {
-            cell.innerHTML = '<input type="text" name="pricing-cost" required>';
-        }
-        // Coluna Impostos (%)
-        else if (i === 3) {
-            cell.innerHTML = '<input type="text" name="pricing-taxes" required>';
-        }
-        // Coluna Tipo de Cliente
-        else if (i === 4) {
+        } else if (i === 1) {
+            cell.innerHTML = '<input type="number" name="pricing-price" required>';
+        } else if (i === 2) {
+            cell.innerHTML = '<input type="number" name="pricing-cost" required>';
+        } else if (i === 3) {
+            cell.innerHTML = '<input type="number" name="pricing-taxes" required>';
+        } else if (i === 4) {
             cell.innerHTML = '<input type="text" name="pricing-client-type" required>';
-        }
-        // Coluna Tipo de Receita
-        else if (i === 5) {
+        } else if (i === 5) {
             cell.innerHTML = `
                 <select name="pricing-revenue-type" required>
                     <option value="Vendas de Produtos">Vendas de Produtos</option>
@@ -40,9 +29,7 @@ function addRow(tableId) {
                     <option value="Licença">Licença</option>
                     <option value="Outro Tipo">Outro Tipo</option>
                 </select>`;
-        }
-        // Coluna Frequência de Vendas
-        else if (i === 6) {
+        } else if (i === 6) {
             cell.innerHTML = `
                 <select name="pricing-sale-frequency" required>
                     <option value="Diária">Diária</option>
@@ -50,17 +37,10 @@ function addRow(tableId) {
                     <option value="Mensal">Mensal</option>
                     <option value="Anual">Anual</option>
                 </select>`;
-        }
-        // Coluna Projeção de Vendas Anual
-        else if (i === 7) {
-            cell.innerHTML = '<input type="text" name="pricing-projection" required>';
+        } else if (i === 7) {
+            cell.innerHTML = '<input type="number" name="pricing-projection" required>';
         }
     }
-}
-
-// Função para rolar até a seção do formulário
-function scrollToForm() {
-    document.getElementById("form-section").scrollIntoView({ behavior: "smooth" });
 }
 
 // Função para coletar dados da tabela
@@ -72,8 +52,12 @@ function getTableData(tableId) {
     for (let i = 1; i < rows.length; i++) { // Começa a partir da linha 1 para pular o cabeçalho
         let cells = rows[i].getElementsByTagName('td');
         let rowData = [];
+
         for (let j = 0; j < cells.length; j++) {
-            rowData.push(cells[j].getElementsByTagName('input')[0].value);
+            let input = cells[j].querySelector('input, select');
+            if (input) {
+                rowData.push(input.value);
+            }
         }
         data.push(rowData);
     }
@@ -81,7 +65,7 @@ function getTableData(tableId) {
     return data;
 }
 
-// Adiciona um ouvinte de evento para o envio do formulário
+// Função de envio do formulário
 document.getElementById('diagnosticForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -92,11 +76,12 @@ document.getElementById('diagnosticForm').addEventListener('submit', function(ev
         data[key] = value;
     });
 
-    // Coleta dados das tabelas
+    // Coleta dados das tabelas e adiciona ao objeto de dados
     data.investmentTable = getTableData('investment-table');
     data.pricingTable = getTableData('pricing-table');
     data.expenseTable = getTableData('expense-table');
 
+    // Envio do formulário via Fetch API
     fetch('https://script.google.com/macros/s/AKfycbwkD5kZXC-u_ENT1U1tdNBlTuOyr0WHbPxEpYVzgtOU99IJinWw39Niu4CVZMh5ONIExw/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -105,7 +90,7 @@ document.getElementById('diagnosticForm').addEventListener('submit', function(ev
     .then(response => response.text())
     .then(result => {
         alert('Formulário enviado com sucesso!');
-        this.reset(); // Opcional: limpa o formulário após envio
+        this.reset(); // Limpa o formulário após envio
     })
     .catch(error => {
         console.error('Erro ao enviar formulário:', error);
