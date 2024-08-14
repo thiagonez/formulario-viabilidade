@@ -86,7 +86,7 @@ Esse é o meu arquivo em HTML
             
             
             
-            <table id="pricing-table">
+    <table id="pricing-table">
     <thead>
         <tr>
             <th>Produto/Serviço</th>
@@ -101,13 +101,14 @@ Esse é o meu arquivo em HTML
     </thead>
     <tbody>
         <tr>
-            <td data-label="Produto/Serviço"><input type="text" name="pricing-item" required></td>
-            <td data-label="Preço de Venda"><input type="number" name="pricing-price" required></td>
-            <td data-label="Custo"><input type="number" name="pricing-cost" required></td>
-            <td data-label="Impostos (%)"><input type="number" name="pricing-taxes" required></td>
-            <td data-label="Tipo de Cliente"><input type="text" name="pricing-client-type" required></td>
+            <td data-label="Produto/Serviço"><input type="text" name="pricing-item" placeholder="Nome do Produto/Serviço" required></td>
+            <td data-label="Preço de Venda"><input type="number" name="pricing-price" placeholder="Ex: 100.00" required></td>
+            <td data-label="Custo"><input type="number" name="pricing-cost" placeholder="Ex: 50.00" required></td>
+            <td data-label="Impostos (%)"><input type="number" name="pricing-taxes" placeholder="Ex: 10" required></td>
+            <td data-label="Tipo de Cliente"><input type="text" name="pricing-client-type" placeholder="Ex: Pessoa Física" required></td>
             <td data-label="Tipo de Receita">
                 <select name="pricing-revenue-type" required>
+                    <option value="" disabled selected hidden>Selecione o Tipo de Receita</option>
                     <option value="Vendas de Produtos">Vendas de Produtos</option>
                     <option value="Vendas de Serviços">Vendas de Serviços</option>
                     <option value="Assinatura">Assinatura</option>
@@ -120,13 +121,14 @@ Esse é o meu arquivo em HTML
             </td>
             <td data-label="Frequência de Vendas">
                 <select name="pricing-sale-frequency" required>
+                    <option value="" disabled selected hidden>Selecione a Frequência</option>
                     <option value="Diária">Diária</option>
                     <option value="Semanal">Semanal</option>
                     <option value="Mensal">Mensal</option>
                     <option value="Anual">Anual</option>
                 </select>
             </td>
-            <td data-label="Projeção de Vendas Anual"><input type="number" name="pricing-projection" required></td>
+            <td data-label="Projeção de Vendas Anual"><input type="number" name="pricing-projection" placeholder="Ex: 1200" required></td>
         </tr>
     </tbody>
 </table>
