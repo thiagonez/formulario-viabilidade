@@ -1,180 +1,157 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Viabilidade</title>
+    <title>Diagnóstico de Viabilidade</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Formulário de Viabilidade Econômica</h1>
-    <form id="viabilidadeForm">
-        <h3>Aspectos Gerais</h3>
-        <label>Ano Inicial do Projeto:</label>
-        <input type="text" name="anoInicialProjeto" value="2024"><br>
+    <header>
+        <div class="logo">Consultoria Financeira</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <label>Mês Inicial do Projeto:</label>
-        <input type="text" name="mesInicialProjeto" value="Jan"><br>
+    <section class="banner">
+        <h1>Faça seu Diagnóstico Financeiro</h1>
+        <p>Descubra as melhores ferramentas para impulsionar seu negócio</p>
+        <button class="cta-button" onclick="scrollToForm()">Iniciar Diagnóstico</button>
+    </section>
 
-        <label>Quantidade de anos analisados no Estudo de Viabilidade Econômica:</label>
-        <input type="number" name="anosAnalise" value="5"><br>
+    <section class="form-section" id="form-section">
+        <h2>Formulário de Diagnóstico de Viabilidade</h2>
+        <form id="diagnosticForm">
+            <h3>Aspectos Gerais</h3>
+            <label for="year">Ano Inicial do Projeto:</label>
+            <input type="number" id="year" name="year" required>
+            
+            <label for="month">Mês Inicial do Projeto:</label>
+            <input type="text" id="month" name="month" required>
+            
+            <label for="years-analyzed">Quantidade de anos analisados:</label>
+            <input type="number" id="years-analyzed" name="years-analyzed" required>
 
-        <h3>Dados Monetários</h3>
-        <label>Capital total disponível para o projeto:</label>
-        <input type="text" name="capitalTotal" value="R$5.000,00"><br>
+            <h3>Dados Monetários</h3>
+            <label for="total-capital">Capital total disponível:</label>
+            <input type="number" id="total-capital" name="total-capital" required>
+            
+            <label for="third-party-capital">Usará capital de terceiros?</label>
+            <select id="third-party-capital" name="third-party-capital" required>
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
+            </select>
+            
+            <label for="third-party-amount">Quanto?</label>
+            <input type="number" id="third-party-amount" name="third-party-amount">
 
-        <label>Usará capital de terceiros?</label>
-        <input type="text" name="capitalTerceiros" value="Sim"><br>
+            <label for="own-capital-percentage">Percentual de capital próprio:</label>
+            <input type="number" id="own-capital-percentage" name="own-capital-percentage" required>
 
-        <label>Quanto?</label>
-        <input type="text" name="valorCapitalTerceiros" value="R$280.000,00"><br>
+            <label for="third-party-capital-percentage">Percentual de capital de terceiros:</label>
+            <input type="number" id="third-party-capital-percentage" name="third-party-capital-percentage" required>
 
-        <h3>Investimentos Iniciais</h3>
-        <label>Mesa:</label>
-        <input type="text" name="mesa" value="R$300,00"><br>
+            <h3>Tabela de Investimentos Iniciais</h3>
+            <table id="investment-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Valor</th>
+                    <th>Depreciação Anual (%)</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="investment-item"></td>
+                    <td><input type="number" name="investment-value"></td>
+                    <td><input type="number" name="investment-depreciation"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="investment-item"></td>
+                    <td><input type="number" name="investment-value"></td>
+                    <td><input type="number" name="investment-depreciation"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="investment-item"></td>
+                    <td><input type="number" name="investment-value"></td>
+                    <td><input type="number" name="investment-depreciation"></td>
+                </tr>
+            </table>
+            <button type="button" onclick="addRow('investment-table')">Inserir mais investimentos</button>
 
-        <label>Cadeira Psicólogo:</label>
-        <input type="text" name="cadeiraPsicologo" value="R$200,00"><br>
+            <h3>Tabela de Precificação</h3>
+            <table id="pricing-table">
+                <tr>
+                    <th>Produto/Serviço</th>
+                    <th>Preço de Venda</th>
+                    <th>Custo</th>
+                    <th>Impostos (%)</th>
+                    <th>Tipo de Cliente</th>
+                    <th>Tipo de Receita</th>
+                    <th>Frequência de Vendas</th>
+                    <th>Projeção de Vendas Anual</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="pricing-item" required></td>
+                    <td><input type="number" name="pricing-price" required></td>
+                    <td><input type="number" name="pricing-cost" required></td>
+                    <td><input type="number" name="pricing-taxes" required></td>
+                    <td><input type="text" name="pricing-client-type" required></td>
+                    <td>
+                        <select name="pricing-revenue-type" required>
+                            <option value="Vendas de Produtos">Vendas de Produtos</option>
+                            <option value="Vendas de Serviços">Vendas de Serviços</option>
+                            <option value="Assinatura">Assinatura</option>
+                            <option value="Taxa de Uso de Produto">Taxa de Uso de Produto</option>
+                            <option value="Propaganda">Propaganda</option>
+                            <option value="Aluguel">Aluguel</option>
+                            <option value="Licença">Licença</option>
+                            <option value="Outro Tipo">Outro Tipo</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="pricing-sale-frequency" required>
+                            <option value="Diária">Diária</option>
+                            <option value="Semanal">Semanal</option>
+                            <option value="Mensal">Mensal</option>
+                            <option value="Anual">Anual</option>
+                        </select>
+                    </td>
+                    <td><input type="number" name="pricing-projection" required></td>
+                </tr>
+            </table>
+            <button type="button" onclick="addRow('pricing-table')">Inserir mais produtos ou serviços</button>
 
-        <label>Cadeira Paciente:</label>
-        <input type="text" name="cadeiraPaciente" value="R$200,00"><br>
+            <h3>Tabela de Despesas</h3>
+            <table id="expense-table">
+                <tr>
+                    <th>Despesa</th>
+                    <th>Valor</th>
+                    <th>Reajuste Anual (%)</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="expense-item"></td>
+                    <td><input type="number" name="expense-value"></td>
+                    <td><input type="number" name="expense-adjustment"></td>
+                </tr>
+                <!-- Repeat rows if needed -->
+            </table>
+            <button type="button" onclick="addRow('expense-table')">Inserir mais despesas</button>
 
-        <label>Reforma/Adequação:</label>
-        <input type="text" name="reforma" value="R$1.500,00"><br>
+            <button type="submit" class="cta-button">Registrar Informações</button>
+        </form>
+    </section>
 
-        <h3>Precificação</h3>
-        <label>Produto ou Serviço:</label>
-        <input type="text" name="produto" value="Atendimento"><br>
+    <footer>
+        <p>&copy; 2024 Consultoria Financeira. Todos os direitos reservados.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a>
+        </div>
+    </footer>
 
-        <label>Impostos sobre a receita:</label>
-        <input type="text" name="impostos" value="5%"><br>
-
-        <label>Custo 1:</label>
-        <input type="text" name="custo1" value="R$15,18"><br>
-
-        <label>Custo 2:</label>
-        <input type="text" name="custo2" value="R$5,00"><br>
-
-        <label>Custo 3:</label>
-        <input type="text" name="custo3" value="R$10,00"><br>
-
-        <label>Custo 4:</label>
-        <input type="text" name="custo4"><br>
-
-        <label>Custo 5:</label>
-        <input type="text" name="custo5"><br>
-
-        <label>Outros Custos:</label>
-        <input type="text" name="outrosCustos"><br>
-
-        <h3>Homem Hora</h3>
-        <label>Homem Hora 1:</label>
-        <input type="text" name="homemHora1"><br>
-
-        <label>Homem Hora 2:</label>
-        <input type="text" name="homemHora2"><br>
-
-        <label>Homem Hora 3:</label>
-        <input type="text" name="homemHora3"><br>
-
-        <label>Homem Hora 4:</label>
-        <input type="text" name="homemHora4"><br>
-
-        <label>Homem Hora 5:</label>
-        <input type="text" name="homemHora5"><br>
-
-        <label>Homem Hora 6:</label>
-        <input type="text" name="homemHora6"><br>
-
-        <label>Valor de Homem Hora para o Serviço:</label>
-        <input type="text" name="valorHomemHora"><br>
-
-        <h3>Projete a quantidade de vendas realizadas para cada produto ou serviço nos meses abaixo</h3>
-        <label>Jan2024:</label>
-        <input type="number" name="jan2024" value="60"><br>
-
-        <label>Fev2024:</label>
-        <input type="number" name="fev2024" value="80"><br>
-
-        <label>Mar2024:</label>
-        <input type="number" name="mar2024" value="120"><br>
-
-        <label>Abr2024:</label>
-        <input type="number" name="abr2024" value="160"><br>
-
-        <label>Mai2024:</label>
-        <input type="number" name="mai2024" value="168"><br>
-
-        <label>Jun2024:</label>
-        <input type="number" name="jun2024" value="160"><br>
-
-        <label>Jul2024:</label>
-        <input type="number" name="jul2024" value="184"><br>
-
-        <label>Ago2024:</label>
-        <input type="number" name="ago2024" value="168"><br>
-
-        <label>Set2024:</label>
-        <input type="number" name="set2024" value="176"><br>
-
-        <label>Out2024:</label>
-        <input type="number" name="out2024" value="184"><br>
-
-        <label>Nov2024:</label>
-        <input type="number" name="nov2024" value="160"><br>
-
-        <label>Dez2024:</label>
-        <input type="number" name="dez2024" value="176"><br>
-
-        <h3>Premissas</h3>
-        <label>Defina a taxa de desconto (mensal):</label>
-        <input type="text" name="descontoMensal" value="10,0%"><br>
-
-        <h3>Cenário Otimista</h3>
-        <label>Receita maior em:</label>
-        <input type="text" name="receitaOtimista" value="2,0%"><br>
-
-        <label>Despesa menor em:</label>
-        <input type="text" name="despesaOtimista" value="1,0%"><br>
-
-        <label>Investimento menor em:</label>
-        <input type="text" name="investimentoOtimista" value="5,0%"><br>
-
-        <label>Defina a taxa de desconto (ano):</label>
-        <input type="text" name="descontoAnoOtimista" value="10,0%"><br>
-
-        <h3>Cenário Pessimista</h3>
-        <label>Receita menor em:</label>
-        <input type="text" name="receitaPessimista" value="10,0%"><br>
-
-        <label>Despesa maior em:</label>
-        <input type="text" name="despesaPessimista" value="15,0%"><br>
-
-        <label>Investimento maior em:</label>
-        <input type="text" name="investimentoPessimista" value="20,0%"><br>
-
-        <label>Defina a taxa de desconto (ano):</label>
-        <input type="text" name="descontoAnoPessimista" value="10,0%"><br>
-
-        <button type="submit">Enviar</button>
-    </form>
-
-    <script>
-        document.getElementById("viabilidadeForm").addEventListener("submit", function(e) {
-            e.preventDefault();
-
-            const url = 'https://script.google.com/macros/s/AKfycbw_JVfQLupu8JeCVeiZfmcUIZzjWRa_Fd3XFe1LNlWZ/dev';
-
-            const formData = new FormData(this);
-            const data = new URLSearchParams(formData);
-
-            fetch(url, {
-                method: 'POST',
-                body: data,
-            })
-            .then(response => response.text())
-            .then(result => alert(result))
-            .catch(error => console.error('Error:', error));
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
