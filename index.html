@@ -71,9 +71,9 @@
                     <th>Depreciação Anual (%)</th>
                 </tr>
                 <tr>
-                    <td><input type="text" name="investment-item"></td>
-                    <td><input type="number" name="investment-value"></td>
-                    <td><input type="number" name="investment-depreciation"></td>
+                    <td><input type="text" name="investment-item[]"></td>
+                    <td><input type="number" name="investment-value[]"></td>
+                    <td><input type="number" name="investment-depreciation[]"></td>
                 </tr>
             </table>
             <button type="button" class="cta-button dark" onclick="addRow('investment-table')">Inserir mais investimentos</button>
@@ -91,13 +91,13 @@
                     <th>Projeção de Vendas Anual</th>
                 </tr>
                 <tr>
-                    <td><input type="text" name="pricing-item" required></td>
-                    <td><input type="number" name="pricing-price" required></td>
-                    <td><input type="number" name="pricing-cost" required></td>
-                    <td><input type="number" name="pricing-taxes" required></td>
-                    <td><input type="text" name="pricing-client-type" required></td>
+                    <td><input type="text" name="pricing-item[]"></td>
+                    <td><input type="number" name="pricing-price[]"></td>
+                    <td><input type="number" name="pricing-cost[]"></td>
+                    <td><input type="number" name="pricing-taxes[]"></td>
+                    <td><input type="text" name="pricing-client-type[]"></td>
                     <td>
-                        <select name="pricing-revenue-type" required>
+                        <select name="pricing-revenue-type[]">
                             <option value="Vendas de Produtos">Vendas de Produtos</option>
                             <option value="Vendas de Serviços">Vendas de Serviços</option>
                             <option value="Assinatura">Assinatura</option>
@@ -109,14 +109,14 @@
                         </select>
                     </td>
                     <td>
-                        <select name="pricing-sale-frequency" required>
+                        <select name="pricing-sale-frequency[]">
                             <option value="Diária">Diária</option>
                             <option value="Semanal">Semanal</option>
                             <option value="Mensal">Mensal</option>
                             <option value="Anual">Anual</option>
                         </select>
                     </td>
-                    <td><input type="number" name="pricing-projection" required></td>
+                    <td><input type="number" name="pricing-projection[]"></td>
                 </tr>
             </table>
             <button type="button" class="cta-button dark" onclick="addRow('pricing-table')">Inserir mais produtos ou serviços</button>
@@ -129,9 +129,9 @@
                     <th>Reajuste Anual (%)</th>
                 </tr>
                 <tr>
-                    <td><input type="text" name="expense-item"></td>
-                    <td><input type="number" name="expense-value"></td>
-                    <td><input type="number" name="expense-adjustment"></td>
+                    <td><input type="text" name="expense-item[]"></td>
+                    <td><input type="number" name="expense-value[]"></td>
+                    <td><input type="number" name="expense-adjustment[]"></td>
                 </tr>
             </table>
             <button type="button" class="cta-button dark" onclick="addRow('expense-table')">Inserir mais despesas</button>
