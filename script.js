@@ -1,15 +1,15 @@
-// Função para adicionar uma nova linha a uma tabela
 function addRow(tableId) {
     let table = document.getElementById(tableId);
-    let newRow = table.insertRow(-1);
+    let newRow = table.insertRow(-1); // Insere a nova linha no final da tabela
     let cols = table.rows[0].cells.length;
 
+    // Copia os valores das células da primeira linha (ou outra linha de referência)
     for (let i = 0; i < cols; i++) {
         let cell = newRow.insertCell(i);
         if (i === 0) {
-            cell.innerHTML = <input type="text" name="${tableId}-item">;
+            cell.innerHTML = `<input type="text" name="${tableId}-item">`;
         } else {
-            cell.innerHTML = <input type="number" name="${tableId}-value">;
+            cell.innerHTML = `<input type="number" name="${tableId}-value">`;
         }
     }
 }
