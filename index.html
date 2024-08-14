@@ -1,171 +1,46 @@
-Esse é o meu arquivo em HTML
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagnóstico de Viabilidade</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="logo"> 2 Consultoria Financeira</div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#services">Serviços</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+// Função para adicionar uma nova linha a uma tabela
+function addRow(tableId) {
+    let table = document.getElementById(tableId);
+    let newRow = table.insertRow(-1);
+    let cols = table.rows[0].cells.length;
 
-    <section class="banner">
-        <h1>Faça seu Diagnóstico Financeiro</h1>
-        <p>Descubra as melhores ferramentas para impulsionar seu negócio</p>
-        <button class="cta-button" onclick="scrollToForm()">Iniciar Diagnóstico</button>
-    </section>
+    for (let i = 0; i < cols; i++) {
+        let cell = newRow.insertCell(i);
+        if (i === 0) {
+            cell.innerHTML = <input type="text" name="${tableId}-item">;
+        } else {
+            cell.innerHTML = <input type="number" name="${tableId}-value">;
+        }
+    }
+}
 
-    <section class="form-section" id="form-section">
-        <h2>Formulário de Diagnóstico de Viabilidade</h2>
-        <form id="diagnosticForm" action="https://script.google.com/macros/s/AKfycbwkD5kZXC-u_ENT1U1tdNBlTuOyr0WHbPxEpYVzgtOU99IJinWw39Niu4CVZMh5ONIExw/exec" method="post">
-            <div class="form-grid">
-                <div class="form-column">
-                    <h3>Aspectos Gerais</h3>
-                    <label for="anoInicialProjeto">Ano Inicial do Projeto:</label>
-                    <input type="text" id="anoInicialProjeto" name="anoInicialProjeto" required>
-                    
-                    <label for="mesInicialProjeto">Mês Inicial do Projeto:</label>
-                    <input type="text" id="mesInicialProjeto" name="mesInicialProjeto" required>
-                    
-                    <label for="qtdAnosEstudo">Quantidade de anos analisados no Estudo de Viabilidade Econômica:</label>
-                    <input type="text" id="qtdAnosEstudo" name="qtdAnosEstudo" required>
-                </div>
-                
-                <div class="form-column">
-                    <h3>Dados Monetários</h3>
-                    <label for="capitalDisponivel">Capital total disponível:</label>
-                    <input type="text" id="capitalDisponivel" name="capitalDisponivel" required>
-                    
-                    <label for="usaraCapitalTerceiros">Usará capital de terceiros?</label>
-                    <select id="usaraCapitalTerceiros" name="usaraCapitalTerceiros" required>
-                        <option value="Sim">Sim</option>
-                        <option value="Não">Não</option>
-                    </select>
-                    
-                    <label for="capitalTerceiros">Quanto?</label>
-                    <input type="text" id="capitalTerceiros" name="capitalTerceiros">
+// Função para rolar até a seção do formulário
+function scrollToForm() {
+    document.getElementById("form-section").scrollIntoView({ behavior: "smooth" });
+}
 
-                    <label for="percentualCapitalProprio">Percentual de capital próprio:</label>
-                    <input type="text" id="percentualCapitalProprio" name="percentualCapitalProprio" required>
+// Adiciona um ouvinte de evento para o envio do formulário
+document.getElementById('diagnosticForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-                    <label for="percentualCapitalTerceiros">Percentual de capital de terceiros:</label>
-                    <input type="text" id="percentualCapitalTerceiros" name="percentualCapitalTerceiros" required>
-                </div>
-            </div>
+    const formData = new FormData(this);
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
 
-            <h3>Investimentos Iniciais</h3>
-            <table id="investment-table">
-                <tr>
-                    <th>Item</th>
-                    <th>Valor</th>
-                    <th>Depreciação Anual (%)</th>
-                </tr>
-                <tr>
-                    <td><input type="text" name="investment-item"></td>
-                    <td><input type="text" name="investment-value"></td>
-                    <td><input type="text" name="investment-depreciation"></td>
-                </tr>
-            </table>
-            <button type="button" class="cta-button dark" onclick="addRow('investment-table')">Inserir mais investimentos</button>
-
-            <h3>Precificação</h3>
-            
-            
-            
-            
-            
-            
-    <table id="pricing-table">
-    <thead>
-        <tr>
-            <th>Produto/Serviço</th>
-            <th>Preço de Venda</th>
-            <th>Custo</th>
-            <th>Impostos (%)</th>
-            <th>Tipo de Cliente</th>
-            <th>Tipo de Receita</th>
-            <th>Frequência de Vendas</th>
-            <th>Projeção de Vendas Anual</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="Produto/Serviço"><input type="text" name="pricing-item" placeholder="Nome do Produto/Serviço" required></td>
-            <td data-label="Preço de Venda"><input type="text" name="pricing-price" placeholder="Ex: 100.00" required></td>
-            <td data-label="Custo"><input type="text" name="pricing-cost" placeholder="Ex: 50.00" required></td>
-            <td data-label="Impostos (%)"><input type="text" name="pricing-taxes" placeholder="Ex: 10" required></td>
-            <td data-label="Tipo de Cliente"><input type="text" name="pricing-client-type" placeholder="Ex: Pessoa Física" required></td>
-            <td data-label="Tipo de Receita">
-                <select name="pricing-revenue-type" required>
-                    <option value="" disabled selected hidden>Selecione o Tipo de Receita</option>
-                    <option value="Vendas de Produtos">Vendas de Produtos</option>
-                    <option value="Vendas de Serviços">Vendas de Serviços</option>
-                    <option value="Assinatura">Assinatura</option>
-                    <option value="Taxa de Uso de Produto">Taxa de Uso de Produto</option>
-                    <option value="Propaganda">Propaganda</option>
-                    <option value="Aluguel">Aluguel</option>
-                    <option value="Licença">Licença</option>
-                    <option value="Outro Tipo">Outro Tipo</option>
-                </select>
-            </td>
-            <td data-label="Frequência de Vendas">
-                <select name="pricing-sale-frequency" required>
-                    <option value="" disabled selected hidden>Selecione a Frequência</option>
-                    <option value="Diária">Diária</option>
-                    <option value="Semanal">Semanal</option>
-                    <option value="Mensal">Mensal</option>
-                    <option value="Anual">Anual</option>
-                </select>
-            </td>
-            <td data-label="Projeção de Vendas Anual"><input type="text" name="pricing-projection" placeholder="Ex: 1200" required></td>
-        </tr>
-    </tbody>
-</table>
-
-
-
-
-
-            
-            <button type="button" class="cta-button dark" onclick="addRow('pricing-table')">Inserir mais produtos ou serviços</button>
-
-            <h3>Tabela de Despesas</h3>
-            <table id="expense-table">
-                <tr>
-                    <th>Despesa</th>
-                    <th>Valor</th>
-                    <th>Reajuste Anual (%)</th>
-                </tr>
-                <tr>
-                    <td><input type="text" name="expense-item"></td>
-                    <td><input type="text" name="expense-value"></td>
-                    <td><input type="text" name="expense-adjustment"></td>
-                </tr>
-            </table>
-            <button type="button" class="cta-button dark" onclick="addRow('expense-table')">Inserir mais despesas</button>
-
-            <button type="submit" class="cta-button">Registrar Informações</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Consultoria Financeira. Todos os direitos reservados.</p>
-        <div class="social-links">
-            <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    fetch('https://script.google.com/macros/s/AKfycbwkD5kZXC-u_ENT1U1tdNBlTuOyr0WHbPxEpYVzgtOU99IJinWw39Niu4CVZMh5ONIExw/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.text())
+    .then(result => {
+        alert('Formulário enviado com sucesso!');
+        this.reset(); // Opcional: limpa o formulário após envio
+    })
+    .catch(error => {
+        console.error('Erro ao enviar formulário:', error);
+        alert('Houve um erro ao enviar o formulário.');
+    });
+});
