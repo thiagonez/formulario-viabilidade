@@ -80,46 +80,62 @@ Esse é o meu arquivo em HTML
             <button type="button" class="cta-button dark" onclick="addRow('investment-table')">Inserir mais investimentos</button>
 
             <h3>Tabela de Precificação</h3>
+            
+            
+            
+            
+            
+            
             <table id="pricing-table">
-                <tr>
-                    <th>Produto/Serviço</th>
-                    <th>Preço de Venda</th>
-                    <th>Custo</th>
-                    <th>Impostos (%)</th>
-                    <th>Tipo de Cliente</th>
-                    <th>Tipo de Receita</th>
-                    <th>Frequência de Vendas</th>
-                    <th>Projeção de Vendas Anual</th>
-                </tr>
-                <tr>
-                    <td><input type="text" name="pricing-item" required></td>
-                    <td><input type="text" name="pricing-price" required></td>
-                    <td><input type="text" name="pricing-cost" required></td>
-                    <td><input type="text" name="pricing-taxes" required></td>
-                    <td><input type="text" name="pricing-client-type" required></td>
-                    <td>
-                        <select name="pricing-revenue-type" required>
-                            <option value="Vendas de Produtos">Vendas de Produtos</option>
-                            <option value="Vendas de Serviços">Vendas de Serviços</option>
-                            <option value="Assinatura">Assinatura</option>
-                            <option value="Taxa de Uso de Produto">Taxa de Uso de Produto</option>
-                            <option value="Propaganda">Propaganda</option>
-                            <option value="Aluguel">Aluguel</option>
-                            <option value="Licença">Licença</option>
-                            <option value="Outro Tipo">Outro Tipo</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select name="pricing-sale-frequency" required>
-                            <option value="Diária">Diária</option>
-                            <option value="Semanal">Semanal</option>
-                            <option value="Mensal">Mensal</option>
-                            <option value="Anual">Anual</option>
-                        </select>
-                    </td>
-                    <td><input type="text" name="pricing-projection" required></td>
-                </tr>
-            </table>
+    <thead>
+        <tr>
+            <th>Produto/Serviço</th>
+            <th>Preço de Venda</th>
+            <th>Custo</th>
+            <th>Impostos (%)</th>
+            <th>Tipo de Cliente</th>
+            <th>Tipo de Receita</th>
+            <th>Frequência de Vendas</th>
+            <th>Projeção de Vendas Anual</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td data-label="Produto/Serviço"><input type="text" name="pricing-item" required></td>
+            <td data-label="Preço de Venda"><input type="number" name="pricing-price" required></td>
+            <td data-label="Custo"><input type="number" name="pricing-cost" required></td>
+            <td data-label="Impostos (%)"><input type="number" name="pricing-taxes" required></td>
+            <td data-label="Tipo de Cliente"><input type="text" name="pricing-client-type" required></td>
+            <td data-label="Tipo de Receita">
+                <select name="pricing-revenue-type" required>
+                    <option value="Vendas de Produtos">Vendas de Produtos</option>
+                    <option value="Vendas de Serviços">Vendas de Serviços</option>
+                    <option value="Assinatura">Assinatura</option>
+                    <option value="Taxa de Uso de Produto">Taxa de Uso de Produto</option>
+                    <option value="Propaganda">Propaganda</option>
+                    <option value="Aluguel">Aluguel</option>
+                    <option value="Licença">Licença</option>
+                    <option value="Outro Tipo">Outro Tipo</option>
+                </select>
+            </td>
+            <td data-label="Frequência de Vendas">
+                <select name="pricing-sale-frequency" required>
+                    <option value="Diária">Diária</option>
+                    <option value="Semanal">Semanal</option>
+                    <option value="Mensal">Mensal</option>
+                    <option value="Anual">Anual</option>
+                </select>
+            </td>
+            <td data-label="Projeção de Vendas Anual"><input type="number" name="pricing-projection" required></td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+            
             <button type="button" class="cta-button dark" onclick="addRow('pricing-table')">Inserir mais produtos ou serviços</button>
 
             <h3>Tabela de Despesas</h3>
