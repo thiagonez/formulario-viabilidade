@@ -162,6 +162,67 @@ table th, table td {
     text-align: center;
 }
 
+
+
+
+*/Ajuste tabela de preço/*
+
+/* Estilos para a tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Responsividade para telas menores */
+@media screen and (max-width: 768px) {
+    /* Faz com que as células da tabela sejam exibidas como blocos em telas pequenas */
+    table, tbody, tr, th, td {
+        display: block;
+        width: 100%;
+    }
+    
+    /* Adiciona espaço entre as linhas */
+    tr {
+        margin-bottom: 15px;
+    }
+    
+    /* Estilos para as células "empilhadas" */
+    th {
+        display: none; /* Esconde os cabeçalhos das colunas */
+    }
+    
+    td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+    }
+    
+    /* Adiciona os títulos das colunas como conteúdo antes das células */
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+
+
+
+
+
+
+
+
 footer {
     background-color: #343A40;
     color: white;
