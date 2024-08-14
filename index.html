@@ -27,39 +27,39 @@
 
     <section class="form-section" id="form-section">
         <h2>Formulário de Diagnóstico de Viabilidade</h2>
-        <form id="diagnosticForm">
+        <form id="diagnostic-form" action="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec" method="post">
             <div class="form-grid">
                 <div class="form-column">
                     <h3>Aspectos Gerais</h3>
-                    <label for="year">Ano Inicial do Projeto:</label>
-                    <input type="number" id="year" name="year" required>
+                    <label for="anoInicialProjeto">Ano Inicial do Projeto:</label>
+                    <input type="number" id="anoInicialProjeto" name="anoInicialProjeto" required>
                     
-                    <label for="month">Mês Inicial do Projeto:</label>
-                    <input type="text" id="month" name="month" required>
+                    <label for="mesInicialProjeto">Mês Inicial do Projeto:</label>
+                    <input type="text" id="mesInicialProjeto" name="mesInicialProjeto" required>
                     
-                    <label for="years-analyzed">Quantidade de anos analisados:</label>
-                    <input type="number" id="years-analyzed" name="years-analyzed" required>
+                    <label for="qtdAnosEstudo">Quantidade de anos analisados no Estudo de Viabilidade Econômica:</label>
+                    <input type="number" id="qtdAnosEstudo" name="qtdAnosEstudo" required>
                 </div>
                 
                 <div class="form-column">
                     <h3>Dados Monetários</h3>
-                    <label for="total-capital">Capital total disponível:</label>
-                    <input type="number" id="total-capital" name="total-capital" required>
+                    <label for="capitalDisponivel">Capital total disponível:</label>
+                    <input type="number" id="capitalDisponivel" name="capitalDisponivel" required>
                     
-                    <label for="third-party-capital">Usará capital de terceiros?</label>
-                    <select id="third-party-capital" name="third-party-capital" required>
+                    <label for="usaraCapitalTerceiros">Usará capital de terceiros?</label>
+                    <select id="usaraCapitalTerceiros" name="usaraCapitalTerceiros" required>
                         <option value="Sim">Sim</option>
                         <option value="Não">Não</option>
                     </select>
                     
-                    <label for="third-party-amount">Quanto?</label>
-                    <input type="number" id="third-party-amount" name="third-party-amount">
+                    <label for="capitalTerceiros">Quanto?</label>
+                    <input type="number" id="capitalTerceiros" name="capitalTerceiros">
 
-                    <label for="own-capital-percentage">Percentual de capital próprio:</label>
-                    <input type="number" id="own-capital-percentage" name="own-capital-percentage" required>
+                    <label for="percentualCapitalProprio">Percentual de capital próprio:</label>
+                    <input type="number" id="percentualCapitalProprio" name="percentualCapitalProprio" required>
 
-                    <label for="third-party-capital-percentage">Percentual de capital de terceiros:</label>
-                    <input type="number" id="third-party-capital-percentage" name="third-party-capital-percentage" required>
+                    <label for="percentualCapitalTerceiros">Percentual de capital de terceiros:</label>
+                    <input type="number" id="percentualCapitalTerceiros" name="percentualCapitalTerceiros" required>
                 </div>
             </div>
 
@@ -75,18 +75,8 @@
                     <td><input type="number" name="investment-value"></td>
                     <td><input type="number" name="investment-depreciation"></td>
                 </tr>
-                <tr>
-                    <td><input type="text" name="investment-item"></td>
-                    <td><input type="number" name="investment-value"></td>
-                    <td><input type="number" name="investment-depreciation"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="investment-item"></td>
-                    <td><input type="number" name="investment-value"></td>
-                    <td><input type="number" name="investment-depreciation"></td>
-                </tr>
             </table>
-            <button type="button" class="add-row-button" onclick="addRow('investment-table')">Inserir mais investimentos</button>
+            <button type="button" class="cta-button dark" onclick="addRow('investment-table')">Inserir mais investimentos</button>
 
             <h3>Tabela de Precificação</h3>
             <table id="pricing-table">
@@ -129,7 +119,7 @@
                     <td><input type="number" name="pricing-projection" required></td>
                 </tr>
             </table>
-            <button type="button" class="add-row-button" onclick="addRow('pricing-table')">Inserir mais produtos ou serviços</button>
+            <button type="button" class="cta-button dark" onclick="addRow('pricing-table')">Inserir mais produtos ou serviços</button>
 
             <h3>Tabela de Despesas</h3>
             <table id="expense-table">
@@ -143,9 +133,8 @@
                     <td><input type="number" name="expense-value"></td>
                     <td><input type="number" name="expense-adjustment"></td>
                 </tr>
-                <!-- Repeat rows if needed -->
             </table>
-            <button type="button" class="add-row-button" onclick="addRow('expense-table')">Inserir mais despesas</button>
+            <button type="button" class="cta-button dark" onclick="addRow('expense-table')">Inserir mais despesas</button>
 
             <button type="submit" class="cta-button">Registrar Informações</button>
         </form>
