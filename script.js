@@ -1,47 +1,6 @@
-// Função para adicionar uma nova linha à Tabela de Precificação
-function addRow(tableId) {
-    let table = document.getElementById(tableId);
-    let newRow = table.insertRow(-1); // Adiciona uma nova linha no final da tabela
-    let cols = table.rows[0].cells.length; // Obtém o número de colunas
-
-    for (let i = 0; i < cols; i++) {
-        let cell = newRow.insertCell(i);
-
-        // Define o conteúdo de cada célula com base na coluna
-        if (i === 0) { 
-            cell.innerHTML = '<input type="text" name="pricing-item" required>';
-        } else if (i === 1) { 
-            cell.innerHTML = '<input type="number" name="pricing-price">';
-        } else if (i === 2) { 
-            cell.innerHTML = '<input type="number" name="pricing-cost" required>';
-        } else if (i === 3) { 
-            cell.innerHTML = '<input type="number" name="pricing-taxes">';
-        } else if (i === 4) { 
-            cell.innerHTML = '<input type="text" name="pricing-client-type">';
-        } else if (i === 5) { 
-            cell.innerHTML = `
-                <select name="pricing-revenue-type" required>
-                    <option value="Vendas de Produtos">Vendas de Produtos</option>
-                    <option value="Vendas de Serviços">Vendas de Serviços</option>
-                    <option value="Assinatura">Assinatura</option>
-                    <option value="Taxa de Uso de Produto">Taxa de Uso de Produto</option>
-                    <option value="Propaganda">Propaganda</option>
-                    <option value="Aluguel">Aluguel</option>
-                    <option value="Licença">Licença</option>
-                    <option value="Outro Tipo">Outro Tipo</option>
-                </select>`;
-        } else if (i === 6) { 
-            cell.innerHTML = `
-                <select name="pricing-sale-frequency" required>
-                    <option value="Diária">Diária</option>
-                    <option value="Semanal">Semanal</option>
-                    <option value="Mensal">Mensal</option>
-                    <option value="Anual">Anual</option>
-                </select>`;
-        } else if (i === 7) { 
-            cell.innerHTML = '<input type="number" name="pricing-projection">';
-        }
-    }
+// Função para rolar até a seção do formulário
+function scrollToForm() {
+    document.getElementById("form-section").scrollIntoView({ behavior: "smooth" });
 }
 
 // Função para coletar dados da tabela
@@ -53,12 +12,8 @@ function getTableData(tableId) {
     for (let i = 1; i < rows.length; i++) { // Começa a partir da linha 1 para pular o cabeçalho
         let cells = rows[i].getElementsByTagName('td');
         let rowData = [];
-
         for (let j = 0; j < cells.length; j++) {
-            let input = cells[j].querySelector('input, select');
-            if (input) {
-                rowData.push(input.value);
-            }
+            rowData.push(cells[j].getElementsByTagName('input')[0].value);
         }
         data.push(rowData);
     }
