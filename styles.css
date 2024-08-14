@@ -55,6 +55,32 @@ nav ul li a {
     margin: 20px 0;
 }
 
+
+.cta-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cta-button.dark {
+    background-color: #343A40;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.cta-button.dark:hover {
+    background-color: #1d2124;
+}
+
+
+
+
+/* configuração anterior
 .cta-button {
     background-color: #28A745;
     color: white;
@@ -83,6 +109,10 @@ nav ul li a {
 .add-row-button:hover {
     background-color: #23272B;
 }
+
+
+*/
+
 
 .form-section {
     padding: 20px;
