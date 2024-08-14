@@ -1,4 +1,3 @@
-Esse é o meu arquivo em HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,7 @@ Esse é o meu arquivo em HTML
 </head>
 <body>
     <header>
-        <div class="logo"> 3 Consultoria Financeira</div>
+        <div class="logo">3 Consultoria Financeira</div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -66,106 +65,243 @@ Esse é o meu arquivo em HTML
 
             <h3>Investimentos Iniciais</h3>
             <table id="investment-table">
-                <tr>
-                    <th>Item</th>
-                    <th>Valor</th>
-                    <th>Depreciação Anual (%)</th>
-                </tr>
-                <tr>
-                    <td><input type="text" name="investment-item"></td>
-                    <td><input type="text" name="investment-value"></td>
-                    <td><input type="text" name="investment-depreciation"></td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Valor</th>
+                        <th>Depreciação Anual (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="investment-item"></td>
+                        <td><input type="number" name="investment-value"></td>
+                        <td><input type="number" name="investment-depreciation"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="investment-item"></td>
+                        <td><input type="number" name="investment-value"></td>
+                        <td><input type="number" name="investment-depreciation"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="investment-item"></td>
+                        <td><input type="number" name="investment-value"></td>
+                        <td><input type="number" name="investment-depreciation"></td>
+                    </tr>
+                </tbody>
             </table>
             <button type="button" class="cta-button dark" onclick="addRow('investment-table')">Inserir mais investimentos</button>
 
             <h3>Precificação</h3>
-            
-            
-            
-            
-            
-            
-    <table id="pricing-table">
-    <thead>
-        <tr>
-            <th>Produto/Serviço</th>
-            <th>Preço de Venda</th>
-            <th>Custo</th>
-            <th>Impostos (%)</th>
-            <th>Tipo de Cliente</th>
-            <th>Tipo de Receita</th>
-            <th>Frequência de Vendas</th>
-            <th>Projeção de Vendas Anual</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="Produto/Serviço"><input type="text" name="pricing-item" placeholder="Nome do Produto/Serviço" required></td>
-            <td data-label="Preço de Venda"><input type="text" name="pricing-price" placeholder="Ex: 100.00" required></td>
-            <td data-label="Custo"><input type="text" name="pricing-cost" placeholder="Ex: 50.00" required></td>
-            <td data-label="Impostos (%)"><input type="text" name="pricing-taxes" placeholder="Ex: 10" required></td>
-            <td data-label="Tipo de Cliente"><input type="text" name="pricing-client-type" placeholder="Ex: Pessoa Física" required></td>
-            <td data-label="Tipo de Receita">
-                <select name="pricing-revenue-type" required>
-                    <option value="" disabled selected hidden>Selecione o Tipo de Receita</option>
-                    <option value="Vendas de Produtos">Vendas de Produtos</option>
-                    <option value="Vendas de Serviços">Vendas de Serviços</option>
-                    <option value="Assinatura">Assinatura</option>
-                    <option value="Taxa de Uso de Produto">Taxa de Uso de Produto</option>
-                    <option value="Propaganda">Propaganda</option>
-                    <option value="Aluguel">Aluguel</option>
-                    <option value="Licença">Licença</option>
-                    <option value="Outro Tipo">Outro Tipo</option>
-                </select>
-            </td>
-            <td data-label="Frequência de Vendas">
-                <select name="pricing-sale-frequency" required>
-                    <option value="" disabled selected hidden>Selecione a Frequência</option>
-                    <option value="Diária">Diária</option>
-                    <option value="Semanal">Semanal</option>
-                    <option value="Mensal">Mensal</option>
-                    <option value="Anual">Anual</option>
-                </select>
-            </td>
-            <td data-label="Projeção de Vendas Anual"><input type="text" name="pricing-projection" placeholder="Ex: 1200" required></td>
-        </tr>
-    </tbody>
-</table>
-
-
-
-
-
-            
-            <button type="button" class="cta-button dark" onclick="addRow('pricing-table')">Inserir mais produtos ou serviços</button>
-
-            <h3>Tabela de Despesas</h3>
-            <table id="expense-table">
-                <tr>
-                    <th>Despesa</th>
-                    <th>Valor</th>
-                    <th>Reajuste Anual (%)</th>
-                </tr>
-                <tr>
-                    <td><input type="text" name="expense-item"></td>
-                    <td><input type="text" name="expense-value"></td>
-                    <td><input type="text" name="expense-adjustment"></td>
-                </tr>
+            <table id="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Produto/Serviço</th>
+                        <th>Preço de Venda</th>
+                        <th>Custo</th>
+                        <th>Impostos (%)</th>
+                        <th>Tipo de Cliente</th>
+                        <th>Tipo de Receita</th>
+                        <th>Frequência de Vendas</th>
+                        <th>Projeção de Vendas Anual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="pricing-item" placeholder="Nome do Produto/Serviço" required></td>
+                        <td><input type="number" name="pricing-price" placeholder="Ex: 100.00" required></td>
+                        <td><input type="number" name="pricing-cost" placeholder="Ex: 50.00" required></td>
+                        <td><input type="number" name="pricing-taxes" placeholder="Ex: 10" required></td>
+                        <td><input type="text" name="pricing-client-type" placeholder="Ex: Pessoa Física" required></td>
+                        <td>
+                            <select name="pricing-revenue-type" required>
+                                <option value="" disabled selected hidden>Selecione o Tipo de Receita</option>
+                                <option value="Vendas de Produtos">Vendas de Produtos</option>
+                                <option value="Vendas de Serviços">Vendas de Serviços</option>
+                                <option value="Assinatura">Assinatura</option>
+                                <option value="Taxa de Uso de Produto">Taxa de Uso de Produto</option>
+                                <option value="Propaganda">Propaganda</option>
+                                <option value="Aluguel">Aluguel</option>
+                                <option value="Licença">Licença</option>
+                                <option value="Outro Tipo">Outro Tipo</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="pricing-sale-frequency" required>
+                                <option value="" disabled selected hidden>Selecione a Frequência</option>
+                                <option value="Diária">Diária</option>
+                                <option value="Semanal">Semanal</option>
+                                <option value="Mensal">Mensal</option>
+                                <option value="Anual">Anual</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="pricing-projection" placeholder="Ex: 1200" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="pricing-item" placeholder="Nome do Produto/Serviço" required></td>
+                        <td><input type="number" name="pricing-price" placeholder="Ex: 100.00" required></td>
+                        <td><input type="number" name="pricing-cost" placeholder="Ex: 50.00" required></td>
+                        <td><input type="number" name="pricing-taxes" placeholder="Ex: 10" required></td>
+                        <td><input type="text" name="pricing-client-type" placeholder="Ex: Pessoa Física" required></td>
+                        <td>
+                            <select name="pricing-revenue-type" required>
+                                <option value="" disabled selected hidden>Selecione o Tipo de Receita</option>
+                                <option value="Vendas de Produtos">Vendas de Produtos</option>
+                                <option value="Vendas de Serviços">Vendas de Serviços</option>
+                                <option value="Assinatura">Assinatura</option>
+                                <option value="Taxa de Uso de Produto">Taxa de Uso de Produto</option>
+                                <option value="Propaganda">Propaganda</option>
+                                <option value="Aluguel">Aluguel</option>
+                                <option value="Licença">Licença</option>
+                                <option value="Outro Tipo">Outro Tipo</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="pricing-sale-frequency" required>
+                                <option value="" disabled selected hidden>Selecione a Frequência</option>
+                                <option value="Diária">Diária</option>
+                                <option value="Semanal">Semanal</option>
+                                <option value="Mensal">Mensal</option>
+                                <option value="Anual">Anual</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="pricing-projection" placeholder="Ex: 1200" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="pricing-item" placeholder="Nome do Produto/Serviço" required></td>
+                        <td><input type="number" name="pricing-price" placeholder="Ex: 100.00" required></td>
+                        <td><input type="number" name="pricing-cost" placeholder="Ex: 50.00" required></td>
+                        <td><input type="number" name="pricing-taxes" placeholder="Ex: 10" required></td>
+                        <td><input type="text" name="pricing-client-type" placeholder="Ex: Pessoa Física" required></td>
+                        <td>
+                            <select name="pricing-revenue-type" required>
+                                <option value="" disabled selected hidden>Selecione o Tipo de Receita</option>
+                                <option value="Vendas de Produtos">Vendas de Produtos</option>
+                                <option value="Vendas de Serviços">Vendas de Serviços</option>
+                                <option value="Assinatura">Assinatura</option>
+                                <option value="Taxa de Uso de Produto">Taxa de Uso de Produto</option>
+                                <option value="Propaganda">Propaganda</option>
+                                <option value="Aluguel">Aluguel</option>
+                                <option value="Licença">Licença</option>
+                                <option value="Outro Tipo">Outro Tipo</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="pricing-sale-frequency" required>
+                                <option value="" disabled selected hidden>Selecione a Frequência</option>
+                                <option value="Diária">Diária</option>
+                                <option value="Semanal">Semanal</option>
+                                <option value="Mensal">Mensal</option>
+                                <option value="Anual">Anual</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="pricing-projection" placeholder="Ex: 1200" required></td>
+                    </tr>
+                </tbody>
             </table>
-            <button type="button" class="cta-button dark" onclick="addRow('expense-table')">Inserir mais despesas</button>
+            <button type="button" class="cta-button dark" onclick="addRow('pricing-table')">Inserir mais preços</button>
 
-            <button type="submit" class="cta-button">Registrar Informações</button>
+            <h3>Despesas</h3>
+            <table id="expenses-table">
+                <thead>
+                    <tr>
+                        <th>Tipo de Despesa</th>
+                        <th>Valor</th>
+                        <th>Frequência</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="expense-type"></td>
+                        <td><input type="number" name="expense-value"></td>
+                        <td><input type="text" name="expense-frequency"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="expense-type"></td>
+                        <td><input type="number" name="expense-value"></td>
+                        <td><input type="text" name="expense-frequency"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="expense-type"></td>
+                        <td><input type="number" name="expense-value"></td>
+                        <td><input type="text" name="expense-frequency"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="cta-button dark" onclick="addRow('expenses-table')">Inserir mais despesas</button>
+
+            <button type="submit" class="cta-button">Enviar Diagnóstico</button>
         </form>
     </section>
 
     <footer>
-        <p>&copy; 2024 Consultoria Financeira. Todos os direitos reservados.</p>
-        <div class="social-links">
-            <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a>
-        </div>
+        <p>&copy; 2024 3 Consultoria Financeira. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function addRow(tableId) {
+            const table = document.getElementById(tableId);
+            const tbody = table.getElementsByTagName('tbody')[0];
+            const rowCount = tbody.getElementsByTagName('tr').length;
+            const newRow = tbody.insertRow();
+
+            if (tableId === 'investment-table') {
+                newRow.innerHTML = `
+                    <td><input type="text" name="investment-item"></td>
+                    <td><input type="number" name="investment-value"></td>
+                    <td><input type="number" name="investment-depreciation"></td>
+                `;
+            } else if (tableId === 'pricing-table') {
+                newRow.innerHTML = `
+                    <td><input type="text" name="pricing-item" placeholder="Nome do Produto/Serviço" required></td>
+                    <td><input type="number" name="pricing-price" placeholder="Ex: 100.00" required></td>
+                    <td><input type="number" name="pricing-cost" placeholder="Ex: 50.00" required></td>
+                    <td><input type="number" name="pricing-taxes" placeholder="Ex: 10" required></td>
+                    <td><input type="text" name="pricing-client-type" placeholder="Ex: Pessoa Física" required></td>
+                    <td>
+                        <select name="pricing-revenue-type" required>
+                            <option value="" disabled selected hidden>Selecione o Tipo de Receita</option>
+                            <option value="Vendas de Produtos">Vendas de Produtos</option>
+                            <option value="Vendas de Serviços">Vendas de Serviços</option>
+                            <option value="Assinatura">Assinatura</option>
+                            <option value="Taxa de Uso de Produto">Taxa de Uso de Produto</option>
+                            <option value="Propaganda">Propaganda</option>
+                            <option value="Aluguel">Aluguel</option>
+                            <option value="Licença">Licença</option>
+                            <option value="Outro Tipo">Outro Tipo</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="pricing-sale-frequency" required>
+                            <option value="" disabled selected hidden>Selecione a Frequência</option>
+                            <option value="Diária">Diária</option>
+                            <option value="Semanal">Semanal</option>
+                            <option value="Mensal">Mensal</option>
+                            <option value="Anual">Anual</option>
+                        </select>
+                    </td>
+                    <td><input type="number" name="pricing-projection" placeholder="Ex: 1200" required></td>
+                `;
+            } else if (tableId === 'expenses-table') {
+                newRow.innerHTML = `
+                    <td><input type="text" name="expense-type"></td>
+                    <td><input type="number" name="expense-value"></td>
+                    <td><input type="text" name="expense-frequency"></td>
+                `;
+            }
+
+            // Ensure at least 3 rows
+            if (rowCount < 3) {
+                for (let i = rowCount; i < 3; i++) {
+                    const clonedRow = newRow.cloneNode(true);
+                    tbody.appendChild(clonedRow);
+                }
+            }
+        }
+        
+        function scrollToForm() {
+            document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
