@@ -22,12 +22,47 @@ function addRow(tableId) {
                 let newInput = document.createElement('input');
                 newInput.type = inputElement.type;
                 newInput.name = inputElement.name;
-                newInput.value = inputElement.value;
+                newInput.value = ""; // Limpa o valor para novas entradas
                 cell.appendChild(newInput);
             }
+        } else {
+            // Se não houver input ou select, copia o conteúdo HTML da célula
+            cell.innerHTML = lastCell.innerHTML;
         }
     }
 }
+
+// Função para rolar até a seção do formulário
+function scrollToForm() {
+    document.getElementById("form-section").scrollIntoView({ behavior: "smooth" });
+}
+
+// Adiciona um ouvinte de evento para o envio do formulário
+document.getElementById('diagnosticForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
+
+    fetch('https://script.google.com/macros/s/AKfycbwkD5kZXC-u_ENT1U1tdNBlTuOyr0WHbPxEpYVzgtOU99IJinWw39Niu4CVZMh5ONIExw/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.text())
+    .then(result => {
+        alert('Formulário enviado com sucesso!');
+        this.reset(); // Opcional: limpa o formulário após envio
+    })
+    .catch(error => {
+        console.error('Erro ao enviar formulário:', error);
+        alert('Houve um erro ao enviar o formulário.');
+    });
+});
+
 
 
 // Função para rolar até a seção do formulário
