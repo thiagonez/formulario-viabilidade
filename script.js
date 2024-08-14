@@ -20,7 +20,7 @@ function scrollToForm() {
 }
 
 // Adiciona um ouvinte de evento para o envio do formulário
-document.getElementById('diagnosticForm').addEventListener('submit', function(event) {
+document.getElementById('diagnosticform').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const formData = new FormData(this);
