@@ -117,7 +117,9 @@ nav ul li a {
 .form-section {
     padding: 20px;
     background-color: white;
-    margin: 20px;
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
     border-radius: 5px;
 }
 
