@@ -1,22 +1,47 @@
-// Função para adicionar uma nova linha a uma tabela
+// Função para adicionar uma nova linha à Tabela de Precificação
 function addRow(tableId) {
     let table = document.getElementById(tableId);
-    let lastRow = table.rows[table.rows.length - 1];
-    let newRow = table.insertRow(-1);
+    let newRow = table.insertRow(-1); // Adiciona uma nova linha no final da tabela
+    let cols = table.rows[0].cells.length; // Obtém o número de colunas
 
-    // Copia o conteúdo HTML da última linha para a nova linha
-    newRow.innerHTML = lastRow.innerHTML;
+    for (let i = 0; i < cols; i++) {
+        let cell = newRow.insertCell(i);
 
-    // Se desejar adicionar algum valor padrão ou específico, pode fazer isso aqui.
-    // Por exemplo:
-    // let inputs = newRow.querySelectorAll('input');
-    // inputs.forEach(input => input.value = '');
-
-    // Atualiza os nomes dos inputs na nova linha para evitar duplicação de nomes
-    let inputs = newRow.querySelectorAll('input');
-    inputs.forEach((input, index) => {
-        input.name = input.name.replace(/\d*$/, '') + (table.rows.length - 1);
-    });
+        // Define o conteúdo de cada célula com base na coluna
+        if (i === 0) { 
+            cell.innerHTML = '<input type="text" name="pricing-item" required>';
+        } else if (i === 1) { 
+            cell.innerHTML = '<input type="text" name="pricing-price">';
+        } else if (i === 2) { 
+            cell.innerHTML = '<input type="text" name="pricing-cost" required>';
+        } else if (i === 3) { 
+            cell.innerHTML = '<input type="text" name="pricing-taxes">';
+        } else if (i === 4) { 
+            cell.innerHTML = '<input type="text" name="pricing-client-type">';
+        } else if (i === 5) { 
+            cell.innerHTML = `
+                <select name="pricing-revenue-type" required>
+                    <option value="Vendas de Produtos">Vendas de Produtos</option>
+                    <option value="Vendas de Serviços">Vendas de Serviços</option>
+                    <option value="Assinatura">Assinatura</option>
+                    <option value="Taxa de Uso de Produto">Taxa de Uso de Produto</option>
+                    <option value="Propaganda">Propaganda</option>
+                    <option value="Aluguel">Aluguel</option>
+                    <option value="Licença">Licença</option>
+                    <option value="Outro Tipo">Outro Tipo</option>
+                </select>`;
+        } else if (i === 6) { 
+            cell.innerHTML = `
+                <select name="pricing-sale-frequency" required>
+                    <option value="Diária">Diária</option>
+                    <option value="Semanal">Semanal</option>
+                    <option value="Mensal">Mensal</option>
+                    <option value="Anual">Anual</option>
+                </select>`;
+        } else if (i === 7) { 
+            cell.innerHTML = '<input type="number" name="pricing-projection">';
+        }
+    }
 }
 
 
