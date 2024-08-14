@@ -1,23 +1,24 @@
-// Função para adicionar uma nova linha à tabela de precificação
+// Função para adicionar uma nova linha à Tabela de Precificação
 function addRow(tableId) {
     let table = document.getElementById(tableId);
-    let newRow = table.insertRow(-1);
-    let cols = table.rows[0].cells.length;
+    let newRow = table.insertRow(-1); // Adiciona uma nova linha no final da tabela
+    let cols = table.rows[0].cells.length; // Obtém o número de colunas
 
     for (let i = 0; i < cols; i++) {
         let cell = newRow.insertCell(i);
 
-        if (i === 0) {
+        // Define o conteúdo de cada célula com base na coluna
+        if (i === 0) { 
             cell.innerHTML = '<input type="text" name="pricing-item" required>';
-        } else if (i === 1) {
-            cell.innerHTML = '<input type="number" name="pricing-price" required>';
-        } else if (i === 2) {
+        } else if (i === 1) { 
+            cell.innerHTML = '<input type="number" name="pricing-price">';
+        } else if (i === 2) { 
             cell.innerHTML = '<input type="number" name="pricing-cost" required>';
-        } else if (i === 3) {
-            cell.innerHTML = '<input type="number" name="pricing-taxes" required>';
-        } else if (i === 4) {
-            cell.innerHTML = '<input type="text" name="pricing-client-type" required>';
-        } else if (i === 5) {
+        } else if (i === 3) { 
+            cell.innerHTML = '<input type="number" name="pricing-taxes">';
+        } else if (i === 4) { 
+            cell.innerHTML = '<input type="text" name="pricing-client-type">';
+        } else if (i === 5) { 
             cell.innerHTML = `
                 <select name="pricing-revenue-type" required>
                     <option value="Vendas de Produtos">Vendas de Produtos</option>
@@ -29,7 +30,7 @@ function addRow(tableId) {
                     <option value="Licença">Licença</option>
                     <option value="Outro Tipo">Outro Tipo</option>
                 </select>`;
-        } else if (i === 6) {
+        } else if (i === 6) { 
             cell.innerHTML = `
                 <select name="pricing-sale-frequency" required>
                     <option value="Diária">Diária</option>
@@ -37,8 +38,8 @@ function addRow(tableId) {
                     <option value="Mensal">Mensal</option>
                     <option value="Anual">Anual</option>
                 </select>`;
-        } else if (i === 7) {
-            cell.innerHTML = '<input type="number" name="pricing-projection" required>';
+        } else if (i === 7) { 
+            cell.innerHTML = '<input type="number" name="pricing-projection">';
         }
     }
 }
@@ -65,7 +66,7 @@ function getTableData(tableId) {
     return data;
 }
 
-// Função de envio do formulário
+// Adiciona um ouvinte de evento para o envio do formulário
 document.getElementById('diagnosticForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -76,12 +77,11 @@ document.getElementById('diagnosticForm').addEventListener('submit', function(ev
         data[key] = value;
     });
 
-    // Coleta dados das tabelas e adiciona ao objeto de dados
+    // Coleta dados das tabelas
     data.investmentTable = getTableData('investment-table');
     data.pricingTable = getTableData('pricing-table');
     data.expenseTable = getTableData('expense-table');
 
-    // Envio do formulário via Fetch API
     fetch('https://script.google.com/macros/s/AKfycbwkD5kZXC-u_ENT1U1tdNBlTuOyr0WHbPxEpYVzgtOU99IJinWw39Niu4CVZMh5ONIExw/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -90,7 +90,7 @@ document.getElementById('diagnosticForm').addEventListener('submit', function(ev
     .then(response => response.text())
     .then(result => {
         alert('Formulário enviado com sucesso!');
-        this.reset(); // Limpa o formulário após envio
+        this.reset(); // Opcional: limpa o formulário após envio
     })
     .catch(error => {
         console.error('Erro ao enviar formulário:', error);
