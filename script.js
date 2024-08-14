@@ -1,17 +1,22 @@
 // Função para adicionar uma nova linha a uma tabela
 function addRow(tableId) {
     let table = document.getElementById(tableId);
+    let lastRow = table.rows[table.rows.length - 1];
     let newRow = table.insertRow(-1);
-    let cols = table.rows[0].cells.length;
 
-    for (let i = 0; i < cols; i++) {
-        let cell = newRow.insertCell(i);
-        if (i === 0) {
-            cell.innerHTML = `<input type="text" name="${tableId}-item">`;
-        } else {
-            cell.innerHTML = `<input type="number" name="${tableId}-value">`;
-        }
-    }
+    // Copia o conteúdo HTML da última linha para a nova linha
+    newRow.innerHTML = lastRow.innerHTML;
+
+    // Se desejar adicionar algum valor padrão ou específico, pode fazer isso aqui.
+    // Por exemplo:
+    // let inputs = newRow.querySelectorAll('input');
+    // inputs.forEach(input => input.value = '');
+
+    // Atualiza os nomes dos inputs na nova linha para evitar duplicação de nomes
+    let inputs = newRow.querySelectorAll('input');
+    inputs.forEach((input, index) => {
+        input.name = input.name.replace(/\d*$/, '') + (table.rows.length - 1);
+    });
 }
 
 // Função para rolar até a seção do formulário
