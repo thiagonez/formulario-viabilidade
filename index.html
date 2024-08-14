@@ -86,7 +86,7 @@
                     <td><input type="number" name="investment-depreciation"></td>
                 </tr>
             </table>
-            <button type="button" onclick="addRow('investment-table')">Inserir mais investimentos</button>
+            <button type="button" class="add-row-button" onclick="addRow('investment-table')">Inserir mais investimentos</button>
 
             <h3>Tabela de Precificação</h3>
             <table id="pricing-table">
@@ -129,7 +129,7 @@
                     <td><input type="number" name="pricing-projection" required></td>
                 </tr>
             </table>
-            <button type="button" onclick="addRow('pricing-table')">Inserir mais produtos ou serviços</button>
+            <button type="button" class="add-row-button" onclick="addRow('pricing-table')">Inserir mais produtos ou serviços</button>
 
             <h3>Tabela de Despesas</h3>
             <table id="expense-table">
@@ -145,7 +145,7 @@
                 </tr>
                 <!-- Repeat rows if needed -->
             </table>
-            <button type="button" onclick="addRow('expense-table')">Inserir mais despesas</button>
+            <button type="button" class="add-row-button" onclick="addRow('expense-table')">Inserir mais despesas</button>
 
             <button type="submit" class="cta-button">Registrar Informações</button>
         </form>
