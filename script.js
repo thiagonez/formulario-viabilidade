@@ -6,10 +6,48 @@ function addRow(tableId) {
 
     for (let i = 0; i < cols; i++) {
         let cell = newRow.insertCell(i);
-        if (i === 0) {
-            cell.innerHTML = <input type="text" name="${tableId}-item">;
+        let inputType = (i === 0) ? "text" : "number"; // Tipo de input: texto para a primeira coluna, número para as outras
+        let inputName = `${tableId}-item`; // Nome dos inputs
+        if (tableId === 'pricing-table' && i === 4) {
+            // Para a tabela de preços, a célula de tipo de cliente deve ser um select
+            inputName = `${tableId}-client-type`;
+            cell.innerHTML = `
+                <select name="${inputName}" required>
+                    <option value="" disabled selected hidden>Selecione o Tipo de Cliente</option>
+                    <option value="Pessoa Física">Pessoa Física</option>
+                    <option value="Pessoa Jurídica">Pessoa Jurídica</option>
+                </select>
+            `;
+        } else if (tableId === 'pricing-table' && i === 6) {
+            // Para a tabela de preços, a célula de frequência de vendas deve ser um select
+            inputName = `${tableId}-sale-frequency`;
+            cell.innerHTML = `
+                <select name="${inputName}" required>
+                    <option value="" disabled selected hidden>Selecione a Frequência</option>
+                    <option value="Diária">Diária</option>
+                    <option value="Semanal">Semanal</option>
+                    <option value="Mensal">Mensal</option>
+                    <option value="Anual">Anual</option>
+                </select>
+            `;
+        } else if (tableId === 'pricing-table' && i === 5) {
+            // Para a tabela de preços, a célula de tipo de receita deve ser um select
+            inputName = `${tableId}-revenue-type`;
+            cell.innerHTML = `
+                <select name="${inputName}" required>
+                    <option value="" disabled selected hidden>Selecione o Tipo de Receita</option>
+                    <option value="Vendas de Produtos">Vendas de Produtos</option>
+                    <option value="Vendas de Serviços">Vendas de Serviços</option>
+                    <option value="Assinatura">Assinatura</option>
+                    <option value="Taxa de Uso de Produto">Taxa de Uso de Produto</option>
+                    <option value="Propaganda">Propaganda</option>
+                    <option value="Aluguel">Aluguel</option>
+                    <option value="Licença">Licença</option>
+                    <option value="Outro Tipo">Outro Tipo</option>
+                </select>
+            `;
         } else {
-            cell.innerHTML = <input type="number" name="${tableId}-value">;
+            cell.innerHTML = `<input type="${inputType}" name="${inputName}">`;
         }
     }
 }
