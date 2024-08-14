@@ -47,12 +47,20 @@ document.getElementById('diagnosticForm').addEventListener('submit', function(ev
         data[key] = value;
     });
 
+    console.log('Dados enviados:', data); // Verifique os dados no console
+
     fetch('https://script.google.com/macros/s/AKfycbwkD5kZXC-u_ENT1U1tdNBlTuOyr0WHbPxEpYVzgtOU99IJinWw39Niu4CVZMh5ONIExw/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     })
-    .then(response => response.text())
+    .then(response => {
+        console.log('Resposta do servidor:', response); // Verifique a resposta no console
+        if (!response.ok) {
+            throw new Error('Erro na resposta do servidor');
+        }
+        return response.text();
+    })
     .then(result => {
         alert('Formulário enviado com sucesso!');
         this.reset(); // Opcional: limpa o formulário após envio
