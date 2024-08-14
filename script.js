@@ -53,7 +53,7 @@ function addRow(tableId) {
         }
         // Coluna Projeção de Vendas Anual
         else if (i === 7) {
-            cell.innerHTML = '<input type="number" name="pricing-projection" required>';
+            cell.innerHTML = '<input type="text" name="pricing-projection" required>';
         }
     }
 }
