@@ -7,9 +7,9 @@ function addRow(tableId) {
     for (let i = 0; i < cols; i++) {
         let cell = newRow.insertCell(i);
         if (i === 0) {
-            cell.innerHTML = `<input type="text" name="${tableId}-item[]">`;
+            cell.innerHTML = <input type="text" name="${tableId}-item">;
         } else {
-            cell.innerHTML = `<input type="number" name="${tableId}-value[]">`;
+            cell.innerHTML = <input type="number" name="${tableId}-value">;
         }
     }
 }
@@ -20,23 +20,18 @@ function scrollToForm() {
 }
 
 // Adiciona um ouvinte de evento para o envio do formulário
-document.getElementById('diagnosticform').addEventListener('submit', function(event) {
+document.getElementById('diagnosticForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const formData = new FormData(this);
     const data = {};
     formData.forEach((value, key) => {
-        if (!data[key]) {
-            data[key] = [];
-        }
-        data[key].push(value);
+        data[key] = value;
     });
 
     fetch('https://script.google.com/macros/s/AKfycbwkD5kZXC-u_ENT1U1tdNBlTuOyr0WHbPxEpYVzgtOU99IJinWw39Niu4CVZMh5ONIExw/exec', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     })
     .then(response => response.text())
