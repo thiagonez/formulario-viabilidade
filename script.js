@@ -13,15 +13,15 @@ function addRow(tableId) {
         }
         // Coluna Preço de Venda
         else if (i === 1) {
-            cell.innerHTML = '<input type="number" name="pricing-price" required>';
+            cell.innerHTML = '<input type="text" name="pricing-price" required>';
         }
         // Coluna Custo
         else if (i === 2) {
-            cell.innerHTML = '<input type="number" name="pricing-cost" required>';
+            cell.innerHTML = '<input type="text" name="pricing-cost" required>';
         }
         // Coluna Impostos (%)
         else if (i === 3) {
-            cell.innerHTML = '<input type="number" name="pricing-taxes" required>';
+            cell.innerHTML = '<input type="text" name="pricing-taxes" required>';
         }
         // Coluna Tipo de Cliente
         else if (i === 4) {
