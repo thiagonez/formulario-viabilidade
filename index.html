@@ -1,92 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Consultoria Empresarial</title>
+    <title>Consultoria Inteligência & Segurança</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-    <!-- Menu de Navegação -->
     <header>
         <nav>
-            <div class="logo">Consultoria IA & Segurança</div>
-            <ul class="menu">
+            <ul>
                 <li><a href="#diagnostico">Diagnóstico</a></li>
                 <li><a href="#solucoes">Soluções</a></li>
-                <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
+        <div class="hero">
+            <h1>Consultoria em Inteligência & Segurança</h1>
+            <p>Transforme seu negócio com soluções baseadas em inteligência artificial e segurança.</p>
+            <a href="#diagnostico" class="btn-primary">Faça seu Diagnóstico Geral</a>
+        </div>
     </header>
 
-    <!-- Seção de Diagnóstico -->
-    <section id="diagnostico">
-        <div class="container">
-            <h1>Faça um Raio-X do Seu Negócio</h1>
-            <p>Descubra os pontos críticos que precisam ser resolvidos ou melhorados.</p>
-            <a href="#form-diagnostico" class="btn">Fazer Diagnóstico</a>
-        </div>
+    <section id="diagnostico" class="diagnostico">
+        <h2>Diagnóstico Completo</h2>
+        <p>Descubra os pontos importantes que devem ser resolvidos ou melhorados na sua empresa.</p>
+        <a href="form1.html" class="btn-secondary">Iniciar Diagnóstico</a>
     </section>
 
-    <!-- Seção de Soluções -->
-    <section id="solucoes">
-        <div class="container">
-            <h2>Soluções Personalizadas</h2>
+    <section id="solucoes" class="solucoes">
+        <h2>Nossas Soluções</h2>
+        <div class="solucoes-container">
             <div class="solucao">
-                <a href="#form-plano-negocios" class="btn">Crie seu Plano de Negócios</a>
+                <h3>Crie seu Plano de Negócios</h3>
                 <p>Monte um plano completo para o seu negócio de forma rápida.</p>
+                <a href="form2.html" class="btn-secondary">Acessar</a>
             </div>
             <div class="solucao">
-                <a href="#form-analise-negocios" class="btn">Análise do Negócio</a>
+                <h3>Análise do Negócio</h3>
                 <p>Tenha clareza sobre sua empresa e identifique melhorias significativas.</p>
+                <a href="form3.html" class="btn-secondary">Acessar</a>
             </div>
             <div class="solucao">
-                <a href="#form-planejamento" class="btn">Planejamento Estratégico</a>
-                <p>Realize o planejamento estratégico e acompanhe a execução através de um mapa estratégico completo.</p>
+                <h3>Planejamento Estratégico</h3>
+                <p>Realize o planejamento estratégico e acompanhe a execução.</p>
+                <a href="form4.html" class="btn-secondary">Acessar</a>
             </div>
             <div class="solucao">
-                <a href="#form-marketing-branding" class="btn">Marketing e Branding</a>
+                <h3>Marketing e Branding</h3>
                 <p>Planeje e acompanhe a divulgação do seu negócio online e offline.</p>
+                <a href="form5.html" class="btn-secondary">Acessar</a>
             </div>
         </div>
     </section>
 
-    <!-- Seção Sobre -->
-    <section id="sobre">
-        <div class="container">
-            <h2>Sobre Nós</h2>
-            <p>Somos uma consultoria especializada em inteligência artificial e segurança para negócios, oferecendo soluções que trazem resultados reais e seguros.</p>
-        </div>
-    </section>
-
-    <!-- Seção de Contato -->
-    <section id="contato">
-        <div class="container">
-            <h2>Entre em Contato</h2>
-            <form id="contact-form">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2024 Consultoria IA & Segurança. Todos os direitos reservados.</p>
+    <footer id="contato" class="contato">
+        <h2>Contato</h2>
+        <p>Entre em contato conosco para saber mais sobre nossos serviços e como podemos ajudar sua empresa.</p>
+        <form action="submit_form.php" method="post">
+            <input type="text" name="name" placeholder="Nome" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Mensagem" required></textarea>
+            <button type="submit" class="btn-primary">Enviar</button>
+        </form>
     </footer>
-
-    <!-- Script -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scripts.js"></script>
 </body>
 </html>
