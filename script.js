@@ -24,27 +24,6 @@ function scrollToForm() {
 
 
 
-// Função Capital de Terceiros
-function toggleCapitalTerceiros() {
-    const select = document.getElementById('usaraCapitalTerceiros');
-    const capitalTerceirosContainer = document.getElementById('capitalTerceirosContainer');
-
-    if (select.value === 'Sim') {
-        capitalTerceirosContainer.style.display = 'block';
-    } else {
-        capitalTerceirosContainer.style.display = 'none';
-    }
-}
-
-function addRow(tableId) {
-    const table = document.getElementById(tableId);
-    const newRow = table.getElementsByTagName('tbody')[0].insertRow();
-    const cells = table.rows[1].cells.length; // Número de colunas da tabela
-    for (let i = 0; i < cells; i++) {
-        const newCell = newRow.insertCell(i);
-        newCell.innerHTML = table.rows[1].cells[i].innerHTML; // Copia o conteúdo da segunda linha
-    }
-}
 
 
 
