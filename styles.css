@@ -1,171 +1,122 @@
-/* Estilos Básicos */
-* {
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6;
 }
 
-/* Estilo do Menu */
 header {
-    background: #1c1c1c;
-    padding: 10px 0;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.logo {
+    background: #0073e6;
     color: #fff;
-    font-size: 24px;
-}
-
-.menu {
-    list-style: none;
-}
-
-.menu li {
-    display: inline-block;
-    margin-left: 20px;
-}
-
-.menu a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 10px;
-}
-
-.menu a:hover {
-    background: #4CAF50;
-    border-radius: 4px;
-}
-
-/* Estilos das Seções */
-section {
-    padding: 50px 20px;
-}
-
-#diagnostico {
-    background: url('diagnostico-bg.jpg') no-repeat center center/cover;
-    color: #fff;
+    padding: 20px 0;
     text-align: center;
 }
 
-#diagnostico h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-#diagnostico p {
-    font-size: 18px;
-    margin-bottom: 30px;
+header nav ul li {
+    margin: 0 15px;
 }
 
-.btn {
-    background: #4CAF50;
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.hero {
+    margin: 50px 0;
+    padding: 20px;
+}
+
+.btn-primary {
+    background: #f47c3c;
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
+    border-radius: 5px;
 }
 
-.btn:hover {
-    background: #45a049;
+.btn-secondary {
+    background: #0056b3;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-/* Seção de Soluções */
-#solucoes .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.diagnostico, .solucoes, .contato {
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 20px;
     text-align: center;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.solucoes-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .solucao {
     flex: 1;
-    margin: 20px;
-    min-width: 250px;
+    min-width: 200px;
+    margin: 10px;
+    padding: 20px;
+    background: #eaeaea;
+    border-radius: 5px;
 }
 
-#solucoes h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 32px;
-}
-
-/* Seção Sobre */
-#sobre {
-    background: #f4f4f4;
-    text-align: center;
-}
-
-#sobre h2 {
-    margin-bottom: 20px;
-}
-
-/* Seção de Contato */
-#contato .container {
-    max-width: 600px;
-    margin: auto;
-}
-
-#contact-form {
-    display: flex;
-    flex-direction: column;
-}
-
-#contact-form label {
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-#contact-form input,
-#contact-form textarea {
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-#contact-form button {
-    padding: 10px;
-    background: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-}
-
-#contact-form button:hover {
-    background: #45a049;
-}
-
-/* Rodapé */
 footer {
-    text-align: center;
-    padding: 20px 0;
-    background: #1c1c1c;
+    background: #333;
     color: #fff;
+    padding: 10px 0;
+    text-align: center;
 }
 
-/* Responsividade */
+form input, form textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background: #0073e6;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
-    nav ul {
-        display: block;
-        text-align: center;
+    .solucoes-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
     }
 
     .solucao {
-        margin: 10px 0;
+        width: 100%;
+    }
+
+    form input, form textarea {
+        width: 100%;
     }
 }
