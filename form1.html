@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário - Nome do Formulário</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html#diagnostico">Diagnóstico</a></li>
+                <li><a href="index.html#solucoes">Soluções</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="form-section">
+        <h2>Formulário - Nome do Formulário</h2>
+        <form action="submit_form.php" method="post">
+            <input type="text" name="company_name" placeholder="Nome da Empresa" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <!-- Campos adicionais específicos para o formulário -->
+            <button type="submit" class="btn-primary">Enviar</button>
+        </form>
+    </section>
+</body>
+</html>
