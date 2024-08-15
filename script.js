@@ -19,19 +19,6 @@ function scrollToForm() {
     document.getElementById("form-section").scrollIntoView({ behavior: "smooth" });
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Adiciona um ouvinte de evento para o envio do formulário
 document.getElementById('diagnosticForm').addEventListener('submit', function(event) {
     event.preventDefault();
