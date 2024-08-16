@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Análise de Viabilidade</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo da Consultoria">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#diagnostico">Diagnóstico</a></li>
+                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="form-section">
+        <h2>Análise de Viabilidade</h2>
+        <form id="form-viabilidade" action="https://script.google.com/macros/s/AKfycbwkD5kZXC-u_ENT1U1tdNBlTuOyr0WHbPxEpYVzgtOU99IJinWw39Niu4CVZMh5ONIExw/exec" method="POST">
+            <fieldset>
+                <legend>Informações da Empresa</legend>
+                <label for="nomeEmpresa">Nome da Empresa:</label>
+                <input type="text" id="nomeEmpresa" name="nomeEmpresa" required>
+                
+                <label for="cnpj">CNPJ:</label>
+                <input type="text" id="cnpj" name="cnpj" required>
+                
+                <label for="nomeContato">Nome do Contato:</label>
+                <input type="text" id="nomeContato" name="nomeContato" required>
+                
+                <label for="whatsappContato">WhatsApp do Contato:</label>
+                <input type="text" id="whatsappContato" name="whatsappContato" required>
+                
+                <label for="emailContato">Melhor E-mail do Contato:</label>
+                <input type="email" id="emailContato" name="emailContato" required>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Aspectos Gerais</legend>
+                <label for="anoInicialProjeto">Ano Inicial do Projeto:</label>
+                <input type="number" id="anoInicialProjeto" name="anoInicialProjeto" required>
+                
+                <label for="capitalTotalProjeto">Capital Total Necessário para o Projeto:</label>
+                <input type="number" id="capitalTotalProjeto" name="capitalTotalProjeto" required>
+                
+                <label for="previsaoCapitalRetorno">Previsão de Capital de Retorno:</label>
+                <input type="number" id="previsaoCapitalRetorno" name="previsaoCapitalRetorno" required>
+                
+                <label for="previsaoTempoRetorno">Previsão de Tempo de Retorno:</label>
+                <input type="number" id="previsaoTempoRetorno" name="previsaoTempoRetorno" required>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Análise do Projeto</legend>
+                <label for="descricaoProjeto">Descrição Geral do Projeto:</label>
+                <textarea id="descricaoProjeto" name="descricaoProjeto" rows="5" required></textarea>
+                
+                <label for="diferenciaisProjeto">Diferenciais do Projeto:</label>
+                <textarea id="diferenciaisProjeto" name="diferenciaisProjeto" rows="3" required></textarea>
+                
+                <label for="principaisRiscos">Principais Riscos Identificados:</label>
+                <textarea id="principaisRiscos" name="principaisRiscos" rows="3" required></textarea>
+                
+                <label for="projecaoFinanceira">Projeção Financeira (em PDF):</label>
+                <input type="file" id="projecaoFinanceira" name="projecaoFinanceira" accept=".pdf" required>
+            </fieldset>
+            
+            <button type="submit">Enviar Formulário</button>
+        </form>
+    </section>
+
+    <footer id="contato" class="footer-section">
+        <p>&copy; 2024 Consultoria Inteligente. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
