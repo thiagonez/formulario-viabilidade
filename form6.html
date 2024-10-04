@@ -1,216 +1,86 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Formulário financeiro para coleta de receitas, despesas, dívidas e investimentos">
-    <meta name="keywords" content="finanças, formulário financeiro, receitas, despesas, investimentos, dívidas">
-    <meta name="author" content="Seu Nome">
     <title>Formulário Financeiro</title>
-    <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <section id="formulario">
-        <h1>Formulário Financeiro</h1>
+
+    <div class="container">
+        <h1>Relatório Financeiro</h1>
         <form id="formularioFinanceiro">
-            <h2>Dados Pessoais</h2>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
 
+            <!-- Seção de Receitas -->
             <h2>Receitas</h2>
-            <div class="coluna">
-                <label for="salario">Salário:</label>
-                <input type="text" id="salario" name="salario" placeholder="Ex: 3000">
-            </div>
-            <div class="coluna">
-                <label for="decimoTerceiro">13º Salário:</label>
-                <input type="text" id="decimoTerceiro" name="decimoTerceiro" placeholder="Ex: 2500">
-            </div>
-            <div class="coluna">
-                <label for="dividendos">Dividendos:</label>
-                <input type="text" id="dividendos" name="dividendos" placeholder="Ex: 500">
-            </div>
-            
+            <table>
+                <tr><td>Salário</td><td><input type="number" name="salario"></td></tr>
+                <tr><td>13º Salário</td><td><input type="number" name="decimoTerceiro"></td></tr>
+                <tr><td>Dividendos</td><td><input type="number" name="dividendos"></td></tr>
+                <!-- Adicionar as outras receitas aqui -->
+            </table>
+
+            <!-- Seção de Despesas -->
             <h2>Despesas</h2>
-            <div class="coluna">
-                <label for="aluguel">Aluguel:</label>
-                <input type="text" id="aluguel" name="aluguel" placeholder="Ex: 1200">
-            </div>
-            <div class="coluna">
-                <label for="energia">Energia Elétrica:</label>
-                <input type="text" id="energia" name="energia" placeholder="Ex: 300">
-            </div>
-            <div class="coluna">
-                <label for="internet">Internet:</label>
-                <input type="text" id="internet" name="internet" placeholder="Ex: 150">
-            </div>
+            <table>
+                <tr><td>Aluguel</td><td><input type="number" name="aluguel"></td></tr>
+                <tr><td>Energia Elétrica</td><td><input type="number" name="energia"></td></tr>
+                <tr><td>Internet / TV a cabo</td><td><input type="number" name="internet"></td></tr>
+                <!-- Adicionar as outras despesas aqui -->
+            </table>
 
-            <h2>Investimentos</h2>
-            <div class="coluna">
-                <label for="fundosInvestimentos">Fundos de Investimentos:</label>
-                <input type="text" id="fundosInvestimentos" name="fundosInvestimentos" placeholder="Ex: 10000">
-            </div>
-            <div class="coluna">
-                <label for="poupanca">Poupança:</label>
-                <input type="text" id="poupanca" name="poupanca" placeholder="Ex: 5000">
-            </div>
+            <!-- Tabela de Dívidas -->
+            <h2>Dívidas</h2>
+            <table>
+                <tr>
+                    <th>Credor</th>
+                    <th>Saldo Atual</th>
+                    <th>Parcela</th>
+                    <th>Parcelas</th>
+                    <th>Juros Mensal</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="credor"></td>
+                    <td><input type="number" name="saldoDivida"></td>
+                    <td><input type="number" name="valorParcela"></td>
+                    <td><input type="number" name="quantParcelas"></td>
+                    <td><input type="number" name="jurosMensal"></td>
+                </tr>
+                <!-- Adicionar mais linhas conforme necessário -->
+            </table>
 
-            
-          
-          
-          
-          
-          
-          
-<h2>Dívidas</h2>
-
-<!-- Dívida 1 -->
-<label for="credor1">Credor (Dívida 1):</label>
-<input type="text" id="credor1" name="credor1">
-
-<label for="saldoDivida1">Saldo da Dívida Atual (Dívida 1):</label>
-<input type="text" id="saldoDivida1" name="saldoDivida1">
-
-<label for="jurosMensal1">Juros Mensal (Dívida 1):</label>
-<input type="text" id="jurosMensal1" name="jurosMensal1">
-
-<label for="valorParcela1">Valor da Parcela (Dívida 1):</label>
-<input type="text" id="valorParcela1" name="valorParcela1">
-
-<label for="parcelasRestantes1">Parcelas Restantes (Dívida 1):</label>
-<input type="text" id="parcelasRestantes1" name="parcelasRestantes1">
-
-<!-- Dívida 2 -->
-<label for="credor2">Credor (Dívida 2):</label>
-<input type="text" id="credor2" name="credor2">
-
-<label for="saldoDivida2">Saldo da Dívida Atual (Dívida 2):</label>
-<input type="text" id="saldoDivida2" name="saldoDivida2">
-
-<label for="jurosMensal2">Juros Mensal (Dívida 2):</label>
-<input type="text" id="jurosMensal2" name="jurosMensal2">
-
-<label for="valorParcela2">Valor da Parcela (Dívida 2):</label>
-<input type="text" id="valorParcela2" name="valorParcela2">
-
-<label for="parcelasRestantes2">Parcelas Restantes (Dívida 2):</label>
-<input type="text" id="parcelasRestantes2" name="parcelasRestantes2">
-
-
-
-
-
-
-
-
-
-
-
-
-          
+            <!-- Tabela de Balanço Patrimonial -->
             <h2>Balanço Patrimonial</h2>
-            <div class="coluna">
-                <label for="ativosImobilizados">Ativos (Imobilizados):</label>
-                <input type="text" id="ativosImobilizados" name="ativosImobilizados" placeholder="Ex: 30000">
-            </div>
-            <div class="coluna">
-                <label for="passivosDividas">Passivos (Dívidas):</label>
-                <input type="text" id="passivosDividas" name="passivosDividas" placeholder="Ex: 15000">
-            </div>
+            <table>
+                <tr><td>Ativos (Imobilizados)</td><td><input type="number" name="ativosImobilizados"></td></tr>
+                <tr><td>Passivos (Dívidas)</td><td><input type="number" name="passivosDividas"></td></tr>
+                <!-- Adicionar mais linhas conforme necessário -->
+            </table>
 
-            <h2>Calculadora de Liberdade Financeira</h2>
-            <div class="coluna">
-                <label for="rendaAposentadoria">Quero me aposentar com uma renda de:</label>
-                <input type="text" id="rendaAposentadoria" name="rendaAposentadoria" placeholder="Ex: 5000">
-            </div>
-            <div class="coluna">
-                <label for="investimentoAtual">Quanto você tem hoje investido?</label>
-                <input type="text" id="investimentoAtual" name="investimentoAtual" placeholder="Ex: 20000">
-            </div>
-            <div class="coluna">
-                <label for="investimentoMensal">Quanto vai investir por mês?</label>
-                <input type="text" id="investimentoMensal" name="investimentoMensal" placeholder="Ex: 1000">
-            </div>
+            <!-- Objetivos Financeiros -->
+            <h2>Objetivos Financeiros</h2>
+            <table>
+                <tr><td>Objetivo de Renda Mensal</td><td><input type="number" name="rendaAposentadoria"></td></tr>
+                <tr><td>Investimentos Atuais</td><td><input type="number" name="investimentoAtual"></td></tr>
+                <tr><td>Investimento Mensal</td><td><input type="number" name="investimentoMensal"></td></tr>
+            </table>
 
-            <button type="submit" id="submitBtn">Enviar</button>
+            <button type="submit" class="submit-btn">Enviar</button>
         </form>
-    </section>
+    </div>
 
-    <script>
-        // Função para enviar os dados do formulário para o Google Sheets
-        document.getElementById('formularioFinanceiro').addEventListener('submit', function (e) {
-            e.preventDefault(); // Evitar recarregar a página ao enviar o formulário
-
-            // Coletar os dados do formulário
-            const formData = new FormData(e.target);
-            const data = {
-                nome: formData.get('nome'),
-                email: formData.get('email'),
-                salario: formData.get('salario'),
-                decimoTerceiro: formData.get('decimoTerceiro'),
-                dividendos: formData.get('dividendos'),
-                aluguel: formData.get('aluguel'),
-                energia: formData.get('energia'),
-                internet: formData.get('internet'),
-                fundosInvestimentos: formData.get('fundosInvestimentos'),
-                poupanca: formData.get('poupanca'),
-
-
-                        // Dívidas
-        credor1: formData.get('credor1'),
-        saldoDivida1: formData.get('saldoDivida1'),
-        jurosMensal1: formData.get('jurosMensal1'),
-        valorParcela1: formData.get('valorParcela1'),
-        parcelasRestantes1: formData.get('parcelasRestantes1'),
-
-        credor2: formData.get('credor2'),
-        saldoDivida2: formData.get('saldoDivida2'),
-        jurosMensal2: formData.get('jurosMensal2'),
-        valorParcela2: formData.get('valorParcela2'),
-        parcelasRestantes2: formData.get('parcelasRestantes2'),
-
-        // Repita isso até Dívida 10
-        // credor3 a credor10...
-
-
-
-
-
-
-
-                
-                ativosImobilizados: formData.get('ativosImobilizados'),
-                passivosDividas: formData.get('passivosDividas'),
-                rendaAposentadoria: formData.get('rendaAposentadoria'),
-                investimentoAtual: formData.get('investimentoAtual'),
-                investimentoMensal: formData.get('investimentoMensal')
-            };
-
-            // Enviar os dados via POST para o Google Apps Script
-            fetch('https://script.google.com/macros/s/AKfycbyHEXk1Rbr_em6P3DS5xQiwEE7vZhSuOCqx-YP165rK7Coof-iD_xcI-U9wBBqeuVrE7Q/exec', {
-                method: 'POST',
-                body: new URLSearchParams(data),
-            })
-            .then(response => response.text())
-            .then(result => {
-                alert('Dados enviados com sucesso!');
-               
-                // Redirecionar para a página de sucesso
-                    window.location.href = 'sucesso.html';
-
-                
-                console.log(result);
-            })
-            .catch(error => {
-                console.error('Erro ao enviar os dados:', error);
-                alert('Houve um erro ao enviar os dados. Tente novamente.');
-            });
-        });
-    </script>
-
+    <script src="scripts.js"></script>
 </body>
 </html>
