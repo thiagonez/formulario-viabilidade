@@ -84,6 +84,36 @@ button:hover {
 
 
 
+/* tabela dívidas */
+
+.dividas-container {
+    display: flex;
+    justify-content: space-between; /* Espalha os itens igualmente */
+    flex-wrap: wrap; /* Permite quebra de linha se não houver espaço suficiente */
+}
+
+.divida {
+    flex: 1; /* Cada div ocupa o mesmo espaço */
+    min-width: 200px; /* Define uma largura mínima para evitar que fique muito pequeno */
+    margin-right: 10px; /* Espaço entre as colunas */
+}
+
+.divida:last-child {
+    margin-right: 0; /* Remove margem do último item */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
