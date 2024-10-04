@@ -3,69 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Consultoria Inteligência & Segurança</title>
+    <meta name="description" content="Formulário financeiro para coleta de receitas, despesas, dívidas e investimentos">
+    <meta name="keywords" content="finanças, formulário financeiro, receitas, despesas, investimentos, dívidas">
+    <meta name="author" content="Seu Nome">
+    <title>Formulário Financeiro</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scripts.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav id="navbar">
-            <ul>
-                <li><a href="#diagnostico">Diagnóstico</a></li>
-                <li><a href="#solucoes">Soluções</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-        <div class="hero">
-            <h1>Consultoria em Inteligência & Segurança</h1>
-            <p>Transforme seu negócio com soluções baseadas em inteligência artificial e segurança.</p>
-            <a href="#diagnostico" class="btn-primary">Faça seu Diagnóstico Geral</a>
-        </div>
-    </header>
+    <section id="formulario">
+        <h1>Formulário Financeiro</h1>
+        <form id="formularioFinanceiro">
+            <h2>Dados Pessoais</h2>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
 
-    <section id="diagnostico" class="diagnostico">
-        <h2>Diagnóstico Completo</h2>
-        <p>Descubra os pontos importantes que devem ser resolvidos ou melhorados na sua empresa.</p>
-        <a href="form1.html" class="btn-secondary">Iniciar Diagnóstico</a>
-    </section>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
 
-    <section id="solucoes" class="solucoes">
-        <h2>Nossas Soluções</h2>
-        <div class="solucoes-container">
-            <div class="solucao">
-                <h3>Crie seu Plano de Negócios</h3>
-                <p>Monte um plano completo para o seu negócio de forma rápida.</p>
-                <a href="form2.html" class="btn-secondary">Acessar</a>
-            </div>
-            <div class="solucao">
-                <h3>Análise do Negócio</h3>
-                <p>Tenha clareza sobre sua empresa e identifique melhorias significativas.</p>
-                <a href="form3.html" class="btn-secondary">Acessar</a>
-            </div>
-            <div class="solucao">
-                <h3>Planejamento Estratégico</h3>
-                <p>Realize o planejamento estratégico e acompanhe a execução.</p>
-                <a href="form4.html" class="btn-secondary">Acessar</a>
-            </div>
-            <div class="solucao">
-                <h3>Marketing e Branding</h3>
-                <p>Planeje e acompanhe a divulgação do seu negócio online e offline.</p>
-                <a href="form5.html" class="btn-secondary">Acessar</a>
-            </div>
-        </div>
-    </section>
+            <h2>Receitas</h2>
+            <label for="salario">Salário:</label>
+            <input type="text" id="salario" name="salario">
 
-    <footer id="contato" class="contato">
-        <h2>Contato</h2>
-        <p>Entre em contato conosco para saber mais sobre nossos serviços e como podemos ajudar sua empresa.</p>
-        <form action="submit_form.php" method="post">
-            <input type="text" name="name" placeholder="Nome" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <textarea name="message" placeholder="Mensagem" required></textarea>
-            <button type="submit" class="btn-primary">Enviar</button>
+            <label for="decimoTerceiro">13º Salário:</label>
+            <input type="text" id="decimoTerceiro" name="decimoTerceiro">
+
+            <label for="dividendos">Dividendos:</label>
+            <input type="text" id="dividendos" name="dividendos">
+
+            <!-- Você pode continuar com o restante dos campos da mesma forma -->
+            
+            <h2>Despesas</h2>
+            <label for="aluguel">Aluguel:</label>
+            <input type="text" id="aluguel" name="aluguel">
+
+            <label for="energia">Energia Elétrica:</label>
+            <input type="text" id="energia" name="energia">
+
+            <label for="internet">Internet:</label>
+            <input type="text" id="internet" name="internet">
+
+            <h2>Investimentos</h2>
+            <label for="fundosInvestimentos">Fundos de Investimentos:</label>
+            <input type="text" id="fundosInvestimentos" name="fundosInvestimentos">
+
+            <label for="poupanca">Poupança:</label>
+            <input type="text" id="poupanca" name="poupanca">
+
+            <h2>Dívidas</h2>
+            <label for="credor">Credor:</label>
+            <input type="text" id="credor" name="credor">
+
+            <label for="saldoDivida">Saldo da Dívida Atual:</label>
+            <input type="text" id="saldoDivida" name="saldoDivida">
+
+            <label for="jurosMensal">Juros Mensal:</label>
+            <input type="text" id="jurosMensal" name="jurosMensal">
+
+            <label for="valorParcela">Valor da Parcela:</label>
+            <input type="text" id="valorParcela" name="valorParcela">
+
+            <h2>Balanço Patrimonial</h2>
+            <label for="ativosImobilizados">Ativos (Imobilizados):</label>
+            <input type="text" id="ativosImobilizados" name="ativosImobilizados">
+
+            <label for="passivosDividas">Passivos (Dívidas):</label>
+            <input type="text" id="passivosDividas" name="passivosDividas">
+
+            <h2>Calculadora de Liberdade Financeira</h2>
+            <label for="rendaAposentadoria">Quero me aposentar com uma renda de:</label>
+            <input type="text" id="rendaAposentadoria" name="rendaAposentadoria">
+
+            <label for="investimentoAtual">Quanto você tem hoje investido?</label>
+            <input type="text" id="investimentoAtual" name="investimentoAtual">
+
+            <label for="investimentoMensal">Quanto vai investir por mês?</label>
+            <input type="text" id="investimentoMensal" name="investimentoMensal">
+
+            <button type="submit" id="submitBtn">Enviar</button>
         </form>
-    </footer>
+    </section>
+
+    <script>
+        // Função para enviar os dados do formulário para o Google Sheets
+        document.getElementById('formularioFinanceiro').addEventListener('submit', function (e) {
+            e.preventDefault(); // Evitar recarregar a página ao enviar o formulário
+
+            // Coletar os dados do formulário
+            const formData = new FormData(e.target);
+            const data = {
+                nome: formData.get('nome'),
+                email: formData.get('email'),
+                salario: formData.get('salario'),
+                decimoTerceiro: formData.get('decimoTerceiro'),
+                dividendos: formData.get('dividendos'),
+                aluguel: formData.get('aluguel'),
+                energia: formData.get('energia'),
+                internet: formData.get('internet'),
+                fundosInvestimentos: formData.get('fundosInvestimentos'),
+                poupanca: formData.get('poupanca'),
+                credor: formData.get('credor'),
+                saldoDivida: formData.get('saldoDivida'),
+                jurosMensal: formData.get('jurosMensal'),
+                valorParcela: formData.get('valorParcela'),
+                ativosImobilizados: formData.get('ativosImobilizados'),
+                passivosDividas: formData.get('passivosDividas'),
+                rendaAposentadoria: formData.get('rendaAposentadoria'),
+                investimentoAtual: formData.get('investimentoAtual'),
+                investimentoMensal: formData.get('investimentoMensal')
+            };
+
+            // Enviar os dados via POST para o Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbyb22UGgr5nv8v3EpCMDrlnzGp0nDTXVPerHd2-znQa/exec', {
+                method: 'POST',
+                body: new URLSearchParams(data),
+            })
+            .then(response => response.text())
+            .then(result => {
+                alert('Dados enviados com sucesso!');
+                console.log(result);
+            })
+            .catch(error => {
+                console.error('Erro ao enviar os dados:', error);
+                alert('Houve um erro ao enviar os dados. Tente novamente.');
+            });
+        });
+    </script>
+
 </body>
 </html>
