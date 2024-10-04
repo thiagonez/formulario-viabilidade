@@ -17,6 +17,8 @@ document.getElementById('formularioFinanceiro').addEventListener('submit', funct
         valorParcela: formData.get('valorParcela'),
         quantParcelas: formData.get('quantParcelas'),
         jurosMensal: formData.get('jurosMensal'),
+        quantidadeParcelas: formData.get('quantidadeParcelas'),
+        
         ativosImobilizados: formData.get('ativosImobilizados'),
         passivosDividas: formData.get('passivosDividas'),
         rendaAposentadoria: formData.get('rendaAposentadoria'),
