@@ -8,30 +8,7 @@
     <meta name="author" content="Seu Nome">
     <title>Formulário Financeiro</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Estilos para organizar as colunas */
-        .coluna {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-        }
-
-        label {
-            flex: 1;
-            margin-right: 10px;
-        }
-
-        input {
-            flex: 2;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        input::placeholder {
-            color: #888; /* Cor do texto do placeholder */
-        }
-    </style>
+    
 </head>
 <body>
     <section id="formulario">
@@ -82,24 +59,44 @@
                 <input type="text" id="poupanca" name="poupanca" placeholder="Ex: 5000">
             </div>
 
-            <h2>Dívidas</h2>
-            <div class="coluna">
-                <label for="credor">Credor:</label>
-                <input type="text" id="credor" name="credor" placeholder="Ex: Banco X">
-            </div>
-            <div class="coluna">
-                <label for="saldoDivida">Saldo da Dívida Atual:</label>
-                <input type="text" id="saldoDivida" name="saldoDivida" placeholder="Ex: 2000">
-            </div>
-            <div class="coluna">
-                <label for="jurosMensal">Juros Mensal:</label>
-                <input type="text" id="jurosMensal" name="jurosMensal" placeholder="Ex: 5%">
-            </div>
-            <div class="coluna">
-                <label for="valorParcela">Valor da Parcela:</label>
-                <input type="text" id="valorParcela" name="valorParcela" placeholder="Ex: 500">
-            </div>
 
+
+
+
+
+
+            
+<h2>Dívidas</h2>
+<div class="dividas-container">
+    <div class="divida">
+        <label for="credor">Credor:</label>
+        <input type="text" id="credor" name="credor" placeholder="Ex: Banco X">
+    </div>
+    <div class="divida">
+        <label for="saldoDivida">Saldo da Dívida Atual:</label>
+        <input type="text" id="saldoDivida" name="saldoDivida" placeholder="Ex: 2000">
+    </div>
+    <div class="divida">
+        <label for="jurosMensal">Juros Mensal:</label>
+        <input type="text" id="jurosMensal" name="jurosMensal" placeholder="Ex: 5%">
+    </div>
+    <div class="divida">
+        <label for="valorParcela">Valor da Parcela:</label>
+        <input type="text" id="valorParcela" name="valorParcela" placeholder="Ex: 500">
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+            
             <h2>Balanço Patrimonial</h2>
             <div class="coluna">
                 <label for="ativosImobilizados">Ativos (Imobilizados):</label>
@@ -160,25 +157,24 @@
             // Enviar os dados via POST para o Google Apps Script
             fetch('https://script.google.com/macros/s/AKfycbyHEXk1Rbr_em6P3DS5xQiwEE7vZhSuOCqx-YP165rK7Coof-iD_xcI-U9wBBqeuVrE7Q/exec', {
                 method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+                body: new URLSearchParams(data),
             })
-            .then(response => response.json())
-            .then(response => {
-                if (response.result === 'success') {
-                    // Redirecionar para a página de sucesso
+            .then(response => response.text())
+            .then(result => {
+                alert('Dados enviados com sucesso!');
+               
+                // Redirecionar para a página de sucesso
                     window.location.href = 'sucesso.html';
-                } else {
-                    alert('Erro ao enviar os dados. Tente novamente.');
-                }
+
+                
+                console.log(result);
             })
             .catch(error => {
-                console.error('Erro:', error);
-                alert('Erro ao enviar os dados. Tente novamente.');
+                console.error('Erro ao enviar os dados:', error);
+                alert('Houve um erro ao enviar os dados. Tente novamente.');
             });
         });
     </script>
+
 </body>
 </html>
