@@ -1,134 +1,76 @@
-/* Global Styles */
+/* Fonte do Google */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
-    line-height: 1.6;
 }
 
 header {
-    position: relative;
+    background-color: #4CAF50;
+    color: white;
     text-align: center;
-    background: #0073e6;
-    color: #fff;
-    padding-top: 80px; /* Ensure content doesn't hide behind the fixed navbar */
+    padding: 1rem;
 }
 
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 115, 230, 0.9);
-    padding: 10px 0;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    transition: background 0.3s ease;
+h1, h2 {
+    margin: 1rem 0;
+    color: #333;
 }
 
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-.hero {
-    margin: 50px 0;
-    padding: 20px;
-}
-
-.btn-primary {
-    background: #f47c3c;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.btn-secondary {
-    background: #0056b3;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.diagnostico, .solucoes, .contato {
-    margin: 20px auto;
-    max-width: 900px;
-    padding: 20px;
-    text-align: center;
+form, table {
+    width: 90%;
+    margin: 1rem auto;
     background: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.solucoes-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.solucao {
-    flex: 1;
-    min-width: 200px;
-    margin: 10px;
-    padding: 20px;
-    background: #eaeaea;
-    border-radius: 5px;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-form input, form textarea {
-    width: 80%;
+input[type="text"], input[type="email"], input[type="number"] {
+    width: 100%;
     padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-form button {
-    background: #0073e6;
-    color: #fff;
-    padding: 10px 20px;
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+    text-align: left;
 }
 
 @media (max-width: 768px) {
-    .solucoes-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    .solucao {
+    form, table {
         width: 100%;
     }
 
-    form input, form textarea {
+    input[type="text"], input[type="email"], input[type="number"], button {
         width: 100%;
     }
 }
