@@ -94,7 +94,7 @@ button:hover {
 
 .divida {
     flex: 1; /* Cada div ocupa o mesmo espaço */
-    min-width: 200px; /* Define uma largura mínima para evitar que fique muito pequeno */
+    min-width: 100px; /* Define uma largura mínima para evitar que fique muito pequeno */
     margin-right: 10px; /* Espaço entre as colunas */
 }
 
