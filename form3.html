@@ -8,6 +8,7 @@
     <meta name="author" content="Seu Nome">
     <title>Formulário Financeiro</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <section id="formulario">
@@ -21,108 +22,84 @@
             <input type="email" id="email" name="email" required>
 
             <h2>Receitas</h2>
-            <div>
+            <div class="coluna">
                 <label for="salario">Salário:</label>
-                <input type="text" id="salario" name="salario">
+                <input type="text" id="salario" name="salario" placeholder="Ex: 3000">
             </div>
-            <div>
-                <label for="salario">Valor:</label>
-                <input type="text" id="salarioValor" name="salarioValor">
-            </div>
-            <div>
+            <div class="coluna">
                 <label for="decimoTerceiro">13º Salário:</label>
-                <input type="text" id="decimoTerceiro" name="decimoTerceiro">
+                <input type="text" id="decimoTerceiro" name="decimoTerceiro" placeholder="Ex: 2500">
             </div>
-            <div>
-                <label for="decimoTerceiroValor">Valor:</label>
-                <input type="text" id="decimoTerceiroValor" name="decimoTerceiroValor">
-            </div>
-            <div>
+            <div class="coluna">
                 <label for="dividendos">Dividendos:</label>
-                <input type="text" id="dividendos" name="dividendos">
+                <input type="text" id="dividendos" name="dividendos" placeholder="Ex: 500">
             </div>
-            <div>
-                <label for="dividendosValor">Valor:</label>
-                <input type="text" id="dividendosValor" name="dividendosValor">
-            </div>
-
+            
             <h2>Despesas</h2>
-            <div>
+            <div class="coluna">
                 <label for="aluguel">Aluguel:</label>
-                <input type="text" id="aluguel" name="aluguel">
+                <input type="text" id="aluguel" name="aluguel" placeholder="Ex: 1200">
             </div>
-            <div>
-                <label for="aluguelValor">Valor:</label>
-                <input type="text" id="aluguelValor" name="aluguelValor">
-            </div>
-            <div>
+            <div class="coluna">
                 <label for="energia">Energia Elétrica:</label>
-                <input type="text" id="energia" name="energia">
+                <input type="text" id="energia" name="energia" placeholder="Ex: 300">
             </div>
-            <div>
-                <label for="energiaValor">Valor:</label>
-                <input type="text" id="energiaValor" name="energiaValor">
-            </div>
-            <div>
+            <div class="coluna">
                 <label for="internet">Internet:</label>
-                <input type="text" id="internet" name="internet">
-            </div>
-            <div>
-                <label for="internetValor">Valor:</label>
-                <input type="text" id="internetValor" name="internetValor">
+                <input type="text" id="internet" name="internet" placeholder="Ex: 150">
             </div>
 
             <h2>Investimentos</h2>
-            <label for="fundosInvestimentos">Fundos de Investimentos:</label>
-            <input type="text" id="fundosInvestimentos" name="fundosInvestimentos">
-
-            <label for="poupanca">Poupança:</label>
-            <input type="text" id="poupanca" name="poupanca">
+            <div class="coluna">
+                <label for="fundosInvestimentos">Fundos de Investimentos:</label>
+                <input type="text" id="fundosInvestimentos" name="fundosInvestimentos" placeholder="Ex: 10000">
+            </div>
+            <div class="coluna">
+                <label for="poupanca">Poupança:</label>
+                <input type="text" id="poupanca" name="poupanca" placeholder="Ex: 5000">
+            </div>
 
             <h2>Dívidas</h2>
-            <table id="dividasTable">
-                <tr>
-                    <th>Credor</th>
-                    <th>Saldo da Dívida Atual</th>
-                    <th>Juros Mensal</th>
-                    <th>Valor da Parcela</th>
-                </tr>
-                <tr>
-                    <td><input type="text" name="credor1"></td>
-                    <td><input type="text" name="saldoDivida1"></td>
-                    <td><input type="text" name="jurosMensal1"></td>
-                    <td><input type="text" name="valorParcela1"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="credor2"></td>
-                    <td><input type="text" name="saldoDivida2"></td>
-                    <td><input type="text" name="jurosMensal2"></td>
-                    <td><input type="text" name="valorParcela2"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="credor3" oninput="addRow()"></td>
-                    <td><input type="text" name="saldoDivida3"></td>
-                    <td><input type="text" name="jurosMensal3"></td>
-                    <td><input type="text" name="valorParcela3"></td>
-                </tr>
-            </table>
+            <div class="coluna">
+                <label for="credor">Credor:</label>
+                <input type="text" id="credor" name="credor" placeholder="Ex: Banco X">
+            </div>
+            <div class="coluna">
+                <label for="saldoDivida">Saldo da Dívida Atual:</label>
+                <input type="text" id="saldoDivida" name="saldoDivida" placeholder="Ex: 2000">
+            </div>
+            <div class="coluna">
+                <label for="jurosMensal">Juros Mensal:</label>
+                <input type="text" id="jurosMensal" name="jurosMensal" placeholder="Ex: 5%">
+            </div>
+            <div class="coluna">
+                <label for="valorParcela">Valor da Parcela:</label>
+                <input type="text" id="valorParcela" name="valorParcela" placeholder="Ex: 500">
+            </div>
 
             <h2>Balanço Patrimonial</h2>
-            <label for="ativosImobilizados">Ativos (Imobilizados):</label>
-            <input type="text" id="ativosImobilizados" name="ativosImobilizados">
-
-            <label for="passivosDividas">Passivos (Dívidas):</label>
-            <input type="text" id="passivosDividas" name="passivosDividas">
+            <div class="coluna">
+                <label for="ativosImobilizados">Ativos (Imobilizados):</label>
+                <input type="text" id="ativosImobilizados" name="ativosImobilizados" placeholder="Ex: 30000">
+            </div>
+            <div class="coluna">
+                <label for="passivosDividas">Passivos (Dívidas):</label>
+                <input type="text" id="passivosDividas" name="passivosDividas" placeholder="Ex: 15000">
+            </div>
 
             <h2>Calculadora de Liberdade Financeira</h2>
-            <label for="rendaAposentadoria">Quero me aposentar com uma renda de:</label>
-            <input type="text" id="rendaAposentadoria" name="rendaAposentadoria">
-
-            <label for="investimentoAtual">Quanto você tem hoje investido?</label>
-            <input type="text" id="investimentoAtual" name="investimentoAtual">
-
-            <label for="investimentoMensal">Quanto vai investir por mês?</label>
-            <input type="text" id="investimentoMensal" name="investimentoMensal">
+            <div class="coluna">
+                <label for="rendaAposentadoria">Quero me aposentar com uma renda de:</label>
+                <input type="text" id="rendaAposentadoria" name="rendaAposentadoria" placeholder="Ex: 5000">
+            </div>
+            <div class="coluna">
+                <label for="investimentoAtual">Quanto você tem hoje investido?</label>
+                <input type="text" id="investimentoAtual" name="investimentoAtual" placeholder="Ex: 20000">
+            </div>
+            <div class="coluna">
+                <label for="investimentoMensal">Quanto vai investir por mês?</label>
+                <input type="text" id="investimentoMensal" name="investimentoMensal" placeholder="Ex: 1000">
+            </div>
 
             <button type="submit" id="submitBtn">Enviar</button>
         </form>
@@ -139,31 +116,17 @@
                 nome: formData.get('nome'),
                 email: formData.get('email'),
                 salario: formData.get('salario'),
-                salarioValor: formData.get('salarioValor'),
                 decimoTerceiro: formData.get('decimoTerceiro'),
-                decimoTerceiroValor: formData.get('decimoTerceiroValor'),
                 dividendos: formData.get('dividendos'),
-                dividendosValor: formData.get('dividendosValor'),
                 aluguel: formData.get('aluguel'),
-                aluguelValor: formData.get('aluguelValor'),
                 energia: formData.get('energia'),
-                energiaValor: formData.get('energiaValor'),
                 internet: formData.get('internet'),
-                internetValor: formData.get('internetValor'),
                 fundosInvestimentos: formData.get('fundosInvestimentos'),
                 poupanca: formData.get('poupanca'),
-                credor1: formData.get('credor1'),
-                saldoDivida1: formData.get('saldoDivida1'),
-                jurosMensal1: formData.get('jurosMensal1'),
-                valorParcela1: formData.get('valorParcela1'),
-                credor2: formData.get('credor2'),
-                saldoDivida2: formData.get('saldoDivida2'),
-                jurosMensal2: formData.get('jurosMensal2'),
-                valorParcela2: formData.get('valorParcela2'),
-                credor3: formData.get('credor3'),
-                saldoDivida3: formData.get('saldoDivida3'),
-                jurosMensal3: formData.get('jurosMensal3'),
-                valorParcela3: formData.get('valorParcela3'),
+                credor: formData.get('credor'),
+                saldoDivida: formData.get('saldoDivida'),
+                jurosMensal: formData.get('jurosMensal'),
+                valorParcela: formData.get('valorParcela'),
                 ativosImobilizados: formData.get('ativosImobilizados'),
                 passivosDividas: formData.get('passivosDividas'),
                 rendaAposentadoria: formData.get('rendaAposentadoria'),
@@ -171,41 +134,22 @@
                 investimentoMensal: formData.get('investimentoMensal')
             };
 
-            // Enviar os dados para o Google Sheets (adapte esta parte conforme necessário)
+            // Enviar os dados via POST para o Google Apps Script
             fetch('https://script.google.com/macros/s/AKfycbyHEXk1Rbr_em6P3DS5xQiwEE7vZhSuOCqx-YP165rK7Coof-iD_xcI-U9wBBqeuVrE7Q/exec', {
                 method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+                body: new URLSearchParams(data),
             })
-            .then(response => response.json())
-            .then(data => {
+            .then(response => response.text())
+            .then(result => {
                 alert('Dados enviados com sucesso!');
-                e.target.reset(); // Limpar o formulário após o envio
+                console.log(result);
             })
             .catch(error => {
-                console.error('Erro ao enviar dados:', error);
+                console.error('Erro ao enviar os dados:', error);
+                alert('Houve um erro ao enviar os dados. Tente novamente.');
             });
         });
-
-        // Função para adicionar nova linha na tabela de dívidas
-        function addRow() {
-            const table = document.getElementById('dividasTable');
-            const rows = table.getElementsByTagName('tr');
-            const lastRow = rows[rows.length - 1];
-
-            // Verifica se a última linha da tabela está preenchida
-            if (lastRow.querySelector('input[name="credor3"]').value !== '') {
-                const newRow = table.insertRow(-1);
-                newRow.innerHTML = `
-                    <td><input type="text" name="credor${rows.length + 1}"></td>
-                    <td><input type="text" name="saldoDivida${rows.length + 1}"></td>
-                    <td><input type="text" name="jurosMensal${rows.length + 1}"></td>
-                    <td><input type="text" name="valorParcela${rows.length + 1}"></td>
-                `;
-            }
-        }
     </script>
+
 </body>
 </html>
