@@ -1,164 +1,211 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Formulário completo para controle financeiro pessoal, com receitas, despesas, investimentos e planejamento de liberdade financeira.">
-    <meta name="keywords" content="controle financeiro, planejamento financeiro, receitas, despesas, liberdade financeira">
+    <meta name="description" content="Formulário financeiro para coleta de receitas, despesas, dívidas e investimentos">
+    <meta name="keywords" content="finanças, formulário financeiro, receitas, despesas, investimentos, dívidas">
     <meta name="author" content="Seu Nome">
-    <title>Controle Financeiro Pessoal - Liberdade Financeira</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Formulário Financeiro</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Controle Financeiro Pessoal</h1>
-        <p>Organize suas finanças, gerencie receitas, despesas e planeje sua liberdade financeira.</p>
-    </header>
-
-    <section id="formulario-principal">
-        <h2>Informações Pessoais</h2>
+    <section id="formulario">
+        <h1>Formulário Financeiro</h1>
         <form id="formularioFinanceiro">
+            <h2>Dados Pessoais</h2>
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+            <input type="text" id="nome" name="nome" required>
 
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-        </form>
+            <input type="email" id="email" name="email" required>
 
-        <h2>Receitas</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Descrição</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Salário</td>
-                    <td><input type="number" name="salario"></td>
-                </tr>
-                <tr>
-                    <td>13º Salário</td>
-                    <td><input type="number" name="decimoTerceiro"></td>
-                </tr>
-                <tr>
-                    <td>Dividendos</td>
-                    <td><input type="number" name="dividendos"></td>
-                </tr>
-                <!-- Mais linhas de receitas aqui -->
-            </tbody>
-        </table>
+            <h2>Receitas</h2>
+            <div>
+                <label for="salario">Salário:</label>
+                <input type="text" id="salario" name="salario">
+            </div>
+            <div>
+                <label for="salario">Valor:</label>
+                <input type="text" id="salarioValor" name="salarioValor">
+            </div>
+            <div>
+                <label for="decimoTerceiro">13º Salário:</label>
+                <input type="text" id="decimoTerceiro" name="decimoTerceiro">
+            </div>
+            <div>
+                <label for="decimoTerceiroValor">Valor:</label>
+                <input type="text" id="decimoTerceiroValor" name="decimoTerceiroValor">
+            </div>
+            <div>
+                <label for="dividendos">Dividendos:</label>
+                <input type="text" id="dividendos" name="dividendos">
+            </div>
+            <div>
+                <label for="dividendosValor">Valor:</label>
+                <input type="text" id="dividendosValor" name="dividendosValor">
+            </div>
 
-        <h2>Despesas</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Descrição</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Aluguel</td>
-                    <td><input type="number" name="aluguel"></td>
-                </tr>
-                <tr>
-                    <td>Energia Elétrica</td>
-                    <td><input type="number" name="energia"></td>
-                </tr>
-                <tr>
-                    <td>Internet</td>
-                    <td><input type="number" name="internet"></td>
-                </tr>
-                <!-- Mais linhas de despesas aqui -->
-            </tbody>
-        </table>
+            <h2>Despesas</h2>
+            <div>
+                <label for="aluguel">Aluguel:</label>
+                <input type="text" id="aluguel" name="aluguel">
+            </div>
+            <div>
+                <label for="aluguelValor">Valor:</label>
+                <input type="text" id="aluguelValor" name="aluguelValor">
+            </div>
+            <div>
+                <label for="energia">Energia Elétrica:</label>
+                <input type="text" id="energia" name="energia">
+            </div>
+            <div>
+                <label for="energiaValor">Valor:</label>
+                <input type="text" id="energiaValor" name="energiaValor">
+            </div>
+            <div>
+                <label for="internet">Internet:</label>
+                <input type="text" id="internet" name="internet">
+            </div>
+            <div>
+                <label for="internetValor">Valor:</label>
+                <input type="text" id="internetValor" name="internetValor">
+            </div>
 
-        <h2>Investimentos</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Descrição</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Fundos de Investimentos</td>
-                    <td><input type="number" name="fundosInvestimentos"></td>
-                </tr>
-                <tr>
-                    <td>Poupança</td>
-                    <td><input type="number" name="poupanca"></td>
-                </tr>
-                <!-- Mais linhas de investimentos aqui -->
-            </tbody>
-        </table>
+            <h2>Investimentos</h2>
+            <label for="fundosInvestimentos">Fundos de Investimentos:</label>
+            <input type="text" id="fundosInvestimentos" name="fundosInvestimentos">
 
-        <h2>Tabela de Dívidas</h2>
-        <table id="tabelaDividas">
-            <thead>
+            <label for="poupanca">Poupança:</label>
+            <input type="text" id="poupanca" name="poupanca">
+
+            <h2>Dívidas</h2>
+            <table id="dividasTable">
                 <tr>
                     <th>Credor</th>
-                    <th>Saldo da Dívida</th>
+                    <th>Saldo da Dívida Atual</th>
                     <th>Juros Mensal</th>
                     <th>Valor da Parcela</th>
                 </tr>
-            </thead>
-            <tbody>
                 <tr>
-                    <td><input type="text" name="credor"></td>
-                    <td><input type="number" name="saldoDivida"></td>
-                    <td><input type="number" name="jurosMensal"></td>
-                    <td><input type="number" name="valorParcela"></td>
+                    <td><input type="text" name="credor1"></td>
+                    <td><input type="text" name="saldoDivida1"></td>
+                    <td><input type="text" name="jurosMensal1"></td>
+                    <td><input type="text" name="valorParcela1"></td>
                 </tr>
-                <!-- Mais linhas serão adicionadas dinamicamente -->
-            </tbody>
-        </table>
+                <tr>
+                    <td><input type="text" name="credor2"></td>
+                    <td><input type="text" name="saldoDivida2"></td>
+                    <td><input type="text" name="jurosMensal2"></td>
+                    <td><input type="text" name="valorParcela2"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="credor3" oninput="addRow()"></td>
+                    <td><input type="text" name="saldoDivida3"></td>
+                    <td><input type="text" name="jurosMensal3"></td>
+                    <td><input type="text" name="valorParcela3"></td>
+                </tr>
+            </table>
 
-        <h2>Balanço Patrimonial Pessoal</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Descrição</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Ativos (Patrimônio/Imobilizados)</td>
-                    <td><input type="number" name="ativosImobilizados"></td>
-                </tr>
-                <tr>
-                    <td>Passivos (Dívidas)</td>
-                    <td><input type="number" name="passivosDividas"></td>
-                </tr>
-                <!-- Mais linhas de balanço patrimonial aqui -->
-            </tbody>
-        </table>
+            <h2>Balanço Patrimonial</h2>
+            <label for="ativosImobilizados">Ativos (Imobilizados):</label>
+            <input type="text" id="ativosImobilizados" name="ativosImobilizados">
 
-        <h2>Calculadora de Liberdade Financeira</h2>
-        <form id="calculadoraLiberdade">
+            <label for="passivosDividas">Passivos (Dívidas):</label>
+            <input type="text" id="passivosDividas" name="passivosDividas">
+
+            <h2>Calculadora de Liberdade Financeira</h2>
             <label for="rendaAposentadoria">Quero me aposentar com uma renda de:</label>
-            <input type="number" id="rendaAposentadoria" name="rendaAposentadoria" placeholder="Renda desejada" required>
+            <input type="text" id="rendaAposentadoria" name="rendaAposentadoria">
 
-            <label for="investimentoAtual">Quanto você tem investido hoje?</label>
-            <input type="number" id="investimentoAtual" name="investimentoAtual" required>
+            <label for="investimentoAtual">Quanto você tem hoje investido?</label>
+            <input type="text" id="investimentoAtual" name="investimentoAtual">
 
             <label for="investimentoMensal">Quanto vai investir por mês?</label>
-            <input type="number" id="investimentoMensal" name="investimentoMensal" required>
+            <input type="text" id="investimentoMensal" name="investimentoMensal">
 
-            <button type="submit">Calcular</button>
+            <button type="submit" id="submitBtn">Enviar</button>
         </form>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Seu Nome - Controle Financeiro Pessoal</p>
-    </footer>
+    <script>
+        // Função para enviar os dados do formulário para o Google Sheets
+        document.getElementById('formularioFinanceiro').addEventListener('submit', function (e) {
+            e.preventDefault(); // Evitar recarregar a página ao enviar o formulário
 
-    <script src="script.js"></script>
+            // Coletar os dados do formulário
+            const formData = new FormData(e.target);
+            const data = {
+                nome: formData.get('nome'),
+                email: formData.get('email'),
+                salario: formData.get('salario'),
+                salarioValor: formData.get('salarioValor'),
+                decimoTerceiro: formData.get('decimoTerceiro'),
+                decimoTerceiroValor: formData.get('decimoTerceiroValor'),
+                dividendos: formData.get('dividendos'),
+                dividendosValor: formData.get('dividendosValor'),
+                aluguel: formData.get('aluguel'),
+                aluguelValor: formData.get('aluguelValor'),
+                energia: formData.get('energia'),
+                energiaValor: formData.get('energiaValor'),
+                internet: formData.get('internet'),
+                internetValor: formData.get('internetValor'),
+                fundosInvestimentos: formData.get('fundosInvestimentos'),
+                poupanca: formData.get('poupanca'),
+                credor1: formData.get('credor1'),
+                saldoDivida1: formData.get('saldoDivida1'),
+                jurosMensal1: formData.get('jurosMensal1'),
+                valorParcela1: formData.get('valorParcela1'),
+                credor2: formData.get('credor2'),
+                saldoDivida2: formData.get('saldoDivida2'),
+                jurosMensal2: formData.get('jurosMensal2'),
+                valorParcela2: formData.get('valorParcela2'),
+                credor3: formData.get('credor3'),
+                saldoDivida3: formData.get('saldoDivida3'),
+                jurosMensal3: formData.get('jurosMensal3'),
+                valorParcela3: formData.get('valorParcela3'),
+                ativosImobilizados: formData.get('ativosImobilizados'),
+                passivosDividas: formData.get('passivosDividas'),
+                rendaAposentadoria: formData.get('rendaAposentadoria'),
+                investimentoAtual: formData.get('investimentoAtual'),
+                investimentoMensal: formData.get('investimentoMensal')
+            };
+
+            // Enviar os dados para o Google Sheets (adapte esta parte conforme necessário)
+            fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Dados enviados com sucesso!');
+                e.target.reset(); // Limpar o formulário após o envio
+            })
+            .catch(error => {
+                console.error('Erro ao enviar dados:', error);
+            });
+        });
+
+        // Função para adicionar nova linha na tabela de dívidas
+        function addRow() {
+            const table = document.getElementById('dividasTable');
+            const rows = table.getElementsByTagName('tr');
+            const lastRow = rows[rows.length - 1];
+
+            // Verifica se a última linha da tabela está preenchida
+            if (lastRow.querySelector('input[name="credor3"]').value !== '') {
+                const newRow = table.insertRow(-1);
+                newRow.innerHTML = `
+                    <td><input type="text" name="credor${rows.length + 1}"></td>
+                    <td><input type="text" name="saldoDivida${rows.length + 1}"></td>
+                    <td><input type="text" name="jurosMensal${rows.length + 1}"></td>
+                    <td><input type="text" name="valorParcela${rows.length + 1}"></td>
+                `;
+            }
+        }
+    </script>
 </body>
 </html>
