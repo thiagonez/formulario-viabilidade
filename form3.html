@@ -7,7 +7,7 @@
     <meta name="keywords" content="controle financeiro, planejamento financeiro, receitas, despesas, liberdade financeira">
     <meta name="author" content="Seu Nome">
     <title>Controle Financeiro Pessoal - Liberdade Financeira</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -25,140 +25,180 @@
 
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-        </form>
 
-        <h2>Receitas</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Descrição</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Salário</td>
-                    <td><input type="number" name="salario"></td>
-                </tr>
-                <tr>
-                    <td>13º Salário</td>
-                    <td><input type="number" name="decimoTerceiro"></td>
-                </tr>
-                <tr>
-                    <td>Dividendos</td>
-                    <td><input type="number" name="dividendos"></td>
-                </tr>
-                <!-- Mais linhas de receitas aqui -->
-            </tbody>
-        </table>
+            <h2>Receitas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Salário</td>
+                        <td><input type="number" name="salario" id="salario"></td>
+                    </tr>
+                    <tr>
+                        <td>13º Salário</td>
+                        <td><input type="number" name="decimoTerceiro" id="decimoTerceiro"></td>
+                    </tr>
+                    <tr>
+                        <td>Dividendos</td>
+                        <td><input type="number" name="dividendos" id="dividendos"></td>
+                    </tr>
+                    <!-- Mais receitas -->
+                </tbody>
+            </table>
 
-        <h2>Despesas</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Descrição</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Aluguel</td>
-                    <td><input type="number" name="aluguel"></td>
-                </tr>
-                <tr>
-                    <td>Energia Elétrica</td>
-                    <td><input type="number" name="energia"></td>
-                </tr>
-                <tr>
-                    <td>Internet</td>
-                    <td><input type="number" name="internet"></td>
-                </tr>
-                <!-- Mais linhas de despesas aqui -->
-            </tbody>
-        </table>
+            <h2>Despesas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Aluguel</td>
+                        <td><input type="number" name="aluguel" id="aluguel"></td>
+                    </tr>
+                    <tr>
+                        <td>Energia Elétrica</td>
+                        <td><input type="number" name="energia" id="energia"></td>
+                    </tr>
+                    <tr>
+                        <td>Internet</td>
+                        <td><input type="number" name="internet" id="internet"></td>
+                    </tr>
+                    <!-- Mais despesas -->
+                </tbody>
+            </table>
 
-        <h2>Investimentos</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Descrição</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Fundos de Investimentos</td>
-                    <td><input type="number" name="fundosInvestimentos"></td>
-                </tr>
-                <tr>
-                    <td>Poupança</td>
-                    <td><input type="number" name="poupanca"></td>
-                </tr>
-                <!-- Mais linhas de investimentos aqui -->
-            </tbody>
-        </table>
+            <h2>Investimentos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fundos de Investimentos</td>
+                        <td><input type="number" name="fundosInvestimentos" id="fundosInvestimentos"></td>
+                    </tr>
+                    <tr>
+                        <td>Poupança</td>
+                        <td><input type="number" name="poupanca" id="poupanca"></td>
+                    </tr>
+                    <!-- Mais investimentos -->
+                </tbody>
+            </table>
 
-        <h2>Tabela de Dívidas</h2>
-        <table id="tabelaDividas">
-            <thead>
-                <tr>
-                    <th>Credor</th>
-                    <th>Saldo da Dívida</th>
-                    <th>Juros Mensal</th>
-                    <th>Valor da Parcela</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="text" name="credor"></td>
-                    <td><input type="number" name="saldoDivida"></td>
-                    <td><input type="number" name="jurosMensal"></td>
-                    <td><input type="number" name="valorParcela"></td>
-                </tr>
-                <!-- Mais linhas serão adicionadas dinamicamente -->
-            </tbody>
-        </table>
+            <h2>Dívidas</h2>
+            <table id="tabelaDividas">
+                <thead>
+                    <tr>
+                        <th>Credor</th>
+                        <th>Saldo da Dívida</th>
+                        <th>Juros Mensal</th>
+                        <th>Valor da Parcela</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="credor" id="credor"></td>
+                        <td><input type="number" name="saldoDivida" id="saldoDivida"></td>
+                        <td><input type="number" name="jurosMensal" id="jurosMensal"></td>
+                        <td><input type="number" name="valorParcela" id="valorParcela"></td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <h2>Balanço Patrimonial Pessoal</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Descrição</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Ativos (Patrimônio/Imobilizados)</td>
-                    <td><input type="number" name="ativosImobilizados"></td>
-                </tr>
-                <tr>
-                    <td>Passivos (Dívidas)</td>
-                    <td><input type="number" name="passivosDividas"></td>
-                </tr>
-                <!-- Mais linhas de balanço patrimonial aqui -->
-            </tbody>
-        </table>
+            <h2>Balanço Patrimonial</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ativos</td>
+                        <td><input type="number" name="ativosImobilizados" id="ativosImobilizados"></td>
+                    </tr>
+                    <tr>
+                        <td>Passivos</td>
+                        <td><input type="number" name="passivosDividas" id="passivosDividas"></td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <h2>Calculadora de Liberdade Financeira</h2>
-        <form id="calculadoraLiberdade">
-            <label for="rendaAposentadoria">Quero me aposentar com uma renda de:</label>
-            <input type="number" id="rendaAposentadoria" name="rendaAposentadoria" placeholder="Renda desejada" required>
+            <h2>Calculadora de Liberdade Financeira</h2>
+            <label for="rendaAposentadoria">Renda desejada na aposentadoria:</label>
+            <input type="number" id="rendaAposentadoria" name="rendaAposentadoria" required>
 
-            <label for="investimentoAtual">Quanto você tem investido hoje?</label>
+            <label for="investimentoAtual">Investimento atual:</label>
             <input type="number" id="investimentoAtual" name="investimentoAtual" required>
 
-            <label for="investimentoMensal">Quanto vai investir por mês?</label>
+            <label for="investimentoMensal">Investimento mensal:</label>
             <input type="number" id="investimentoMensal" name="investimentoMensal" required>
 
-            <button type="submit">Calcular</button>
+             <!-- Botão Enviar -->
+
+            <button type="submit" id="submitBtn">Enviar</button>
         </form>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Seu Nome - Controle Financeiro Pessoal</p>
-    </footer>
+    <script>
+        // Função para enviar os dados do formulário para o Google Sheets
+        document.getElementById('formularioFinanceiro').addEventListener('submit', function (e) {
+            e.preventDefault(); // Evitar recarregar a página ao enviar o formulário
 
-    <script src="script.js"></script>
+            // Coletar os dados do formulário
+            const formData = new FormData(e.target);
+            const data = {
+                nome: formData.get('nome'),
+                email: formData.get('email'),
+                salario: formData.get('salario'),
+                decimoTerceiro: formData.get('decimoTerceiro'),
+                dividendos: formData.get('dividendos'),
+                aluguel: formData.get('aluguel'),
+                energia: formData.get('energia'),
+                internet: formData.get('internet'),
+                fundosInvestimentos: formData.get('fundosInvestimentos'),
+                poupanca: formData.get('poupanca'),
+                credor: formData.get('credor'),
+                saldoDivida: formData.get('saldoDivida'),
+                jurosMensal: formData.get('jurosMensal'),
+                valorParcela: formData.get('valorParcela'),
+                ativosImobilizados: formData.get('ativosImobilizados'),
+                passivosDividas: formData.get('passivosDividas'),
+                rendaAposentadoria: formData.get('rendaAposentadoria'),
+                investimentoAtual: formData.get('investimentoAtual'),
+                investimentoMensal: formData.get('investimentoMensal')
+            };
+
+            // Enviar os dados via POST para o Google Apps Script
+            fetch('https://script.google.com/macros/s/YOUR_SCRIPT_URL/exec', {
+                method: 'POST',
+                body: new URLSearchParams(data),
+            })
+            .then(response => response.text())
+            .then(result => {
+                alert('Dados enviados com sucesso!');
+                console.log(result);
+            })
+            .catch(error => {
+                console.error('Erro ao enviar os dados:', error);
+                alert('Houve um erro ao enviar os dados. Tente novamente.');
+            });
+        });
+    </script>
+
 </body>
 </html>
+
