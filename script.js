@@ -1,34 +1,46 @@
-document.getElementById('addRowBtn').addEventListener('click', function() {
-    const table = document.getElementById('dividasTable').getElementsByTagName('tbody')[0];
-    const newRow = table.insertRow();
-    newRow.innerHTML = `
-        <td><input type="text" name="credor" placeholder="Credor"></td>
-        <td><input type="number" name="saldo" placeholder="Valor"></td>
-        <td><input type="number" name="juros" placeholder="Valor"></td>
-        <td><input type="number" name="parcela" placeholder="Valor"></td>
-    `;
+// Função para adicionar novas linhas automaticamente na tabela de dívidas
+document.addEventListener('DOMContentLoaded', function() {
+    const tabelaDividas = document.querySelector('#tabelaDividas tbody');
+    
+    tabelaDividas.addEventListener('input', function(event) {
+        const ultimaLinha = tabelaDividas.lastElementChild;
+        const inputsPreenchidos = Array.from(ultimaLinha.querySelectorAll('input')).some(input => input.value !== '');
+        
+        if (inputsPreenchidos) {
+            const novaLinha = ultimaLinha.cloneNode(true);
+            novaLinha.querySelectorAll('input').forEach(input => input.value = '');
+            tabelaDividas.appendChild(novaLinha);
+        }
+    });
 });
 
-// Envio do formulário para o Google Sheets
-document.getElementById('financialForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Previne o envio padrão
+// Simulação da Calculadora de Liberdade Financeira
+document.getElementById('calculadoraLiberdade').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const rendaAposentadoria = parseFloat(document.getElementById('rendaAposentadoria').value);
+    const investimentoAtual = parseFloat(document.getElementById('investimentoAtual').value);
+    const investimentoMensal = parseFloat(document.getElementById('investimentoMensal').value);
+    
+    if (isNaN(rendaAposentadoria) || isNaN(investimentoAtual) || isNaN(investimentoMensal)) {
+        alert('Por favor, preencha todos os campos corretamente.');
+        return;
+    }
 
-    const formData = new FormData(this);
-    const formObject = Object.fromEntries(formData.entries());
+    const anosAteAposentadoria = 20; // Exemplo de cálculo para 20 anos
+    const rendimentoAnual = 0.06; // Rendimento anual de 6%
 
-    fetch('https://script.google.com/macros/s/AKfycbyb22UGgr5nv8v3EpCMDrlnzGp0nDTXVPerHd2-znQa/exec', {
-        method: 'POST',
-        body: JSON.stringify(formObject),
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert(data);
-        this.reset(); // Limpa o formulário
-    })
-    .catch(error => {
-        console.error('Houve um erro ao enviar os dados:', error);
-    });
+    let totalInvestido = investimentoAtual;
+    for (let i = 0; i < anosAteAposentadoria; i++) {
+        totalInvestido += investimentoMensal * 12;
+        totalInvestido += totalInvestido * rendimentoAnual;
+    }
+
+    const rendaGerada = totalInvestido * rendimentoAnual;
+
+    if (rendaGerada >= rendaAposentadoria) {
+        alert('Parabéns! Você alcançará sua meta de liberdade financeira.');
+    } else {
+        alert('Você precisará aumentar seus investimentos para atingir a meta.');
+    }
 });
