@@ -1,116 +1,163 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário Financeiro</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Formulário completo para controle financeiro pessoal, com receitas, despesas, investimentos e planejamento de liberdade financeira.">
+    <meta name="keywords" content="controle financeiro, planejamento financeiro, receitas, despesas, liberdade financeira">
+    <meta name="author" content="Seu Nome">
+    <title>Controle Financeiro Pessoal - Liberdade Financeira</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Formulário Financeiro Pessoal</h1>
-        
-        <form id="financeForm">
-            <!-- Coleta de Nome e E-mail -->
-            <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
-            </div>
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-            </div>
+    <header>
+        <h1>Controle Financeiro Pessoal</h1>
+        <p>Organize suas finanças, gerencie receitas, despesas e planeje sua liberdade financeira.</p>
+    </header>
 
-            <!-- Tabela de Receitas -->
-            <h2>Receitas</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Título</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody id="receitasTable">
-                    <tr><td>Salário</td><td><input type="number" placeholder="R$ 0,00"></td></tr>
-                    <tr><td>13º salário</td><td><input type="number" placeholder="R$ 0,00"></td></tr>
-                    <tr><td>Dividendos</td><td><input type="number" placeholder="R$ 0,00"></td></tr>
-                    <tr><td>Férias</td><td><input type="number" placeholder="R$ 0,00"></td></tr>
-                    <!-- Adicione mais receitas conforme necessário -->
-                </tbody>
-            </table>
+    <section id="formulario-principal">
+        <h2>Informações Pessoais</h2>
+        <form id="formularioFinanceiro">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
 
-            <!-- Tabela de Despesas -->
-            <h2>Despesas</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Título</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody id="despesasTable">
-                    <tr><td>Aluguel / Prestação</td><td><input type="number" placeholder="R$ 0,00"></td></tr>
-                    <tr><td>Supermercado</td><td><input type="number" placeholder="R$ 0,00"></td></tr>
-                    <tr><td>Internet</td><td><input type="number" placeholder="R$ 0,00"></td></tr>
-                    <!-- Adicione mais despesas conforme necessário -->
-                </tbody>
-            </table>
-
-            <!-- Tabela de Dívidas -->
-            <h2>Dívidas</h2>
-            <table id="dividasTable">
-                <thead>
-                    <tr>
-                        <th>Credor</th>
-                        <th>Saldo da Dívida Atual</th>
-                        <th>Juros Mensal (%)</th>
-                        <th>Valor da Parcela</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="text" placeholder="Nome do Credor"></td>
-                        <td><input type="number" placeholder="R$ 0,00"></td>
-                        <td><input type="number" placeholder="0"></td>
-                        <td><input type="number" placeholder="R$ 0,00"></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <!-- Balanço Patrimonial -->
-            <h2>Balanço Patrimonial Pessoal</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Ativo</th>
-                        <th>Passivo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td><input type="number" placeholder="Ativos"></td><td><input type="number" placeholder="Passivos"></td></tr>
-                </tbody>
-            </table>
-
-            <!-- Calculadora de Liberdade Financeira -->
-            <h2>Calculadora de Liberdade Financeira</h2>
-            <div class="form-group">
-                <label for="retirementIncome">Quero me aposentar com uma renda de:</label>
-                <input type="number" id="retirementIncome" placeholder="R$ 0,00">
-            </div>
-            <div class="form-group">
-                <label for="currentInvestment">Quanto você tem hoje investido?</label>
-                <input type="number" id="currentInvestment" placeholder="R$ 0,00">
-            </div>
-            <div class="form-group">
-                <label for="monthlyInvestment">Quanto vai investir por mês?</label>
-                <input type="number" id="monthlyInvestment" placeholder="R$ 0,00">
-            </div>
-
-            <button type="submit">Enviar</button>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
         </form>
-    </div>
+
+        <h2>Receitas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Salário</td>
+                    <td><input type="number" name="salario"></td>
+                </tr>
+                <tr>
+                    <td>13º Salário</td>
+                    <td><input type="number" name="decimoTerceiro"></td>
+                </tr>
+                <tr>
+                    <td>Dividendos</td>
+                    <td><input type="number" name="dividendos"></td>
+                </tr>
+                <!-- Mais linhas de receitas aqui -->
+            </tbody>
+        </table>
+
+        <h2>Despesas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aluguel</td>
+                    <td><input type="number" name="aluguel"></td>
+                </tr>
+                <tr>
+                    <td>Energia Elétrica</td>
+                    <td><input type="number" name="energia"></td>
+                </tr>
+                <tr>
+                    <td>Internet</td>
+                    <td><input type="number" name="internet"></td>
+                </tr>
+                <!-- Mais linhas de despesas aqui -->
+            </tbody>
+        </table>
+
+        <h2>Investimentos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fundos de Investimentos</td>
+                    <td><input type="number" name="fundosInvestimentos"></td>
+                </tr>
+                <tr>
+                    <td>Poupança</td>
+                    <td><input type="number" name="poupanca"></td>
+                </tr>
+                <!-- Mais linhas de investimentos aqui -->
+            </tbody>
+        </table>
+
+        <h2>Tabela de Dívidas</h2>
+        <table id="tabelaDividas">
+            <thead>
+                <tr>
+                    <th>Credor</th>
+                    <th>Saldo da Dívida</th>
+                    <th>Juros Mensal</th>
+                    <th>Valor da Parcela</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="credor"></td>
+                    <td><input type="number" name="saldoDivida"></td>
+                    <td><input type="number" name="jurosMensal"></td>
+                    <td><input type="number" name="valorParcela"></td>
+                </tr>
+                <!-- Mais linhas serão adicionadas dinamicamente -->
+            </tbody>
+        </table>
+
+        <h2>Balanço Patrimonial Pessoal</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ativos (Patrimônio/Imobilizados)</td>
+                    <td><input type="number" name="ativosImobilizados"></td>
+                </tr>
+                <tr>
+                    <td>Passivos (Dívidas)</td>
+                    <td><input type="number" name="passivosDividas"></td>
+                </tr>
+                <!-- Mais linhas de balanço patrimonial aqui -->
+            </tbody>
+        </table>
+
+        <h2>Calculadora de Liberdade Financeira</h2>
+        <form id="calculadoraLiberdade">
+            <label for="rendaAposentadoria">Quero me aposentar com uma renda de:</label>
+            <input type="number" id="rendaAposentadoria" name="rendaAposentadoria" placeholder="Renda desejada" required>
+
+            <label for="investimentoAtual">Quanto você tem investido hoje?</label>
+            <input type="number" id="investimentoAtual" name="investimentoAtual" required>
+
+            <label for="investimentoMensal">Quanto vai investir por mês?</label>
+            <input type="number" id="investimentoMensal" name="investimentoMensal" required>
+
+            <button type="submit">Calcular</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Seu Nome - Controle Financeiro Pessoal</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
