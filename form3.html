@@ -1,125 +1,133 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulário financeiro para coleta de receitas, despesas, dívidas e investimentos">
+    <meta name="keywords" content="finanças, formulário financeiro, receitas, despesas, investimentos, dívidas">
+    <meta name="author" content="Seu Nome">
     <title>Formulário Financeiro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <section id="formulario">
         <h1>Formulário Financeiro</h1>
-        <form id="financialForm">
-            <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-            </div>
-            <div class="form-group">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
+        <form id="formularioFinanceiro">
+            <h2>Dados Pessoais</h2>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
 
             <h2>Receitas</h2>
-            <table id="receitasTable">
-                <tbody>
-                    <tr>
-                        <td>Salário</td>
-                        <td><input type="number" name="salario" placeholder="Valor"></td>
-                    </tr>
-                    <tr>
-                        <td>13º salário</td>
-                        <td><input type="number" name="decimoTerceiro" placeholder="Valor"></td>
-                    </tr>
-                    <tr>
-                        <td>Dividendos</td>
-                        <td><input type="number" name="dividendos" placeholder="Valor"></td>
-                    </tr>
-                    <tr>
-                        <td>Férias</td>
-                        <td><input type="number" name="ferias" placeholder="Valor"></td>
-                    </tr>
-                    <tr>
-                        <td>Horas extras</td>
-                        <td><input type="number" name="horasExtras" placeholder="Valor"></td>
-                    </tr>
-                    <tr>
-                        <td>IR</td>
-                        <td><input type="number" name="ir" placeholder="Valor"></td>
-                    </tr>
-                    <tr>
-                        <td>Outras Receitas</td>
-                        <td><input type="number" name="outrasReceitas" placeholder="Valor"></td>
-                    </tr>
-                </tbody>
-            </table>
+            <label for="salario">Salário:</label>
+            <input type="text" id="salario" name="salario">
 
+            <label for="decimoTerceiro">13º Salário:</label>
+            <input type="text" id="decimoTerceiro" name="decimoTerceiro">
+
+            <label for="dividendos">Dividendos:</label>
+            <input type="text" id="dividendos" name="dividendos">
+
+            <!-- Você pode continuar com o restante dos campos da mesma forma -->
+            
             <h2>Despesas</h2>
-            <table id="despesasTable">
-                <tbody>
-                    <tr>
-                        <td>Celular</td>
-                        <td><input type="number" name="celular" placeholder="Valor"></td>
-                    </tr>
-                    <tr>
-                        <td>Condomínio</td>
-                        <td><input type="number" name="condominio" placeholder="Valor"></td>
-                    </tr>
-                    <tr>
-                        <td>Consumo de água</td>
-                        <td><input type="number" name="agua" placeholder="Valor"></td>
-                    </tr>
-                    <tr>
-                        <td>Energia Elétrica</td>
-                        <td><input type="number" name="energia" placeholder="Valor"></td>
-                    </tr>
-                    <tr>
-                        <td>Internet / TV a cabo</td>
-                        <td><input type="number" name="internet" placeholder="Valor"></td>
-                    </tr>
-                    <!-- Adicione mais despesas conforme necessário -->
-                </tbody>
-            </table>
+            <label for="aluguel">Aluguel:</label>
+            <input type="text" id="aluguel" name="aluguel">
+
+            <label for="energia">Energia Elétrica:</label>
+            <input type="text" id="energia" name="energia">
+
+            <label for="internet">Internet:</label>
+            <input type="text" id="internet" name="internet">
+
+            <h2>Investimentos</h2>
+            <label for="fundosInvestimentos">Fundos de Investimentos:</label>
+            <input type="text" id="fundosInvestimentos" name="fundosInvestimentos">
+
+            <label for="poupanca">Poupança:</label>
+            <input type="text" id="poupanca" name="poupanca">
 
             <h2>Dívidas</h2>
-            <table id="dividasTable">
-                <thead>
-                    <tr>
-                        <th>Credor</th>
-                        <th>Saldo da dívida atual</th>
-                        <th>Juros mensal</th>
-                        <th>Valor da parcela</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="text" name="credor" placeholder="Credor"></td>
-                        <td><input type="number" name="saldo" placeholder="Valor"></td>
-                        <td><input type="number" name="juros" placeholder="Valor"></td>
-                        <td><input type="number" name="parcela" placeholder="Valor"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="credor" placeholder="Credor"></td>
-                        <td><input type="number" name="saldo" placeholder="Valor"></td>
-                        <td><input type="number" name="juros" placeholder="Valor"></td>
-                        <td><input type="number" name="parcela" placeholder="Valor"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="credor" placeholder="Credor"></td>
-                        <td><input type="number" name="saldo" placeholder="Valor"></td>
-                        <td><input type="number" name="juros" placeholder="Valor"></td>
-                        <td><input type="number" name="parcela" placeholder="Valor"></td>
-                    </tr>
-                </tbody>
-            </table>
+            <label for="credor">Credor:</label>
+            <input type="text" id="credor" name="credor">
 
-            <button type="button" id="addRowBtn">Adicionar Dívida</button>
+            <label for="saldoDivida">Saldo da Dívida Atual:</label>
+            <input type="text" id="saldoDivida" name="saldoDivida">
 
-            <button type="submit">Enviar</button>
+            <label for="jurosMensal">Juros Mensal:</label>
+            <input type="text" id="jurosMensal" name="jurosMensal">
+
+            <label for="valorParcela">Valor da Parcela:</label>
+            <input type="text" id="valorParcela" name="valorParcela">
+
+            <h2>Balanço Patrimonial</h2>
+            <label for="ativosImobilizados">Ativos (Imobilizados):</label>
+            <input type="text" id="ativosImobilizados" name="ativosImobilizados">
+
+            <label for="passivosDividas">Passivos (Dívidas):</label>
+            <input type="text" id="passivosDividas" name="passivosDividas">
+
+            <h2>Calculadora de Liberdade Financeira</h2>
+            <label for="rendaAposentadoria">Quero me aposentar com uma renda de:</label>
+            <input type="text" id="rendaAposentadoria" name="rendaAposentadoria">
+
+            <label for="investimentoAtual">Quanto você tem hoje investido?</label>
+            <input type="text" id="investimentoAtual" name="investimentoAtual">
+
+            <label for="investimentoMensal">Quanto vai investir por mês?</label>
+            <input type="text" id="investimentoMensal" name="investimentoMensal">
+
+            <button type="submit" id="submitBtn">Enviar</button>
         </form>
-    </div>
+    </section>
 
-    <script src="script.js"></script>
+    <script>
+        // Função para enviar os dados do formulário para o Google Sheets
+        document.getElementById('formularioFinanceiro').addEventListener('submit', function (e) {
+            e.preventDefault(); // Evitar recarregar a página ao enviar o formulário
+
+            // Coletar os dados do formulário
+            const formData = new FormData(e.target);
+            const data = {
+                nome: formData.get('nome'),
+                email: formData.get('email'),
+                salario: formData.get('salario'),
+                decimoTerceiro: formData.get('decimoTerceiro'),
+                dividendos: formData.get('dividendos'),
+                aluguel: formData.get('aluguel'),
+                energia: formData.get('energia'),
+                internet: formData.get('internet'),
+                fundosInvestimentos: formData.get('fundosInvestimentos'),
+                poupanca: formData.get('poupanca'),
+                credor: formData.get('credor'),
+                saldoDivida: formData.get('saldoDivida'),
+                jurosMensal: formData.get('jurosMensal'),
+                valorParcela: formData.get('valorParcela'),
+                ativosImobilizados: formData.get('ativosImobilizados'),
+                passivosDividas: formData.get('passivosDividas'),
+                rendaAposentadoria: formData.get('rendaAposentadoria'),
+                investimentoAtual: formData.get('investimentoAtual'),
+                investimentoMensal: formData.get('investimentoMensal')
+            };
+
+            // Enviar os dados via POST para o Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbyb22UGgr5nv8v3EpCMDrlnzGp0nDTXVPerHd2-znQa/exec', {
+                method: 'POST',
+                body: new URLSearchParams(data),
+            })
+            .then(response => response.text())
+            .then(result => {
+                alert('Dados enviados com sucesso!');
+                console.log(result);
+            })
+            .catch(error => {
+                console.error('Erro ao enviar os dados:', error);
+                alert('Houve um erro ao enviar os dados. Tente novamente.');
+            });
+        });
+    </script>
+
 </body>
 </html>
