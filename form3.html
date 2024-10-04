@@ -1,153 +1,83 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Formulário completo para controle financeiro pessoal, com receitas, despesas, investimentos e planejamento de liberdade financeira.">
-    <meta name="keywords" content="controle financeiro, planejamento financeiro, receitas, despesas, liberdade financeira">
+    <meta name="description" content="Formulário financeiro para coleta de receitas, despesas, dívidas e investimentos">
+    <meta name="keywords" content="finanças, formulário financeiro, receitas, despesas, investimentos, dívidas">
     <meta name="author" content="Seu Nome">
-    <title>Controle Financeiro Pessoal - Liberdade Financeira</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Formulário Financeiro</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Controle Financeiro Pessoal</h1>
-        <p>Organize suas finanças, gerencie receitas, despesas e planeje sua liberdade financeira.</p>
-    </header>
-
-    <section id="formulario-principal">
-        <h2>Informações Pessoais</h2>
+    <section id="formulario">
+        <h1>Formulário Financeiro</h1>
         <form id="formularioFinanceiro">
+            <h2>Dados Pessoais</h2>
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+            <input type="text" id="nome" name="nome" required>
 
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+            <input type="email" id="email" name="email" required>
 
             <h2>Receitas</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Descrição</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Salário</td>
-                        <td><input type="number" name="salario" id="salario"></td>
-                    </tr>
-                    <tr>
-                        <td>13º Salário</td>
-                        <td><input type="number" name="decimoTerceiro" id="decimoTerceiro"></td>
-                    </tr>
-                    <tr>
-                        <td>Dividendos</td>
-                        <td><input type="number" name="dividendos" id="dividendos"></td>
-                    </tr>
-                    <!-- Mais receitas -->
-                </tbody>
-            </table>
+            <label for="salario">Salário:</label>
+            <input type="text" id="salario" name="salario">
 
+            <label for="decimoTerceiro">13º Salário:</label>
+            <input type="text" id="decimoTerceiro" name="decimoTerceiro">
+
+            <label for="dividendos">Dividendos:</label>
+            <input type="text" id="dividendos" name="dividendos">
+
+            <!-- Você pode continuar com o restante dos campos da mesma forma -->
+            
             <h2>Despesas</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Descrição</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Aluguel</td>
-                        <td><input type="number" name="aluguel" id="aluguel"></td>
-                    </tr>
-                    <tr>
-                        <td>Energia Elétrica</td>
-                        <td><input type="number" name="energia" id="energia"></td>
-                    </tr>
-                    <tr>
-                        <td>Internet</td>
-                        <td><input type="number" name="internet" id="internet"></td>
-                    </tr>
-                    <!-- Mais despesas -->
-                </tbody>
-            </table>
+            <label for="aluguel">Aluguel:</label>
+            <input type="text" id="aluguel" name="aluguel">
+
+            <label for="energia">Energia Elétrica:</label>
+            <input type="text" id="energia" name="energia">
+
+            <label for="internet">Internet:</label>
+            <input type="text" id="internet" name="internet">
 
             <h2>Investimentos</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Descrição</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Fundos de Investimentos</td>
-                        <td><input type="number" name="fundosInvestimentos" id="fundosInvestimentos"></td>
-                    </tr>
-                    <tr>
-                        <td>Poupança</td>
-                        <td><input type="number" name="poupanca" id="poupanca"></td>
-                    </tr>
-                    <!-- Mais investimentos -->
-                </tbody>
-            </table>
+            <label for="fundosInvestimentos">Fundos de Investimentos:</label>
+            <input type="text" id="fundosInvestimentos" name="fundosInvestimentos">
+
+            <label for="poupanca">Poupança:</label>
+            <input type="text" id="poupanca" name="poupanca">
 
             <h2>Dívidas</h2>
-            <table id="tabelaDividas">
-                <thead>
-                    <tr>
-                        <th>Credor</th>
-                        <th>Saldo da Dívida</th>
-                        <th>Juros Mensal</th>
-                        <th>Valor da Parcela</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="text" name="credor" id="credor"></td>
-                        <td><input type="number" name="saldoDivida" id="saldoDivida"></td>
-                        <td><input type="number" name="jurosMensal" id="jurosMensal"></td>
-                        <td><input type="number" name="valorParcela" id="valorParcela"></td>
-                    </tr>
-                </tbody>
-            </table>
+            <label for="credor">Credor:</label>
+            <input type="text" id="credor" name="credor">
+
+            <label for="saldoDivida">Saldo da Dívida Atual:</label>
+            <input type="text" id="saldoDivida" name="saldoDivida">
+
+            <label for="jurosMensal">Juros Mensal:</label>
+            <input type="text" id="jurosMensal" name="jurosMensal">
+
+            <label for="valorParcela">Valor da Parcela:</label>
+            <input type="text" id="valorParcela" name="valorParcela">
 
             <h2>Balanço Patrimonial</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Descrição</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Ativos</td>
-                        <td><input type="number" name="ativosImobilizados" id="ativosImobilizados"></td>
-                    </tr>
-                    <tr>
-                        <td>Passivos</td>
-                        <td><input type="number" name="passivosDividas" id="passivosDividas"></td>
-                    </tr>
-                </tbody>
-            </table>
+            <label for="ativosImobilizados">Ativos (Imobilizados):</label>
+            <input type="text" id="ativosImobilizados" name="ativosImobilizados">
+
+            <label for="passivosDividas">Passivos (Dívidas):</label>
+            <input type="text" id="passivosDividas" name="passivosDividas">
 
             <h2>Calculadora de Liberdade Financeira</h2>
-            <label for="rendaAposentadoria">Renda desejada na aposentadoria:</label>
-            <input type="number" id="rendaAposentadoria" name="rendaAposentadoria" required>
+            <label for="rendaAposentadoria">Quero me aposentar com uma renda de:</label>
+            <input type="text" id="rendaAposentadoria" name="rendaAposentadoria">
 
-            <label for="investimentoAtual">Investimento atual:</label>
-            <input type="number" id="investimentoAtual" name="investimentoAtual" required>
+            <label for="investimentoAtual">Quanto você tem hoje investido?</label>
+            <input type="text" id="investimentoAtual" name="investimentoAtual">
 
-            <label for="investimentoMensal">Investimento mensal:</label>
-            <input type="number" id="investimentoMensal" name="investimentoMensal" required>
-
-             <!-- Botão Enviar -->
+            <label for="investimentoMensal">Quanto vai investir por mês?</label>
+            <input type="text" id="investimentoMensal" name="investimentoMensal">
 
             <button type="submit" id="submitBtn">Enviar</button>
         </form>
@@ -201,4 +131,3 @@
 
 </body>
 </html>
-
