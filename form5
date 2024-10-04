@@ -1,0 +1,190 @@
+<h2>Dívidas</h2>
+<div class="dividas-container">
+    <div class="divida">
+        <label for="credor1">Credor:</label>
+        <input type="text" id="credor1" name="credor1" placeholder="Ex: Banco X">
+    </div>
+    <div class="divida">
+        <label for="saldoDivida1">Saldo da Dívida Atual:</label>
+        <input type="text" id="saldoDivida1" name="saldoDivida1" placeholder="Ex: 2000">
+    </div>
+    <div class="divida">
+        <label for="jurosMensal1">Juros Mensal:</label>
+        <input type="text" id="jurosMensal1" name="jurosMensal1" placeholder="Ex: 5%">
+    </div>
+    <div class="divida">
+        <label for="valorParcela1">Valor da Parcela:</label>
+        <input type="text" id="valorParcela1" name="valorParcela1" placeholder="Ex: 500">
+    </div>
+</div>
+
+<div class="dividas-container">
+    <div class="divida">
+        <label for="credor2">Credor:</label>
+        <input type="text" id="credor2" name="credor2" placeholder="Ex: Banco Y">
+    </div>
+    <div class="divida">
+        <label for="saldoDivida2">Saldo da Dívida Atual:</label>
+        <input type="text" id="saldoDivida2" name="saldoDivida2" placeholder="Ex: 3000">
+    </div>
+    <div class="divida">
+        <label for="jurosMensal2">Juros Mensal:</label>
+        <input type="text" id="jurosMensal2" name="jurosMensal2" placeholder="Ex: 4%">
+    </div>
+    <div class="divida">
+        <label for="valorParcela2">Valor da Parcela:</label>
+        <input type="text" id="valorParcela2" name="valorParcela2" placeholder="Ex: 600">
+    </div>
+</div>
+
+<div class="dividas-container">
+    <div class="divida">
+        <label for="credor3">Credor:</label>
+        <input type="text" id="credor3" name="credor3" placeholder="Ex: Banco Z">
+    </div>
+    <div class="divida">
+        <label for="saldoDivida3">Saldo da Dívida Atual:</label>
+        <input type="text" id="saldoDivida3" name="saldoDivida3" placeholder="Ex: 1500">
+    </div>
+    <div class="divida">
+        <label for="jurosMensal3">Juros Mensal:</label>
+        <input type="text" id="jurosMensal3" name="jurosMensal3" placeholder="Ex: 6%">
+    </div>
+    <div class="divida">
+        <label for="valorParcela3">Valor da Parcela:</label>
+        <input type="text" id="valorParcela3" name="valorParcela3" placeholder="Ex: 300">
+    </div>
+</div>
+
+<div class="dividas-container">
+    <div class="divida">
+        <label for="credor4">Credor:</label>
+        <input type="text" id="credor4" name="credor4" placeholder="Ex: Banco A">
+    </div>
+    <div class="divida">
+        <label for="saldoDivida4">Saldo da Dívida Atual:</label>
+        <input type="text" id="saldoDivida4" name="saldoDivida4" placeholder="Ex: 1000">
+    </div>
+    <div class="divida">
+        <label for="jurosMensal4">Juros Mensal:</label>
+        <input type="text" id="jurosMensal4" name="jurosMensal4" placeholder="Ex: 7%">
+    </div>
+    <div class="divida">
+        <label for="valorParcela4">Valor da Parcela:</label>
+        <input type="text" id="valorParcela4" name="valorParcela4" placeholder="Ex: 200">
+    </div>
+</div>
+
+<div class="dividas-container">
+    <div class="divida">
+        <label for="credor5">Credor:</label>
+        <input type="text" id="credor5" name="credor5" placeholder="Ex: Banco B">
+    </div>
+    <div class="divida">
+        <label for="saldoDivida5">Saldo da Dívida Atual:</label>
+        <input type="text" id="saldoDivida5" name="saldoDivida5" placeholder="Ex: 2500">
+    </div>
+    <div class="divida">
+        <label for="jurosMensal5">Juros Mensal:</label>
+        <input type="text" id="jurosMensal5" name="jurosMensal5" placeholder="Ex: 5%">
+    </div>
+    <div class="divida">
+        <label for="valorParcela5">Valor da Parcela:</label>
+        <input type="text" id="valorParcela5" name="valorParcela5" placeholder="Ex: 400">
+    </div>
+</div>
+
+<div class="dividas-container">
+    <div class="divida">
+        <label for="credor6">Credor:</label>
+        <input type="text" id="credor6" name="credor6" placeholder="Ex: Banco C">
+    </div>
+    <div class="divida">
+        <label for="saldoDivida6">Saldo da Dívida Atual:</label>
+        <input type="text" id="saldoDivida6" name="saldoDivida6" placeholder="Ex: 3000">
+    </div>
+    <div class="divida">
+        <label for="jurosMensal6">Juros Mensal:</label>
+        <input type="text" id="jurosMensal6" name="jurosMensal6" placeholder="Ex: 3%">
+    </div>
+    <div class="divida">
+        <label for="valorParcela6">Valor da Parcela:</label>
+        <input type="text" id="valorParcela6" name="valorParcela6" placeholder="Ex: 550">
+    </div>
+</div>
+
+<div class="dividas-container">
+    <div class="divida">
+        <label for="credor7">Credor:</label>
+        <input type="text" id="credor7" name="credor7" placeholder="Ex: Banco D">
+    </div>
+    <div class="divida">
+        <label for="saldoDivida7">Saldo da Dívida Atual:</label>
+        <input type="text" id="saldoDivida7" name="saldoDivida7" placeholder="Ex: 2200">
+    </div>
+    <div class="divida">
+        <label for="jurosMensal7">Juros Mensal:</label>
+        <input type="text" id="jurosMensal7" name="jurosMensal7" placeholder="Ex: 4%">
+    </div>
+    <div class="divida">
+        <label for="valorParcela7">Valor da Parcela:</label>
+        <input type="text" id="valorParcela7" name="valorParcela7" placeholder="Ex: 650">
+    </div>
+</div>
+
+<div class="dividas-container">
+    <div class="divida">
+        <label for="credor8">Credor:</label>
+        <input type="text" id="credor8" name="credor8" placeholder="Ex: Banco E">
+    </div>
+    <div class="divida">
+        <label for="saldoDivida8">Saldo da Dívida Atual:</label>
+        <input type="text" id="saldoDivida8" name="saldoDivida8" placeholder="Ex: 1800">
+    </div>
+    <div class="divida">
+        <label for="jurosMensal8">Juros Mensal:</label>
+        <input type="text" id="jurosMensal8" name="jurosMensal8" placeholder="Ex: 5%">
+    </div>
+    <div class="divida">
+        <label for="valorParcela8">Valor da Parcela:</label>
+        <input type="text" id="valorParcela8" name="valorParcela8" placeholder="Ex: 350">
+    </div>
+</div>
+
+<div class="dividas-container">
+    <div class="divida">
+        <label for="credor9">Credor:</label>
+        <input type="text" id="credor9" name="credor9" placeholder="Ex: Banco F">
+    </div>
+    <div class="divida">
+        <label for="saldoDivida9">Saldo da Dívida Atual:</label>
+        <input type="text" id="saldoDivida9" name="saldoDivida9" placeholder="Ex: 2700">
+    </div>
+    <div class="divida">
+        <label for="jurosMensal9">Juros Mensal:</label>
+        <input type="text" id="jurosMensal9" name="jurosMensal9" placeholder="Ex: 6%">
+    </div>
+    <div class="divida">
+        <label for="valorParcela9">Valor da Parcela:</label>
+        <input type="text" id="valorParcela9" name="valorParcela9" placeholder="Ex: 480">
+    </div>
+</div>
+
+<div class="dividas-container">
+    <div class="divida">
+        <label for="credor10">Credor:</label>
+        <input type="text" id="credor10" name="credor10" placeholder="Ex: Banco G">
+    </div>
+    <div class="divida">
+        <label for="saldoDivida10">Saldo da Dívida Atual:</label>
+        <input type="text" id="saldoDivida10" name="saldoDivida10" placeholder="Ex: 3200">
+    </div>
+    <div class="divida">
+        <label for="jurosMensal10">Juros Mensal:</label>
+        <input type="text" id="jurosMensal10" name="jurosMensal10" placeholder="Ex: 7%">
+    </div>
+    <div class="divida">
+        <label for="valorParcela10">Valor da Parcela:</label>
+        <input type="text" id="valorParcela10" name="valorParcela10" placeholder="Ex: 700">
+    </div>
+</div>
