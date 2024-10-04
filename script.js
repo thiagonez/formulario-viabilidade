@@ -1,46 +1,24 @@
-// Função para adicionar novas linhas automaticamente na tabela de dívidas
-document.addEventListener('DOMContentLoaded', function() {
-    const tabelaDividas = document.querySelector('#tabelaDividas tbody');
-    
-    tabelaDividas.addEventListener('input', function(event) {
-        const ultimaLinha = tabelaDividas.lastElementChild;
-        const inputsPreenchidos = Array.from(ultimaLinha.querySelectorAll('input')).some(input => input.value !== '');
-        
-        if (inputsPreenchidos) {
-            const novaLinha = ultimaLinha.cloneNode(true);
-            novaLinha.querySelectorAll('input').forEach(input => input.value = '');
-            tabelaDividas.appendChild(novaLinha);
-        }
-    });
+document.getElementById("financeForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Formulário enviado com sucesso!");
 });
 
-// Simulação da Calculadora de Liberdade Financeira
-document.getElementById('calculadoraLiberdade').addEventListener('submit', function(event) {
-    event.preventDefault();
+// Função para adicionar uma nova linha na tabela de dívidas
+const dividasTable = document.getElementById('dividasTable').querySelector('tbody');
+dividasTable.addEventListener('input', function(e) {
+    const lastRow = dividasTable.querySelector('tr:last-child');
+    const inputs = lastRow.querySelectorAll('input');
+    let isFilled = true;
     
-    const rendaAposentadoria = parseFloat(document.getElementById('rendaAposentadoria').value);
-    const investimentoAtual = parseFloat(document.getElementById('investimentoAtual').value);
-    const investimentoMensal = parseFloat(document.getElementById('investimentoMensal').value);
-    
-    if (isNaN(rendaAposentadoria) || isNaN(investimentoAtual) || isNaN(investimentoMensal)) {
-        alert('Por favor, preencha todos os campos corretamente.');
-        return;
-    }
+    inputs.forEach(input => {
+        if (!input.value) {
+            isFilled = false;
+        }
+    });
 
-    const anosAteAposentadoria = 20; // Exemplo de cálculo para 20 anos
-    const rendimentoAnual = 0.06; // Rendimento anual de 6%
-
-    let totalInvestido = investimentoAtual;
-    for (let i = 0; i < anosAteAposentadoria; i++) {
-        totalInvestido += investimentoMensal * 12;
-        totalInvestido += totalInvestido * rendimentoAnual;
-    }
-
-    const rendaGerada = totalInvestido * rendimentoAnual;
-
-    if (rendaGerada >= rendaAposentadoria) {
-        alert('Parabéns! Você alcançará sua meta de liberdade financeira.');
-    } else {
-        alert('Você precisará aumentar seus investimentos para atingir a meta.');
+    if (isFilled) {
+        const newRow = lastRow.cloneNode(true);
+        newRow.querySelectorAll('input').forEach(input => input.value = '');
+        dividasTable.appendChild(newRow);
     }
 });
