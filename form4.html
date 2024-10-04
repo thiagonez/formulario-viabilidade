@@ -78,7 +78,7 @@
     </div>
     <div class="divida">
         <label for="parcelasRestantes">Quantidade de Parcelas</label>
-        <input type="text" id="parcelasRestantes" name="parcelasRestantes" placeholder="Ex: 12">
+        <input type="text" id="quantidadeParcelas" name="quantidadeParcelas" placeholder="Ex: 12">
     </div>
     <div class="divida">
         <label for="jurosMensal">Juros Mensal:</label>
@@ -133,56 +133,55 @@
 
     <script>
         // Função para enviar os dados do formulário para o Google Sheets
-        document.getElementById('formularioFinanceiro').addEventListener('submit', function (e) {
-            e.preventDefault(); // Evitar recarregar a página ao enviar o formulário
+document.getElementById('formularioFinanceiro').addEventListener('submit', function (e) {
+    e.preventDefault(); // Evitar recarregar a página ao enviar o formulário
 
-            // Coletar os dados do formulário
-            const formData = new FormData(e.target);
-            const data = {
-                nome: formData.get('nome'),
-                email: formData.get('email'),
-                salario: formData.get('salario'),
-                decimoTerceiro: formData.get('decimoTerceiro'),
-                dividendos: formData.get('dividendos'),
-                aluguel: formData.get('aluguel'),
-                energia: formData.get('energia'),
-                internet: formData.get('internet'),
-                fundosInvestimentos: formData.get('fundosInvestimentos'),
-                poupanca: formData.get('poupanca'),
-                
-                credor: formData.get('credor'),
-                parcelasRestantes: formData.get('parcelasRestantes'),
-                saldoDivida: formData.get('saldoDivida'),
-                jurosMensal: formData.get('jurosMensal'),
-                valorParcela: formData.get('valorParcela'),
-                
-                ativosImobilizados: formData.get('ativosImobilizados'),
-                passivosDividas: formData.get('passivosDividas'),
-                rendaAposentadoria: formData.get('rendaAposentadoria'),
-                investimentoAtual: formData.get('investimentoAtual'),
-                investimentoMensal: formData.get('investimentoMensal')
-            };
+    // Coletar os dados do formulário
+    const formData = new FormData(e.target);
+    const data = {
+        nome: formData.get('nome'),
+        email: formData.get('email'),
+        salario: formData.get('salario'),
+        decimoTerceiro: formData.get('decimoTerceiro'),
+        dividendos: formData.get('dividendos'),
+        aluguel: formData.get('aluguel'),
+        energia: formData.get('energia'),
+        internet: formData.get('internet'),
+        fundosInvestimentos: formData.get('fundosInvestimentos'),
+        poupanca: formData.get('poupanca'),
 
-            // Enviar os dados via POST para o Google Apps Script
-            fetch('https://script.google.com/macros/s/AKfycbyHEXk1Rbr_em6P3DS5xQiwEE7vZhSuOCqx-YP165rK7Coof-iD_xcI-U9wBBqeuVrE7Q/exec', {
-                method: 'POST',
-                body: new URLSearchParams(data),
-            })
-            .then(response => response.text())
-            .then(result => {
-                alert('Dados enviados com sucesso!');
-               
-                // Redirecionar para a página de sucesso
-                    window.location.href = 'sucesso.html';
+        // Adicione um console.log aqui para verificar a quantidade de parcelas
+        credor: formData.get('credor'),
+        quantidadeParcelas: formData.get('quantidadeParcelas'),
+        saldoDivida: formData.get('saldoDivida'),
+        jurosMensal: formData.get('jurosMensal'),
+        valorParcela: formData.get('valorParcela'),
 
-                
-                console.log(result);
-            })
-            .catch(error => {
-                console.error('Erro ao enviar os dados:', error);
-                alert('Houve um erro ao enviar os dados. Tente novamente.');
-            });
-        });
+        ativosImobilizados: formData.get('ativosImobilizados'),
+        passivosDividas: formData.get('passivosDividas'),
+        rendaAposentadoria: formData.get('rendaAposentadoria'),
+        investimentoAtual: formData.get('investimentoAtual'),
+        investimentoMensal: formData.get('investimentoMensal')
+    };
+
+    console.log("Quantidade de Parcelas: ", data.quantidadeParcelas); // Verifique o valor aqui
+
+    // Enviar os dados via POST para o Google Apps Script
+    fetch('https://script.google.com/macros/s/AKfycbyHEXk1Rbr_em6P3DS5xQiwEE7vZhSuOCqx-YP165rK7Coof-iD_xcI-U9wBBqeuVrE7Q/exec', {
+        method: 'POST',
+        body: new URLSearchParams(data),
+    })
+    .then(response => response.text())
+    .then(result => {
+        alert('Dados enviados com sucesso!');
+        window.location.href = 'sucesso.html';
+        console.log(result);
+    })
+    .catch(error => {
+        console.error('Erro ao enviar os dados:', error);
+        alert('Houve um erro ao enviar os dados. Tente novamente.');
+    });
+});
     </script>
 
 </body>
