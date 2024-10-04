@@ -1,87 +1,164 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Análise de Viabilidade</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Formulário completo para controle financeiro pessoal, com receitas, despesas, investimentos e planejamento de liberdade financeira.">
+    <meta name="keywords" content="controle financeiro, planejamento financeiro, receitas, despesas, liberdade financeira">
+    <meta name="author" content="Seu Nome">
+    <title>Controle Financeiro Pessoal - Liberdade Financeira</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <img src="images/logo.png" alt="Logo da Consultoria">
-            </div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#diagnostico">Diagnóstico</a></li>
-                <li><a href="#solucoes">Soluções</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+        <h1>Controle Financeiro Pessoal</h1>
+        <p>Organize suas finanças, gerencie receitas, despesas e planeje sua liberdade financeira.</p>
     </header>
 
-    <section class="form-section">
-        <h2>Análise de Viabilidade</h2>
-        <form id="form-viabilidade" action="https://script.google.com/macros/s/AKfycbwkD5kZXC-u_ENT1U1tdNBlTuOyr0WHbPxEpYVzgtOU99IJinWw39Niu4CVZMh5ONIExw/exec" method="POST">
-            <fieldset>
-                <legend>Informações da Empresa</legend>
-                <label for="nomeEmpresa">Nome da Empresa:</label>
-                <input type="text" id="nomeEmpresa" name="nomeEmpresa" required>
-                
-                <label for="cnpj">CNPJ:</label>
-                <input type="text" id="cnpj" name="cnpj" required>
-                
-                <label for="nomeContato">Nome do Contato:</label>
-                <input type="text" id="nomeContato" name="nomeContato" required>
-                
-                <label for="whatsappContato">WhatsApp do Contato:</label>
-                <input type="text" id="whatsappContato" name="whatsappContato" required>
-                
-                <label for="emailContato">Melhor E-mail do Contato:</label>
-                <input type="email" id="emailContato" name="emailContato" required>
-            </fieldset>
-            
-            <fieldset>
-                <legend>Aspectos Gerais</legend>
-                <label for="anoInicialProjeto">Ano Inicial do Projeto:</label>
-                <input type="number" id="anoInicialProjeto" name="anoInicialProjeto" required>
-                
-                <label for="capitalTotalProjeto">Capital Total Necessário para o Projeto:</label>
-                <input type="number" id="capitalTotalProjeto" name="capitalTotalProjeto" required>
-                
-                <label for="previsaoCapitalRetorno">Previsão de Capital de Retorno:</label>
-                <input type="number" id="previsaoCapitalRetorno" name="previsaoCapitalRetorno" required>
-                
-                <label for="previsaoTempoRetorno">Previsão de Tempo de Retorno:</label>
-                <input type="number" id="previsaoTempoRetorno" name="previsaoTempoRetorno" required>
-            </fieldset>
-            
-            <fieldset>
-                <legend>Análise do Projeto</legend>
-                <label for="descricaoProjeto">Descrição Geral do Projeto:</label>
-                <textarea id="descricaoProjeto" name="descricaoProjeto" rows="5" required></textarea>
-                
-                <label for="diferenciaisProjeto">Diferenciais do Projeto:</label>
-                <textarea id="diferenciaisProjeto" name="diferenciaisProjeto" rows="3" required></textarea>
-                
-                <label for="principaisRiscos">Principais Riscos Identificados:</label>
-                <textarea id="principaisRiscos" name="principaisRiscos" rows="3" required></textarea>
-                
-                <label for="projecaoFinanceira">Projeção Financeira (em PDF):</label>
-                <input type="file" id="projecaoFinanceira" name="projecaoFinanceira" accept=".pdf" required>
-            </fieldset>
-            
-            <button type="submit">Enviar Formulário</button>
+    <section id="formulario-principal">
+        <h2>Informações Pessoais</h2>
+        <form id="formularioFinanceiro">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+        </form>
+
+        <h2>Receitas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Salário</td>
+                    <td><input type="number" name="salario"></td>
+                </tr>
+                <tr>
+                    <td>13º Salário</td>
+                    <td><input type="number" name="decimoTerceiro"></td>
+                </tr>
+                <tr>
+                    <td>Dividendos</td>
+                    <td><input type="number" name="dividendos"></td>
+                </tr>
+                <!-- Mais linhas de receitas aqui -->
+            </tbody>
+        </table>
+
+        <h2>Despesas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aluguel</td>
+                    <td><input type="number" name="aluguel"></td>
+                </tr>
+                <tr>
+                    <td>Energia Elétrica</td>
+                    <td><input type="number" name="energia"></td>
+                </tr>
+                <tr>
+                    <td>Internet</td>
+                    <td><input type="number" name="internet"></td>
+                </tr>
+                <!-- Mais linhas de despesas aqui -->
+            </tbody>
+        </table>
+
+        <h2>Investimentos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fundos de Investimentos</td>
+                    <td><input type="number" name="fundosInvestimentos"></td>
+                </tr>
+                <tr>
+                    <td>Poupança</td>
+                    <td><input type="number" name="poupanca"></td>
+                </tr>
+                <!-- Mais linhas de investimentos aqui -->
+            </tbody>
+        </table>
+
+        <h2>Tabela de Dívidas</h2>
+        <table id="tabelaDividas">
+            <thead>
+                <tr>
+                    <th>Credor</th>
+                    <th>Saldo da Dívida</th>
+                    <th>Juros Mensal</th>
+                    <th>Valor da Parcela</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="credor"></td>
+                    <td><input type="number" name="saldoDivida"></td>
+                    <td><input type="number" name="jurosMensal"></td>
+                    <td><input type="number" name="valorParcela"></td>
+                </tr>
+                <!-- Mais linhas serão adicionadas dinamicamente -->
+            </tbody>
+        </table>
+
+        <h2>Balanço Patrimonial Pessoal</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ativos (Patrimônio/Imobilizados)</td>
+                    <td><input type="number" name="ativosImobilizados"></td>
+                </tr>
+                <tr>
+                    <td>Passivos (Dívidas)</td>
+                    <td><input type="number" name="passivosDividas"></td>
+                </tr>
+                <!-- Mais linhas de balanço patrimonial aqui -->
+            </tbody>
+        </table>
+
+        <h2>Calculadora de Liberdade Financeira</h2>
+        <form id="calculadoraLiberdade">
+            <label for="rendaAposentadoria">Quero me aposentar com uma renda de:</label>
+            <input type="number" id="rendaAposentadoria" name="rendaAposentadoria" placeholder="Renda desejada" required>
+
+            <label for="investimentoAtual">Quanto você tem investido hoje?</label>
+            <input type="number" id="investimentoAtual" name="investimentoAtual" required>
+
+            <label for="investimentoMensal">Quanto vai investir por mês?</label>
+            <input type="number" id="investimentoMensal" name="investimentoMensal" required>
+
+            <button type="submit">Calcular</button>
         </form>
     </section>
 
-    <footer id="contato" class="footer-section">
-        <p>&copy; 2024 Consultoria Inteligente. Todos os direitos reservados.</p>
+    <footer>
+        <p>&copy; 2024 Seu Nome - Controle Financeiro Pessoal</p>
     </footer>
-</body>
 
+    <script src="script.js"></script>
+</body>
 </html>
