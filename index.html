@@ -7,9 +7,7 @@
     <meta name="keywords" content="finanças, formulário financeiro, receitas, despesas, investimentos, dívidas">
     <meta name="author" content="Seu Nome">
     <title>Formulário Financeiro</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <section id="formulario">
@@ -17,120 +15,119 @@
         <form id="formularioFinanceiro">
             <h2>Dados Pessoais</h2>
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+            <input type="text" id="nome" name="nome" required>
 
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+            <input type="email" id="email" name="email" required>
 
             <h2>Receitas</h2>
             <label for="salario">Salário:</label>
-            <input type="text" id="salario" name="salario" placeholder="Salário mensal">
+            <input type="text" id="salario" name="salario">
 
             <label for="decimoTerceiro">13º Salário:</label>
-            <input type="text" id="decimoTerceiro" name="decimoTerceiro" placeholder="Valor do 13º salário">
+            <input type="text" id="decimoTerceiro" name="decimoTerceiro">
 
             <label for="dividendos">Dividendos:</label>
-            <input type="text" id="dividendos" name="dividendos" placeholder="Renda de dividendos">
+            <input type="text" id="dividendos" name="dividendos">
 
+            <!-- Você pode continuar com o restante dos campos da mesma forma -->
+            
             <h2>Despesas</h2>
             <label for="aluguel">Aluguel:</label>
-            <input type="text" id="aluguel" name="aluguel" placeholder="Valor do aluguel">
+            <input type="text" id="aluguel" name="aluguel">
 
             <label for="energia">Energia Elétrica:</label>
-            <input type="text" id="energia" name="energia" placeholder="Valor da conta de energia">
+            <input type="text" id="energia" name="energia">
 
             <label for="internet">Internet:</label>
-            <input type="text" id="internet" name="internet" placeholder="Valor da conta de internet">
+            <input type="text" id="internet" name="internet">
 
             <h2>Investimentos</h2>
             <label for="fundosInvestimentos">Fundos de Investimentos:</label>
-            <input type="text" id="fundosInvestimentos" name="fundosInvestimentos" placeholder="Valor em fundos de investimentos">
+            <input type="text" id="fundosInvestimentos" name="fundosInvestimentos">
 
             <label for="poupanca">Poupança:</label>
-            <input type="text" id="poupanca" name="poupanca" placeholder="Valor na poupança">
+            <input type="text" id="poupanca" name="poupanca">
 
             <h2>Dívidas</h2>
             <label for="credor">Credor:</label>
-            <input type="text" id="credor" name="credor" placeholder="Nome do credor">
+            <input type="text" id="credor" name="credor">
 
             <label for="saldoDivida">Saldo da Dívida Atual:</label>
-            <input type="text" id="saldoDivida" name="saldoDivida" placeholder="Valor da dívida">
+            <input type="text" id="saldoDivida" name="saldoDivida">
 
             <label for="jurosMensal">Juros Mensal:</label>
-            <input type="text" id="jurosMensal" name="jurosMensal" placeholder="Taxa de juros mensal">
+            <input type="text" id="jurosMensal" name="jurosMensal">
 
             <label for="valorParcela">Valor da Parcela:</label>
-            <input type="text" id="valorParcela" name="valorParcela" placeholder="Valor da parcela">
+            <input type="text" id="valorParcela" name="valorParcela">
 
             <h2>Balanço Patrimonial</h2>
             <label for="ativosImobilizados">Ativos (Imobilizados):</label>
-            <input type="text" id="ativosImobilizados" name="ativosImobilizados" placeholder="Valor dos ativos">
+            <input type="text" id="ativosImobilizados" name="ativosImobilizados">
 
             <label for="passivosDividas">Passivos (Dívidas):</label>
-            <input type="text" id="passivosDividas" name="passivosDividas" placeholder="Valor dos passivos">
+            <input type="text" id="passivosDividas" name="passivosDividas">
 
             <h2>Calculadora de Liberdade Financeira</h2>
             <label for="rendaAposentadoria">Quero me aposentar com uma renda de:</label>
-            <input type="text" id="rendaAposentadoria" name="rendaAposentadoria" placeholder="Renda desejada na aposentadoria">
+            <input type="text" id="rendaAposentadoria" name="rendaAposentadoria">
 
             <label for="investimentoAtual">Quanto você tem hoje investido?</label>
-            <input type="text" id="investimentoAtual" name="investimentoAtual" placeholder="Valor investido atualmente">
+            <input type="text" id="investimentoAtual" name="investimentoAtual">
 
             <label for="investimentoMensal">Quanto vai investir por mês?</label>
-            <input type="text" id="investimentoMensal" name="investimentoMensal" placeholder="Valor do investimento mensal">
+            <input type="text" id="investimentoMensal" name="investimentoMensal">
 
             <button type="submit" id="submitBtn">Enviar</button>
         </form>
     </section>
 
     <script>
-    // Função para enviar os dados do formulário para o Google Sheets
-    document.getElementById('formularioFinanceiro').addEventListener('submit', function (e) {
-        e.preventDefault(); // Evitar recarregar a página ao enviar o formulário
+        // Função para enviar os dados do formulário para o Google Sheets
+        document.getElementById('formularioFinanceiro').addEventListener('submit', function (e) {
+            e.preventDefault(); // Evitar recarregar a página ao enviar o formulário
 
-        // Coletar os dados do formulário
-        const formData = new FormData(e.target);
-        const data = {
-            nome: formData.get('nome'),
-            email: formData.get('email'),
-            salario: formData.get('salario'),
-            decimoTerceiro: formData.get('decimoTerceiro'),
-            dividendos: formData.get('dividendos'),
-            aluguel: formData.get('aluguel'),
-            energia: formData.get('energia'),
-            internet: formData.get('internet'),
-            fundosInvestimentos: formData.get('fundosInvestimentos'),
-            poupanca: formData.get('poupanca'),
-            credor: formData.get('credor'),
-            saldoDivida: formData.get('saldoDivida'),
-            jurosMensal: formData.get('jurosMensal'),
-            valorParcela: formData.get('valorParcela'),
-            ativosImobilizados: formData.get('ativosImobilizados'),
-            passivosDividas: formData.get('passivosDividas'),
-            rendaAposentadoria: formData.get('rendaAposentadoria'),
-            investimentoAtual: formData.get('investimentoAtual'),
-            investimentoMensal: formData.get('investimentoMensal'),
-        };
+            // Coletar os dados do formulário
+            const formData = new FormData(e.target);
+            const data = {
+                nome: formData.get('nome'),
+                email: formData.get('email'),
+                salario: formData.get('salario'),
+                decimoTerceiro: formData.get('decimoTerceiro'),
+                dividendos: formData.get('dividendos'),
+                aluguel: formData.get('aluguel'),
+                energia: formData.get('energia'),
+                internet: formData.get('internet'),
+                fundosInvestimentos: formData.get('fundosInvestimentos'),
+                poupanca: formData.get('poupanca'),
+                credor: formData.get('credor'),
+                saldoDivida: formData.get('saldoDivida'),
+                jurosMensal: formData.get('jurosMensal'),
+                valorParcela: formData.get('valorParcela'),
+                ativosImobilizados: formData.get('ativosImobilizados'),
+                passivosDividas: formData.get('passivosDividas'),
+                rendaAposentadoria: formData.get('rendaAposentadoria'),
+                investimentoAtual: formData.get('investimentoAtual'),
+                investimentoMensal: formData.get('investimentoMensal')
+            };
 
-        // Enviar os dados para o Google Sheets
-        fetch('https://script.google.com/macros/s/AKfycbyHEXk1Rbr_em6P3DS5xQiwEE7vZhSuOCqx-YP165rK7Coof-iD_xcI-U9wBBqeuVrE7Q/exec', {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert('Formulário enviado com sucesso!');
-            e.target.reset(); // Limpar o formulário
-        })
-        .catch((error) => {
-            console.error('Erro:', error);
-            alert('Ocorreu um erro ao enviar o formulário. Tente novamente.');
+            // Enviar os dados via POST para o Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbyHEXk1Rbr_em6P3DS5xQiwEE7vZhSuOCqx-YP165rK7Coof-iD_xcI-U9wBBqeuVrE7Q/exec', {
+                method: 'POST',
+                body: new URLSearchParams(data),
+            })
+            .then(response => response.text())
+            .then(result => {
+                alert('Dados enviados com sucesso!');
+                console.log(result);
+            })
+            .catch(error => {
+                console.error('Erro ao enviar os dados:', error);
+                alert('Houve um erro ao enviar os dados. Tente novamente.');
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
 </html>
