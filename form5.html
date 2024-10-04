@@ -151,22 +151,24 @@
                 data[`parcelasRestantes_${i}`] = formData.get(`parcelasRestantes_${i}`);
             }
 
-            // Enviar os dados para o Google Sheets
-            fetch('https://script.google.com/macros/s/SEU_SCRIPT_ID/exec', {
+// Enviar os dados via POST para o Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbyHEXk1Rbr_em6P3DS5xQiwEE7vZhSuOCqx-YP165rK7Coof-iD_xcI-U9wBBqeuVrE7Q/exec', {
                 method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+                body: new URLSearchParams(data),
             })
-            .then(response => response.json())
-            .then(data => {
+            .then(response => response.text())
+            .then(result => {
                 alert('Dados enviados com sucesso!');
-                document.getElementById('formularioFinanceiro').reset();
+               
+                // Redirecionar para a página de sucesso
+                    window.location.href = 'sucesso.html';
+
+                
+                console.log(result);
             })
-            .catch((error) => {
+            .catch(error => {
                 console.error('Erro ao enviar os dados:', error);
-                alert('Erro ao enviar os dados.');
+                alert('Houve um erro ao enviar os dados. Tente novamente.');
             });
         });
     </script>
