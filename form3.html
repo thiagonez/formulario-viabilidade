@@ -1,136 +1,125 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário Financeiro</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Formulário Financeiro Pessoal</h1>
-        
-        <form id="financeForm">
-            <!-- Coleta de Nome e E-mail -->
+        <h1>Formulário Financeiro</h1>
+        <form id="financialForm">
             <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
             </div>
             <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
             </div>
 
-            <!-- Tabela de Receitas -->
             <h2>Receitas</h2>
-            <table>
-                <thead>
+            <table id="receitasTable">
+                <tbody>
                     <tr>
-                        <th>Título</th>
-                        <th>Valor</th>
+                        <td>Salário</td>
+                        <td><input type="number" name="salario" placeholder="Valor"></td>
                     </tr>
-                </thead>
-                <tbody id="receitasTable">
-                    <tr><td>Salário</td><td><input type="number" name="salario" placeholder="R$ 0,00" required></td></tr>
-                    <tr><td>13º salário</td><td><input type="number" name="decimoTerceiro" placeholder="R$ 0,00" required></td></tr>
-                    <tr><td>Dividendos</td><td><input type="number" name="dividendos" placeholder="R$ 0,00" required></td></tr>
-                    <tr><td>Férias</td><td><input type="number" name="ferias" placeholder="R$ 0,00" required></td></tr>
+                    <tr>
+                        <td>13º salário</td>
+                        <td><input type="number" name="decimoTerceiro" placeholder="Valor"></td>
+                    </tr>
+                    <tr>
+                        <td>Dividendos</td>
+                        <td><input type="number" name="dividendos" placeholder="Valor"></td>
+                    </tr>
+                    <tr>
+                        <td>Férias</td>
+                        <td><input type="number" name="ferias" placeholder="Valor"></td>
+                    </tr>
+                    <tr>
+                        <td>Horas extras</td>
+                        <td><input type="number" name="horasExtras" placeholder="Valor"></td>
+                    </tr>
+                    <tr>
+                        <td>IR</td>
+                        <td><input type="number" name="ir" placeholder="Valor"></td>
+                    </tr>
+                    <tr>
+                        <td>Outras Receitas</td>
+                        <td><input type="number" name="outrasReceitas" placeholder="Valor"></td>
+                    </tr>
                 </tbody>
             </table>
 
-            <!-- Tabela de Despesas -->
             <h2>Despesas</h2>
-            <table>
-                <thead>
+            <table id="despesasTable">
+                <tbody>
                     <tr>
-                        <th>Título</th>
-                        <th>Valor</th>
+                        <td>Celular</td>
+                        <td><input type="number" name="celular" placeholder="Valor"></td>
                     </tr>
-                </thead>
-                <tbody id="despesasTable">
-                    <tr><td>Aluguel / Prestação</td><td><input type="number" name="aluguel" placeholder="R$ 0,00" required></td></tr>
-                    <tr><td>Supermercado</td><td><input type="number" name="supermercado" placeholder="R$ 0,00" required></td></tr>
-                    <tr><td>Internet</td><td><input type="number" name="internet" placeholder="R$ 0,00" required></td></tr>
+                    <tr>
+                        <td>Condomínio</td>
+                        <td><input type="number" name="condominio" placeholder="Valor"></td>
+                    </tr>
+                    <tr>
+                        <td>Consumo de água</td>
+                        <td><input type="number" name="agua" placeholder="Valor"></td>
+                    </tr>
+                    <tr>
+                        <td>Energia Elétrica</td>
+                        <td><input type="number" name="energia" placeholder="Valor"></td>
+                    </tr>
+                    <tr>
+                        <td>Internet / TV a cabo</td>
+                        <td><input type="number" name="internet" placeholder="Valor"></td>
+                    </tr>
+                    <!-- Adicione mais despesas conforme necessário -->
                 </tbody>
             </table>
 
-            <!-- Tabela de Dívidas -->
             <h2>Dívidas</h2>
             <table id="dividasTable">
                 <thead>
                     <tr>
                         <th>Credor</th>
-                        <th>Saldo da Dívida Atual</th>
-                        <th>Juros Mensal (%)</th>
-                        <th>Valor da Parcela</th>
+                        <th>Saldo da dívida atual</th>
+                        <th>Juros mensal</th>
+                        <th>Valor da parcela</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="text" name="credor" placeholder="Nome do Credor" required></td>
-                        <td><input type="number" name="saldoDivida" placeholder="R$ 0,00" required></td>
-                        <td><input type="number" name="jurosMensal" placeholder="0" required></td>
-                        <td><input type="number" name="valorParcela" placeholder="R$ 0,00" required></td>
+                        <td><input type="text" name="credor" placeholder="Credor"></td>
+                        <td><input type="number" name="saldo" placeholder="Valor"></td>
+                        <td><input type="number" name="juros" placeholder="Valor"></td>
+                        <td><input type="number" name="parcela" placeholder="Valor"></td>
                     </tr>
-                </tbody>
-            </table>
-
-            <!-- Balanço Patrimonial -->
-            <h2>Balanço Patrimonial Pessoal</h2>
-            <table>
-                <thead>
                     <tr>
-                        <th>Ativo</th>
-                        <th>Passivo</th>
+                        <td><input type="text" name="credor" placeholder="Credor"></td>
+                        <td><input type="number" name="saldo" placeholder="Valor"></td>
+                        <td><input type="number" name="juros" placeholder="Valor"></td>
+                        <td><input type="number" name="parcela" placeholder="Valor"></td>
                     </tr>
-                </thead>
-                <tbody>
-                    <tr><td><input type="number" name="ativosImobilizados" placeholder="Ativos" required></td><td><input type="number" name="passivosDividas" placeholder="Passivos" required></td></tr>
+                    <tr>
+                        <td><input type="text" name="credor" placeholder="Credor"></td>
+                        <td><input type="number" name="saldo" placeholder="Valor"></td>
+                        <td><input type="number" name="juros" placeholder="Valor"></td>
+                        <td><input type="number" name="parcela" placeholder="Valor"></td>
+                    </tr>
                 </tbody>
             </table>
 
-            <!-- Calculadora de Liberdade Financeira -->
-            <h2>Calculadora de Liberdade Financeira</h2>
-            <div class="form-group">
-                <label for="retirementIncome">Quero me aposentar com uma renda de:</label>
-                <input type="number" name="rendaAposentadoria" placeholder="R$ 0,00" required>
-            </div>
-            <div class="form-group">
-                <label for="currentInvestment">Quanto você tem hoje investido?</label>
-                <input type="number" name="investimentoAtual" placeholder="R$ 0,00" required>
-            </div>
-            <div class="form-group">
-                <label for="monthlyInvestment">Quanto vai investir por mês?</label>
-                <input type="number" name="investimentoMensal" placeholder="R$ 0,00" required>
-            </div>
+            <button type="button" id="addRowBtn">Adicionar Dívida</button>
 
             <button type="submit">Enviar</button>
         </form>
     </div>
 
-    <script>
-        const form = document.getElementById('financeForm');
-        const url = 'https://script.google.com/macros/s/AKfycbyb22UGgr5nv8v3EpCMDrlnzGp0nDTXVPerHd2-znQa/exec';
-
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault(); // Impede o envio padrão do formulário
-
-            const formData = new FormData(form); // Coleta os dados do formulário
-
-            try {
-                const response = await fetch(url, {
-                    method: 'POST',
-                    body: formData,
-                });
-
-                const result = await response.text(); // Obtém a resposta como texto
-                alert(result); // Exibe a resposta (sucesso ou erro)
-            } catch (error) {
-                alert('Houve um erro ao enviar os dados. Tente novamente.'); // Mensagem de erro
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
