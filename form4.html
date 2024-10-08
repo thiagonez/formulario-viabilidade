@@ -366,113 +366,25 @@
         </form>
     </section>
 
-    <script>
-        // Função para enviar os dados do formulário para o Google Sheets
-document.getElementById('formularioFinanceiro').addEventListener('submit', function (e) {
-    e.preventDefault(); // Evitar recarregar a página ao enviar o formulário
+<script>
+    document.getElementById('formularioFinanceiro').onsubmit = function(e) {
+        e.preventDefault(); // Previne o comportamento padrão do formulário
 
-    // Coletar os dados do formulário
-    const formData = new FormData(e.target);
-    const data = {
-        nome: formData.get('nome'),
-        email: formData.get('email'),
-        salario: formData.get('salario'),
-        decimoTerceiro: formData.get('decimoTerceiro'),
-        dividendos: formData.get('dividendos'),
-        aluguel: formData.get('aluguel'),
-        energia: formData.get('energia'),
-        internet: formData.get('internet'),
-        fundosInvestimentos: formData.get('fundosInvestimentos'),
-        poupanca: formData.get('poupanca'),
-
-        // quantidadeParcelas ----------------------------------------------------------- não ta dando certo, analisar aqui
-        credor: formData.get('credor1'),
-        saldoDivida: formData.get('saldoDivida1'),
-        quantidadeParcelas: formData.get('quantidadeParcelas1'),
-        valorParcela: formData.get('valorParcela1'),
-        jurosMensal: formData.get('jurosMensal1'),
-
-        credor: formData.get('credor2'),
-        saldoDivida: formData.get('saldoDivida2'),
-        quantidadeParcelas: formData.get('quantidadeParcelas2'),
-        valorParcela: formData.get('valorParcela2'),
-        jurosMensal: formData.get('jurosMensal2'),
-        
-        credor: formData.get('credor3'),
-        saldoDivida: formData.get('saldoDivida3'),
-        quantidadeParcelas: formData.get('quantidadeParcelas3'),
-        valorParcela: formData.get('valorParcela3'),
-        jurosMensal: formData.get('jurosMensal3'),
-        
-        credor: formData.get('credor4'),
-        saldoDivida: formData.get('saldoDivida4'),
-        quantidadeParcelas: formData.get('quantidadeParcelas4'),
-        valorParcela: formData.get('valorParcela4'),
-        jurosMensal: formData.get('jurosMensal4'),
-
-        credor: formData.get('credor5'),
-        saldoDivida: formData.get('saldoDivida5'),
-        quantidadeParcelas: formData.get('quantidadeParcelas5'),
-        valorParcela: formData.get('valorParcela5'),
-        jurosMensal: formData.get('jurosMensal5'),
-
-        credor: formData.get('credor6'),
-        saldoDivida: formData.get('saldoDivida6'),
-        quantidadeParcelas: formData.get('quantidadeParcelas6'),
-        valorParcela: formData.get('valorParcela6'),
-        jurosMensal: formData.get('jurosMensal6'),
-
-        credor: formData.get('credor7'),
-        saldoDivida: formData.get('saldoDivida7'),
-        quantidadeParcelas: formData.get('quantidadeParcelas7'),
-        valorParcela: formData.get('valorParcela7'),
-        jurosMensal: formData.get('jurosMensal7'),
-
-        credor: formData.get('credor8'),
-        saldoDivida: formData.get('saldoDivida8'),
-        quantidadeParcelas: formData.get('quantidadeParcelas8'),
-        valorParcela: formData.get('valorParcela8'),
-        jurosMensal: formData.get('jurosMensal8'),
-
-        credor: formData.get('credor9'),
-        saldoDivida: formData.get('saldoDivida9'),
-        quantidadeParcelas: formData.get('quantidadeParcelas9'),
-        valorParcela: formData.get('valorParcela9'),
-        jurosMensal: formData.get('jurosMensal9'),
-
-        credor: formData.get('credor10'),
-        saldoDivida: formData.get('saldoDivida10'),
-        quantidadeParcelas: formData.get('quantidadeParcelas10'),
-        valorParcela: formData.get('valorParcela10'),
-        jurosMensal: formData.get('jurosMensal10'),
-
-        
-
-        ativosImobilizados: formData.get('ativosImobilizados'),
-        passivosDividas: formData.get('passivosDividas'),
-        rendaAposentadoria: formData.get('rendaAposentadoria'),
-        investimentoAtual: formData.get('investimentoAtual'),
-        investimentoMensal: formData.get('investimentoMensal')
+        var formData = new FormData(this);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "SUA_URL_DO_APLICATIVO_WEB"); // Substitua pela URL do seu aplicativo da Web
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                alert("Dados enviados com sucesso!");
+                document.getElementById('formularioFinanceiro').reset(); // Limpa o formulário
+            } else {
+                alert("Erro ao enviar dados: " + xhr.status);
+            }
+        };
+        xhr.send(formData);
     };
+</script>
 
-
-    // Enviar os dados via POST para o Google Apps Script
-    fetch('https://script.google.com/macros/s/AKfycbyHEXk1Rbr_em6P3DS5xQiwEE7vZhSuOCqx-YP165rK7Coof-iD_xcI-U9wBBqeuVrE7Q/exec', {
-        method: 'POST',
-        body: new URLSearchParams(data),
-    })
-    .then(response => response.text())
-    .then(result => {
-        alert('Dados enviados com sucesso!');
-        window.location.href = 'sucesso.html';
-        console.log(result);
-    })
-    .catch(error => {
-        console.error('Erro ao enviar os dados:', error);
-        alert('Houve um erro ao enviar os dados. Tente novamente.');
-    });
-});
-    </script>
 
 </body>
 </html>
